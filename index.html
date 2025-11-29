@@ -44,7 +44,6 @@
             display: flex; 
             flex-direction: column;
         }
-        
         .main-content-wrapper { flex-grow: 1; }
         .header-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: .1em; }
         .header-bg { background-color: #330066; border-bottom: 5px solid #B266FF; }
@@ -270,21 +269,29 @@
         <div class="max-w-6xl mx-auto space-y-2">
 
             <!-- 1. HEADER PANEL -->
-            <header class="header-bg text-white py-3 px-4 sm:py-4 sm:px-6 rounded-xl shadow-2xl">
-                <div class="flex items-center justify-between">
-                    <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/LAWLOGO.png" alt="USA Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'graduation-cap\' class=\'w-12 h-12 text-yellow-300\'></i>'">
-                    </div>
-                    <div class="text-center mx-4 flex-grow">
-                        <h1 class="text-xl sm:text-3xl font-extrabold header-font tracking-wider mb-2 underline">UNIVERSITY OF SAN AGUSTIN</h1>
-                        <h2 class="text-3xl sm:text-5xl italic font-extrabold header-font tracking-widest" style="text-shadow: 2px 2px 0 #000000;">2026 BAR EXAM REVIEW TRACKER</h2>
-                    </div>
-                    <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center rounded-full overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/CHECKLIST.png" alt="USACoL Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'shield\' class=\'w-12 h-12 text-yellow-300\'></i>'">
+<header class="header-bg text-white py-1 px-4 sm:py-2 sm:px-6 rounded-xl shadow-2xl">
+            <div class="flex items-center justify-between">
+                
+                                <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center rounded-full overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/LAWLOGO.png" alt="Law Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'graduation-cap\' class=\'w-full h-full object-cover\'></i>'">
+                </div>
+                
+                                <div class="text-center mx-4 flex-grow">
+                                                        <h1 class="text-3xl sm:text-5xl italic font-extrabold header-font tracking-widest mb-1" style="text-shadow: 2px 2px 0 #000000;">
+                                2026 BAR EXAM REVIEW TRACKER
+                            </h1>
+                            
+                                                        <h2 class="text-xl sm:text-3xl font-extrabold tracking-wider mb-0 italic" style="line-height: 1.1;">
+                                #AweSAMBar2026
+                            </h2>
+                        </div>
+        
+                                        <div class="flex-shrink-0 w-32 h-32 flex items-center justify-center rounded-full overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/CHECKLIST.png" alt="Checklist Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'shield\' class=\'w-full h-full object-cover\'></i>'">
                     </div>
                 </div>
-            </header>
-
+        </header>
+        
             <!-- 2. COUNTDOWN PANELS (Hourglass color fixed to inherited white) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div id="card-day-1" class="bg-white rounded-xl shadow-lg border border-gray-300 relative overflow-hidden">
@@ -293,7 +300,7 @@
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-1" class="date-display-wrapper" data-target-date="2026-06-14"><span class="date-text"></span></span>
+                            <span id="target-date-display-1" class="date-display-wrapper" data-target-date="2026-09-06"><span class="date-text"></span></span>
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-1" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -309,7 +316,7 @@
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-2" class="date-display-wrapper" data-target-date="2026-06-21"><span class="date-text"></span></span>
+                            <span id="target-date-display-2" class="date-display-wrapper" data-target-date="2026-09-09"><span class="date-text"></span></span>
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-2" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -325,7 +332,7 @@
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-3" class="date-display-wrapper" data-target-date="2026-06-28"><span class="date-text"></span></span>
+                            <span id="target-date-display-3" class="date-display-wrapper" data-target-date="2026-09-13"><span class="date-text"></span></span>
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-3" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -639,9 +646,9 @@
         
         const CHECKLIST_COLUMNS = ['codal', 'books', 'reviewer', 'barqas', 'cases'];
         const COUNTDOWN_DATA = [
-            {id:1,targetDate:localStorage.getItem('comp_exam_date_1')||'2026-06-14'},
-            {id:2,targetDate:localStorage.getItem('comp_exam_date_2')||'2026-06-21'},
-            {id:3,targetDate:localStorage.getItem('comp_exam_date_3')||'2026-06-28'}
+            {id:1,targetDate:localStorage.getItem('comp_exam_date_1')||'2026-09-06'},
+            {id:2,targetDate:localStorage.getItem('comp_exam_date_2')||'2026-09-09'},
+            {id:3,targetDate:localStorage.getItem('comp_exam_date_3')||'2026-09-13'}
         ];
         
         const DOM_ELEMENTS = {
