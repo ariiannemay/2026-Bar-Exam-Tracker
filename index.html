@@ -47,8 +47,8 @@
         
         .main-content-wrapper { flex-grow: 1; }
         .header-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: .1em; }
-        .header-bg { background-color: #330066; border-bottom: 5px solid #fece1b; }
-        .card-header-bg { background-color: #6d1b1b; }
+        .header-bg { background-color: #330066; border-bottom: 5px solid #B266FF; }
+        .card-header-bg { background-color: #330066; }
         .time-value { font-size: 1.75rem; font-weight: 900; line-height: 1; color: #1a202c; }
         .time-label { font-size: .875rem; font-weight: 700; color: #4a5568; text-transform: uppercase; }
         .date-display-wrapper { display: inline-block; padding-bottom: 0; cursor: pointer; transition: color .2s; }
@@ -68,8 +68,8 @@
         /* 2. DASHBOARD & SCHEDULE STYLES (Existing) */
         /* -------------------------------------------------------------------------- */
 
-        .border-custom-yellow { border-color: #fece1b; }
-        .text-custom-yellow { color: #fece1b; }
+        .border-custom-yellow { border-color: #B266FF; }
+        .text-custom-yellow { color: #B266FF; }
         .bg-chart-done { background-color: #38761d; }
         .text-chart-done { color: #38761d; }
         .bg-chart-toread { background-color: #ef4444; }
@@ -98,7 +98,7 @@
         
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
         .schedule-table th, .schedule-table td { padding: 0.3rem 0.5rem; vertical-align: middle; }
-        .schedule-header th { background-color: #330066; color: #FFFFFF; font-weight: 700; text-transform: uppercase; border: 2px solid #fece1b; font-size: 0.75rem; }
+        .schedule-header th { background-color: #330066; color: #FFFFFF; font-weight: 700; text-transform: uppercase; border: 2px solid #B266FF; font-size: 0.75rem; }
         .subject-cell { font-weight: 600; color: white; padding: 0.4rem; text-align: center; border-radius: 0.5rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); font-size: 0.7rem; text-transform: uppercase; }
         .progress-bar-sparkline { width: 100%; height: 0.8rem; background-color: #e5e7eb; border-radius: 9999px; overflow: hidden; box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1); padding: 2px; }
         .bg-progress-red { background-color: #ef4444; }
@@ -499,7 +499,7 @@
             <div id="calendar-module-container" class="mt-4">
                 <div class="calendar-wrapper mx-auto max-w-6xl p-0">
                     <details id="calendar-details" class="bg-white rounded-xl shadow-lg border border-gray-300" open>
-                        <summary class="flex justify-between items-center p-4 font-bold text-lg cursor-pointer select-none" style="background-color: #6D1B1B; color: white; border-bottom: 3px solid #FECE1B;">
+                        <summary class="flex justify-between items-center p-4 font-bold text-lg cursor-pointer select-none" style="background-color: #330066; color: white; border-bottom: 3px solid #B266FF;">
                             <div class="summary-title-content flex-grow text-center flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <span>REVIEW CALENDAR</span>
@@ -514,7 +514,7 @@
                              
                             <div id="calendar-content" style="grid-column: 1; padding: 0;">
                                 <div id='calendar-card' style="background-color: white; border-radius: 0.75rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 0;">
-                                    <div class="fc-toolbar fc-header-toolbar flex justify-between items-center p-2 rounded-lg border-1 border-secondary-gold" style="background-color: #6D1B1B;">
+                                    <div class="fc-toolbar fc-header-toolbar flex justify-between items-center p-2 rounded-lg border-1 border-secondary-gold" style="background-color: #330066;">
                                         <div class="fc-left flex items-center">
                                             <span id="customMonthTitle" class="text-secondary-gold font-extrabold text-lg" style="color: #fff;"></span>
                                             <div class="fc-button-group ml-4">
@@ -525,7 +525,7 @@
                                                 <button type="button" class="fc-basicWeek-button fc-button fc-state-default" onclick="window.CALENDAR_APP.setActiveButton(this); $('#calendar').fullCalendar('changeView', 'basicWeek')">week</button>
                                                 <button type="button" class="fc-basicDay-button fc-button fc-state-default fc-corner-right" onclick="window.CALENDAR_APP.setActiveButton(this); $('#calendar').fullCalendar('changeView', 'basicDay')">day</button>
                                             </div>
-                                            <button id="jumpToDateButton" type="button" onclick="window.CALENDAR_APP.toggleDateJumpPicker()" class="fc-button fc-state-default font-inter ml-4" style="background-color: #FECE1B !important; color: #6D1B1B !important; border-color: #6D1B1B !important;">JUMP TO DATE</button>
+                                            <button id="jumpToDateButton" type="button" onclick="window.CALENDAR_APP.toggleDateJumpPicker()" class="fc-button fc-state-default font-inter ml-4" style="background-color: #B266FF !important; color: #330066 !important; border-color: #330066 !important;">JUMP TO DATE</button>
                                         </div>
                                         <div class="fc-right flex items-center">
                                             <div class="fc-button-group">
@@ -538,7 +538,7 @@
                                 </div>
                             </div>
                             <div id="notepad-sidebar" style="background-color: #FFF; border-radius: 0.75rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 1.5rem; display: flex; flex-direction: column; border: 1px solid #e5e7eb; grid-column: 2;">
-                                <h3 class="text-xl font-bold uppercase" style="background-color: #6D1B1B; color: white; border-bottom: 3px solid #FECE1B;">
+                                <h3 class="text-xl font-bold uppercase" style="background-color: #330066; color: white; border-bottom: 3px solid #B266FF;">
                                     <i class="fa-solid fas fa-pencil-alt mr-2"></i>NOTES
                                 </h3>
                                  
@@ -1137,9 +1137,9 @@
                     start: dateString, 
                     end: dateString, 
                     allDay: true,
-                    backgroundColor: '#6D1B1B', 
-                    textColor: '#FECE1B',
-                    borderColor: '#FECE1B',
+                    backgroundColor: '#330066', 
+                    textColor: '#B266FF',
+                    borderColor: '#B266FF',
                     className: 'exam-day-marker',
                     editable: false 
                 };
