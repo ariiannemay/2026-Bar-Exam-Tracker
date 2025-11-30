@@ -54,7 +54,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 | **Labor Law** | ![Preview showing the detailed checklist for Labor Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-LAB.png) |
 | **Civil Law** | ![Preview showing the detailed checklist for Civil Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CIV.png) |
 | **Commercial Law** | ![Preview showing the detailed checklist for Commercial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-COMM.png) |
-| **Political Law** | ![Preview showing the detailed checklist for Political Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25208%2520-%2520POLI.png) |
+| **Political Law** | ![Preview showing the detailed checklist for Political Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-POLI.png) |
 
 -----
 
