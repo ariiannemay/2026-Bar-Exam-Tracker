@@ -8,7 +8,7 @@
 
 This project is a custom-built web application designed for comprehensive, subject-by-subject progress management tailored for the 2026 Bar Examinations. It functions as a centralized, dynamic study hub, built using HTML, JavaScript, jQuery, and FullCalendar. All user progress and notes are stored locally within the browser for immediate access and data privacy.
 
-| 🖥️ Tracker Header Overview |
+| 🖥️ HEADER PREVIEW |
 | :---: |
 | ![Preview showing the header and overall progress meters](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-HEADER.png) |
 
@@ -47,14 +47,14 @@ The application incorporates six distinct, expandable subject panels that utiliz
   * **Progress Metric:** A topic is officially marked as **"DONE"** and contributes to the overall metrics only upon checking **at least 3 out of 5** review method boxes for that topic.
   * **Visual Feedback:** Checkbox completion colors are assigned based on the column type (e.g., Codal = Violet, Bar QAs = Green) for quick visual identification.
 
-| Subject | Preview Image |
+| SUBJECT | PREVIEW IMAGE |
 | :---: | :---: |
 | **Remedial Law** | ![Preview showing the detailed checklist for Remedial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-REM.png) |
 | **Criminal Law** | ![Preview showing the detailed checklist for Criminal Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CRIM.png) |
 | **Labor Law** | ![Preview showing the detailed checklist for Labor Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-LAB.png) |
 | **Civil Law** | ![Preview showing the detailed checklist for Civil Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CIV.png) |
 | **Commercial Law** | ![Preview showing the detailed checklist for Commercial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-COMM.png) |
-| **Political Law** | ![Preview showing the detailed checklist for Political Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-POLI.png) |
+| **Political Law** | ![Preview showing the detailed checklist for Political Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-POLI.png) |
 
 -----
 
@@ -65,7 +65,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
   * The **Review Calendar** allows users to visualize their study schedule by linking tasks and personal events to specific subject topics.
   * Users can click any date to schedule a review task, which then displays the full subject and topic name (e.g., "POLI LAW - II. NATIONAL TERRITORY") on the calendar view.
 
-| 📅 Calendar and Notepad Preview |
+| 📅 CALENDAR and NOTEPAD PREVIEW |
 | :---: |
 | ![Preview showing the monthly calendar view and notepad](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CALENDAR.png) |
 
@@ -88,7 +88,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
   * The application relies on external libraries (Tailwind CSS, FullCalendar, jQuery, etc.) and requires an **active internet connection** for initial asset loading.
   * The application is primarily tested and optimized for **Google Chrome**.
 
-| ⚙️ Footer and Data Management Preview |
+| ⚙️ FOOTER and DATA MANAGEMENT PREVIEW |
 | :---: |
 | ![Preview showing the data management buttons and footer quote](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-FOOTER.png) |
 
