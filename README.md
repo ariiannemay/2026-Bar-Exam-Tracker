@@ -1,6 +1,6 @@
 # ⚖️ 2026 BAR EXAM REVIEW TRACKER
 
-**App Link:** [2026bar-reviewtracker.vercel.app](2026bar-reviewtracker.vercel.app/)
+**App Link:** [2026bar-reviewtracker.vercel.app](https://www.google.com/search?q=https://2026bar-reviewtracker.vercel.app/)
 
 -----
 
@@ -10,7 +10,7 @@ This project is a custom-built web application designed for comprehensive, subje
 
 | 🖥️ Tracker Header Overview |
 | :---: |
-| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%201%20-%20Header.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25201%2520-%2520Header.png)" alt="Preview showing the header and overall progress meters" width="800"/\> |
+| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%201%20-%20Header.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%201%20-%20Header.png)" alt="Preview showing the header and overall progress meters" width="800" /\> |
 
 -----
 
@@ -49,12 +49,12 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | Subject | Preview Image |
 | :---: | :---: |
-| **Remedial Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%203%20-%20REM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25203%2520-%2520REM.png)" alt="Preview showing the detailed checklist for Remedial Law" width="400"/\> |
-| **Criminal Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%204%20-%20CRIM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25204%2520-%2520CRIM.png)" alt="Preview showing the detailed checklist for Criminal Law" width="400"/\> |
-| **Labor Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%205%20-%20LAB.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25205%2520-%2520LAB.png)" alt="Preview showing the detailed checklist for Labor Law" width="400"/\> |
-| **Civil Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%206%20-%20CIV.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25206%2520-%2520CIV.png)" alt="Preview showing the detailed checklist for Civil Law" width="400"/\> |
-| **Commercial Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%207%20-%20COMM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25207%2520-%2520COMM.png)" alt="Preview showing the detailed checklist for Commercial Law" width="400"/\> |
-| **Political Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%208%20-%20POLI.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25208%2520-%2520POLI.png)" alt="Preview showing the detailed checklist for Political Law" width="400"/\> |
+| **Remedial Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%203%20-%20REM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%203%20-%20REM.png)" alt="Preview showing the detailed checklist for Remedial Law" width="400" /\> |
+| **Criminal Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%204%20-%20CRIM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%204%20-%20CRIM.png)" alt="Preview showing the detailed checklist for Criminal Law" width="400" /\> |
+| **Labor Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%205%20-%20LAB.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%205%20-%20LAB.png)" alt="Preview showing the detailed checklist for Labor Law" width="400" /\> |
+| **Civil Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%206%20-%20CIV.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%206%20-%20CIV.png)" alt="Preview showing the detailed checklist for Civil Law" width="400" /\> |
+| **Commercial Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%207%20-%20COMM.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%207%20-%20COMM.png)" alt="Preview showing the detailed checklist for Commercial Law" width="400" /\> |
+| **Political Law** | \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%208%20-%20POLI.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%208%20-%20POLI.png)" alt="Preview showing the detailed checklist for Political Law" width="400" /\> |
 
 -----
 
@@ -67,7 +67,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | 📅 Calendar and Notepad Preview |
 | :---: |
-| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%202%20-%20Calendar.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25202%2520-%2520Calendar.png)" alt="Preview showing the monthly calendar view and notepad" width="800"/\> |
+| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%202%20-%20Calendar.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%202%20-%20Calendar.png)" alt="Preview showing the monthly calendar view and notepad" width="800" /\> |
 
 ### B. Digital Notepad
 
@@ -90,10 +90,10 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | ⚙️ Footer and Data Management Preview |
 | :---: |
-| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%209%20-%20FOOTER.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25209%2520-%2520FOOTER.png)" alt="Preview showing the data management buttons and footer quote" width="800"/\> |
+| \<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%209%20-%20FOOTER.png](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/2026%20Bar%20Review%20Tracker%20-%20Preview%209%20-%20FOOTER.png)" alt="Preview showing the data management buttons and footer quote" width="800" /\> |
 
+-----
 
----
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/missattycpa.PNG" alt="missattycpa watermark" height="20"/> | november 2025
-</p>
+\<p align="center"\>
+\<img src="[https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/missattycpa.PNG](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/missattycpa.PNG)" alt="missattycpa watermark" height="20" /\> | november 2025
+\</p\>
