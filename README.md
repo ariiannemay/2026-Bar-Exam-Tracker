@@ -10,7 +10,7 @@ This project is a custom-built web application designed for comprehensive, subje
 
 | 🖥️ Tracker Header Overview |
 | :---: |
-| ![Preview showing the header and overall progress meters](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-HEADER.png) |
+| ![Preview showing the header and overall progress meters](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-HEADER.png) |
 
 -----
 
@@ -49,11 +49,11 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | Subject | Preview Image |
 | :---: | :---: |
-| **Remedial Law** | ![Preview showing the detailed checklist for Remedial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-REM.png) |
-| **Criminal Law** | ![Preview showing the detailed checklist for Criminal Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CRIM.png) |
-| **Labor Law** | ![Preview showing the detailed checklist for Labor Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-LAB.png) |
-| **Civil Law** | ![Preview showing the detailed checklist for Civil Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CIV.png) |
-| **Commercial Law** | ![Preview showing the detailed checklist for Commercial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-COMM.png) |
+| **Remedial Law** | ![Preview showing the detailed checklist for Remedial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-REM.png) |
+| **Criminal Law** | ![Preview showing the detailed checklist for Criminal Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CRIM.png) |
+| **Labor Law** | ![Preview showing the detailed checklist for Labor Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-LAB.png) |
+| **Civil Law** | ![Preview showing the detailed checklist for Civil Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CIV.png) |
+| **Commercial Law** | ![Preview showing the detailed checklist for Commercial Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-COMM.png) |
 | **Political Law** | ![Preview showing the detailed checklist for Political Law](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25208%2520-%2520POLI.png) |
 
 -----
@@ -67,7 +67,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | 📅 Calendar and Notepad Preview |
 | :---: |
-| ![Preview showing the monthly calendar view and notepad](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CALENDAR.png) |
+| ![Preview showing the monthly calendar view and notepad](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CALENDAR.png) |
 
 ### B. Digital Notepad
 
@@ -90,7 +90,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | ⚙️ Footer and Data Management Preview |
 | :---: |
-| ![Preview showing the data management buttons and footer quote](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-FOOTER.png) |
+| ![Preview showing the data management buttons and footer quote](https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-FOOTER.png) |
 
 
 ---
