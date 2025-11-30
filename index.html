@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 BAR EXAM REVIEW TRACKER</title>
     <!-- FIX: Updated favicon link -->
-    <link rel="icon" href="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/LAWLOGO.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/LAWLOGO.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -273,7 +273,7 @@
             <div class="flex items-center justify-between">
                 
                                 <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center rounded-full overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/LAWLOGO.png" alt="Law Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'graduation-cap\' class=\'w-full h-full object-cover\'></i>'">
+                    <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/LAWLOGO.png" alt="Law Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'graduation-cap\' class=\'w-full h-full object-cover\'></i>'">
                 </div>
                 
                                 <div class="text-center mx-4 flex-grow">
@@ -287,7 +287,7 @@
                         </div>
         
                                         <div class="flex-shrink-0 w-32 h-32 flex items-center justify-center rounded-full overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/CHECKLIST.png" alt="Checklist Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'shield\' class=\'w-full h-full object-cover\'></i>'">
+                        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/CHECKLIST.png" alt="Checklist Logo" class="w-full h-full object-cover" onerror="this.outerHTML = '<i data-lucide=\'shield\' class=\'w-full h-full object-cover\'></i>'">
                     </div>
                 </div>
         </header>
@@ -464,7 +464,7 @@
             Trust that your hard work will never betray you. You did not come this far to only come this far.
         </p>
         <p class="signature mt-1">
-            <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/missattycpa.PNG" 
+            <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/missattycpa.PNG" 
                  alt="missattycpa signature" 
                  class="inline-block h-3.5"
                  onerror="this.outerHTML = '<span class=\'text-miss\'>made by miss</span><span class=\'text-atty\'>atty</span><span class=\'text-cpa\'>cpa</span>'">
@@ -2036,22 +2036,22 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
         // This is the CRITICAL change: The load function now uses the file path to load the external JS.
         function initializeSubjectTrackers() {
             // REMEDIAL LAW
-            loadSubjectPanel('rem', 'rem_logic.js');
+            loadSubjectPanel('rem', 'Syllabus/rem_logic.js');
             
             // CRIMINAL LAW
-            loadSubjectPanel('crim', 'crim_logic.js');
+            loadSubjectPanel('crim', 'Syllabus/crim_logic.js');
             
             // LABOR LAW
-            loadSubjectPanel('lab', 'lab_logic.js');
+            loadSubjectPanel('lab', 'Syllabus/lab_logic.js');
 
             // CIVIL LAW
-            loadSubjectPanel('civ', 'civ_logic.js');
+            loadSubjectPanel('civ', 'Syllabus/civ_logic.js');
             
             // COMMERCIAL LAW
-            loadSubjectPanel('comm', 'comm_logic.js');
+            loadSubjectPanel('comm', 'Syllabus/comm_logic.js');
             
             // POLITICAL LAW
-            loadSubjectPanel('poli', 'poli_logic.js');
+            loadSubjectPanel('poli', 'Syllabus/poli_logic.js');
         }
 
         // --- GLOBAL DASHBOARD LOGIC ---
