@@ -10,7 +10,7 @@ This project is a custom-built web application designed for comprehensive, subje
 
 | 🖥️ Tracker Header Overview |
 | :---: |
-| \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20120-20Header.png" alt="Preview showing the header and overall progress meters" width="800"/\> |
+| \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-HEADER.png" alt="Preview showing the header and overall progress meters" width="800"/\> |
 
 -----
 
@@ -49,12 +49,12 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | Subject | Preview Image |
 | :---: | :---: |
-| **Remedial Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20320-20REM.png" alt="Preview showing the detailed checklist for Remedial Law" width="400"/\> |
-| **Criminal Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20420-20CRIM.png" alt="Preview showing the detailed checklist for Criminal Law" width="400"/\> |
-| **Labor Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20520-20LAB.png" alt="Preview showing the detailed checklist for Labor Law" width="400"/\> |
-| **Civil Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20620-20CIV.png" alt="Preview showing the detailed checklist for Civil Law" width="400"/\> |
-| **Commercial Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20720-20COMM.png" alt="Preview showing the detailed checklist for Commercial Law" width="400"/\> |
-| **Political Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20820-20POLI.png" alt="Preview showing the detailed checklist for Political Law" width="400"/\> |
+| **Remedial Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-REM.png" alt="Preview showing the detailed checklist for Remedial Law" width="400"/\> |
+| **Criminal Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CRIM.png" alt="Preview showing the detailed checklist for Criminal Law" width="400"/\> |
+| **Labor Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-LAB.png" alt="Preview showing the detailed checklist for Labor Law" width="400"/\> |
+| **Civil Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CIV.png" alt="Preview showing the detailed checklist for Civil Law" width="400"/\> |
+| **Commercial Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-COMM.png" alt="Preview showing the detailed checklist for Commercial Law" width="400"/\> |
+| **Political Law** | \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview/2026%2520Bar%2520Review%2520Tracker%2520-%2520Preview%25208%2520-%2520POLI.png" alt="Preview showing the detailed checklist for Political Law" width="400"/\> |
 
 -----
 
@@ -67,7 +67,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | 📅 Calendar and Notepad Preview |
 | :---: |
-| \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20220-20Calendar.png" alt="Preview showing the monthly calendar view and notepad" width="800"/\> |
+| \<img src="https://raw.githubusercontent.com.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-CALENDAR.png" alt="Preview showing the monthly calendar view and notepad" width="800"/\> |
 
 ### B. Digital Notepad
 
@@ -90,7 +90,7 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 | ⚙️ Footer and Data Management Preview |
 | :---: |
-| \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/202620Bar20Review20Tracker20-20Preview/202620Bar20Review20Tracker20-20Preview20920-20FOOTER.png" alt="Preview showing the data management buttons and footer quote" width="800"/\> |
+| \<img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/blob/main/2026%20Bar%20Review%20Tracker%20-%20Preview/Preview-FOOTER.png" alt="Preview showing the data management buttons and footer quote" width="800"/\> |
 
 
 ---
