@@ -1315,11 +1315,11 @@
         function saveTopicTask() {
             const eventId = $('#topicEventId').val();
             const eventName = $('#eventNameInput').val().trim();
-            const subjectKey = $('#subjectSelect').val();
-            // 🚨 FIX: Use the jQuery selector to target the selected option to ensure 
-            // the full 'value' attribute (e.g., "5007|II. NATIONAL TERRITORY") is retrieved correctly.
-            const $topicSelect = $('#topicSelect');
-            const selectedTopicValue = $topicSelect.find('option:selected').val(); 
+const subjectKey = $('#subjectSelect').val();
+            // 🚨 DEFINITIVE FIX: Use the native DOM element to ensure we capture the 
+            // value property reliably, as jQuery's :selected selector can fail in size>1 lists.
+            const topicSelectElement = document.getElementById('topicSelect');
+            const selectedTopicValue = topicSelectElement.value; // Gets the full "ID|TOPIC_TEXT" string
             const start = $('#topicStart').val();
             const end = $('#topicEnd').val();
             
