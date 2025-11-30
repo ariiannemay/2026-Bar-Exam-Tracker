@@ -1316,7 +1316,10 @@
             const eventId = $('#topicEventId').val();
             const eventName = $('#eventNameInput').val().trim();
             const subjectKey = $('#subjectSelect').val();
-            const selectedTopicValue = $('#topicSelect').val(); 
+            // 🚨 FIX: Use the jQuery selector to target the selected option to ensure 
+            // the full 'value' attribute (e.g., "5007|II. NATIONAL TERRITORY") is retrieved correctly.
+            const $topicSelect = $('#topicSelect');
+            const selectedTopicValue = $topicSelect.find('option:selected').val(); 
             const start = $('#topicStart').val();
             const end = $('#topicEnd').val();
             
