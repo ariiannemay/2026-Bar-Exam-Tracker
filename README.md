@@ -6,7 +6,7 @@
 
 ## 💡 Application Overview
 
-This project is a custom-built web application designed for comprehensive, subject-by-subject progress management tailored for the 2026 Bar Examinations. It functions as a centralized, dynamic study hub, built using HTML, JavaScript, jQuery, and FullCalendar. All user progress and notes are stored locally within the browser for immediate access and data privacy.
+This project is a custom-built web application designed for comprehensive, subject-by-subject progress management tailored for the 2026 Bar Examination. Inspired by a Google Sheet bar exam review tracker, it functions as a centralized, dynamic study hub, built using `HTML, JavaScript, jQuery, and FullCalendar`. All user progress and notes are stored locally within the browser for immediate access and data privacy.
 
 | 🖥️ HEADER PREVIEW |
 | :---: |
