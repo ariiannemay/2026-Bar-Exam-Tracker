@@ -95,5 +95,5 @@ The application incorporates six distinct, expandable subject panels that utiliz
 
 ---
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/missattycpa.PNG" alt="missattycpa watermark" height="20"/> | november 2025
+  <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/missattycpa.PNG" alt="missattycpa watermark" height="20"/> | november 2025
 </p>
