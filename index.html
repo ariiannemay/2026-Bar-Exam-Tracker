@@ -501,6 +501,28 @@
 
     <!-- Dynamic JavaScript Loader and Core Logic -->
     <script>
+// ------------------------------------------------------------------
+// 1. THIS IS THE ABSOLUTE FIRST EXECUTABLE CODE
+// ------------------------------------------------------------------
+    const SECRET_PASSWORD = "missattycpa";
+    const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Review Tracker:");
+
+    if (userPassword === SECRET_PASSWORD) {
+        // Correct password. Execution continues to the rest of the script.
+    } else if (userPassword !== null) {
+        alert("Incorrect Password. Access Denied.");
+        window.location.href = 'https://www.google.com/search?q=bar+review+tracker+password+hint';
+        document.body.innerHTML = '<h1>ACCESS DENIED</h1>';
+        // CRITICAL: Stop script execution immediately.
+        throw new Error("Access Denied");
+    } else {
+        alert("Access Denied. You must enter the password.");
+        window.location.href = 'about:blank';
+        document.body.innerHTML = '<h1>ACCESS DENIED</h1>';
+        // CRITICAL: Stop script execution immediately.
+        throw new Error("Access Denied");
+    }
+// ------------------------------------------------------------------        
         // --- INLINED CALENDAR MODULE HTML CONTENT ---
         const CALENDAR_MODULE_HTML = `
             <div id="calendar-module-container" class="mt-4">
