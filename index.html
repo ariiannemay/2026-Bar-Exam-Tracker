@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,9 +123,10 @@
         .syllabus-summary { padding: 1rem; font-size: 1.25rem; font-weight: 700; color: white; cursor: pointer; list-style: none; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: .5rem; border-top-left-radius: .75rem; border-top-right-radius: .75rem; }
         .topic-header { padding: .75rem; font-weight: 600; color: #1f2937; display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; }
         
+        /* 🚨 MODIFIED: Increased width for 6 columns (1.5fr for topic text, 6x 100px for material, 1x 50px for final checkmark) */
         .checklist-grid { 
             display: grid; 
-            grid-template-columns: 2fr repeat(5, 70px) minmax(40px, 50px); 
+            grid-template-columns: 1.5fr repeat(6, 100px) minmax(40px, 50px); 
             gap: .2rem; 
             padding: .3rem 0; 
             align-items: center; 
@@ -143,10 +145,12 @@
 
 /* NEW: Column-specific colors for CHECKED state */
         .checkbox-codal:checked { background-color: #8b5cf6 !important; } /* Violet/Rem */
-        .checkbox-books:checked { background-color: #eab308 !important; } /* Yellow/Comm */
-        .checkbox-reviewer:checked { background-color: #3b82f6 !important; } /* Blue/Civ */
-        .checkbox-barqas:checked { background-color: #10b981 !important; } /* Green */
-        .checkbox-cases:checked { background-color: #f97316 !important; } /* Orange */
+        /* NEW COLUMNS */
+        .checkbox-first_reading:checked { background-color: #eab308 !important; } /* Yellow/Comm */
+        .checkbox-second_reading:checked { background-color: #3b82f6 !important; } /* Blue/Civ */
+        .checkbox-pre_bar_notes:checked { background-color: #10b981 !important; } /* Green */
+        .checkbox-pre_week:checked { background-color: #f97316 !important; } /* Orange */
+        .checkbox-lmts:checked { background-color: #ef4444 !important; } /* Red */
 
         .checklist-grid input[type="checkbox"]:checked::before {
         content: ''; position: absolute; width: 0.25rem; height: 0.5rem;
@@ -188,33 +192,22 @@
         .depth2-chevron { transition: transform .2s; transform: rotate(0deg); flex-shrink: 0; margin-right: .5rem; }
         .depth2-details[open] .depth2-chevron { transform: rotate(90deg); }
         .topic-content-wrapper { display: flex; align-items: flex-start; padding-left: .5rem; }
+        /* 🚨 MODIFIED: Matched grid template to 6 columns */
         .checklist-grid.checklist-grid-header>div:first-child { grid-column: 1 / span 1; padding-left: 0; align-items: center; text-align: center; }
-        .checklist-grid.checklist-grid-header { grid-template-columns: 2fr repeat(5, 70px) minmax(40px, 50px); }
+        .checklist-grid.checklist-grid-header { grid-template-columns: 1.5fr repeat(6, 100px) minmax(40px, 50px); }
         .checklist-grid-micro-progress { border-bottom: 1px solid #e5e7eb; }
 
         .depth3-content-wrapper>div { display: block; padding: .25rem .5rem; }
-        .checklist-grid>div:nth-child(n+2):nth-child(-n+6) { border-right: 1px dashed #d1d5db; }
-        .checklist-grid>div:nth-child(6) { border-right: none; }
+        /* 🚨 MODIFIED: Border on 6 columns (n+2 through n+7) */
+        .checklist-grid>div:nth-child(n+2):nth-child(-n+7) { border-right: 1px dashed #d1d5db; }
+        /* 🚨 MODIFIED: Remove border on the 7th cell (6th material column) */
+        .checklist-grid>div:nth-child(7) { border-right: none; }
         .checklist-label-capsule { font-size: .65rem; font-weight: 7-00; text-transform: uppercase; text-align: center; word-break: keep-all; padding: .15rem .35rem; border-radius: 9999px; line-height: 1; color: white; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05); }
-        .col-progress-codal { background-color: #8b5cf6; }
-        .col-progress-lectures { background-color: #facc15; }
-        .col-progress-reviewer { background-color: #3b82f6; }
-        .col-progress-barqas { background-color: #10b981; }
-        .col-progress-cases { background-color: #f97316; }
-        .capsule-codal { background-color: #8b5cf6; }
-        .capsule-books { background-color: #eab308; }
-        .capsule-reviewer { background-color: #3b82f6; }
-        .capsule-barqas { background-color: #10b981; }
-        .capsule-cases { background-color: #f97316; }
-        .tick-all-icon { cursor: pointer; transition: color .2s, transform .2s; color: #9ca3af; }
-        .tick-all-icon.checked { color: #10b981; }
-        .tick-all-icon.partial { color: #f59e0b; }
-        .tick-all-icon:hover { transform: scale(1.1); }
         .col-progress-bar-container { height: .4rem; background: #e5e7eb; border-radius: 9999px; overflow: hidden; width: 100%; }
         .col-progress-bar { height: 100%; transition: width .3s ease-in-out; }
         .status-message-row { padding-top: .25rem; padding-bottom: .25rem; }
         
-        .depth3-content-wrapper>div:first-child { grid-column: 1 / span 7; padding-left: 2.5rem; }
+        .depth3-content-wrapper>div:first-child { grid-column: 1 / span 8; padding-left: 2.5rem; }
         .depth2-topic-row { grid-column: 1 / span 1; display: flex; align-items: flex-start; }
         
         /* SUBJECT PANEL THEMES */
@@ -445,7 +438,7 @@
                     </p>
                     <ul class="list-disc list-outside ml-5 text-sm text-gray-700 space-y-2">
                         <li class="pl-1">
-                            <strong style="color: #330066;">Progress Metric:</strong> Overall progress updates and a topic counts as “done” only once <strong>3 out of 5 boxes</strong> per topic row are checked.
+                            <strong style="color: #330066;">Progress Metric:</strong> Overall progress updates and a topic counts as “done” only once <strong>4 out of 6 boxes</strong> per topic row are checked. (Updated for 6 columns)
                         </li>
                         <li class="pl-1">
                             <strong style="color: #330066;">Data Portability:</strong> Your review progress is saved <strong>only within your current browser</strong> (Local Storage). Your data will not be synchronized automatically if you clear your browsing data or switch devices. To transfer your progress to a new device or browser, please use the <strong>Export All Data</strong> and <strong>Import Existing Data</strong> functions.
@@ -501,7 +494,7 @@
 
     <!-- Dynamic JavaScript Loader and Core Logic -->
     <script>
-
+        
 const SECRET_PASSWORD = "secret";
 
 const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
@@ -674,7 +667,8 @@ if (userPassword === SECRET_PASSWORD) {
         
         // --- CORE UTILITY AND COUNTDOWN LOGIC (REMAINS IN INDEX) ---
         
-        const CHECKLIST_COLUMNS = ['codal', 'books', 'reviewer', 'barqas', 'cases'];
+        // 🚨 MODIFIED: Added two columns, renamed existing columns
+        const CHECKLIST_COLUMNS = ['codal', 'first_reading', 'second_reading', 'pre_bar_notes', 'pre_week', 'lmts'];
         const COUNTDOWN_DATA = [
             {id:1,targetDate:localStorage.getItem('comp_exam_date_1')||'2026-09-06'},
             {id:2,targetDate:localStorage.getItem('comp_exam_date_2')||'2026-09-09'},
@@ -1627,6 +1621,9 @@ else if (isSyllabusTask) {
                 const topic = syllabusData.find(t => t.id === topicId);
                 if (!topic) return 0;
                 
+                // 🚨 MODIFIED: Updated threshold from 3 to 4
+                const DONE_THRESHOLD = 4;
+                
                 if (topic.depth === 1) {
                     let sectionBoxesTotal = 0;
                     let sectionBoxesChecked = 0;
@@ -1637,7 +1634,7 @@ else if (isSyllabusTask) {
                         if (currentItem.depth === 2 && currentItem.trackable) {
                             const prog = progressData[currentItem.id] || {};
                             const boxesTicked = CHECKLIST_COLUMNS.filter(col => prog[col] === true).length;
-                            if (boxesTicked >= 3) {
+                            if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
                                 sectionBoxesChecked++;
                             }
                             sectionBoxesTotal++;
@@ -1651,7 +1648,7 @@ else if (isSyllabusTask) {
                     const topicProgress = progressData[topicId] || {};
                     const checkedCount = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
                     if (checkedCount === CHECKLIST_COLUMNS.length) return 2;
-                    if (checkedCount >= 3) return 2;
+                    if (checkedCount >= DONE_THRESHOLD) return 2; // 🚨 MODIFIED: Uses DONE_THRESHOLD
                     if (checkedCount > 0) return 1;
                     return 0;
                 }
@@ -1663,6 +1660,9 @@ else if (isSyllabusTask) {
                 const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
                 let topicsDoneCount = 0;
                 let topicsToReadCount = 0;
+                
+                // 🚨 MODIFIED: 6 columns
+                const DONE_THRESHOLD = 4;
                 const columnProgress = CHECKLIST_COLUMNS.map(() => 0);
                 const totalMainTopics = mainTopics.length;
 
@@ -1676,7 +1676,7 @@ else if (isSyllabusTask) {
                         }
                     });
                     
-                    if (boxesTicked >= 3) {
+                    if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
                         topicsDoneCount++;
                     } else {
                         topicsToReadCount++;
@@ -1706,7 +1706,8 @@ else if (isSyllabusTask) {
                     progressBar.style.backgroundColor = barColor;
                 }
 
-                const columnHeaderNames = ['codal', 'books', 'reviewer', 'barqas', 'cases'];
+                // 🚨 MODIFIED: Updated column names for progress bars
+                const columnHeaderNames = ['codal', 'first_reading', 'second_reading', 'pre_bar_notes', 'pre_week', 'lmts'];
                 columnProgress.forEach((tickedCount, index) => {
                     const elementId = `col-progress-bar-${subjectName}-${columnHeaderNames[index]}`;
                     const percentElementId = `col-percent-${subjectName}-${columnHeaderNames[index]}`;
@@ -1778,7 +1779,7 @@ else if (isSyllabusTask) {
 
                         if (isDepth2Open && !isCollapsible) { html += `</div></details></div>`; isDepth2Open = false; }
 
-const checklist = CHECKLIST_COLUMNS.map(col => {
+                        const checklist = CHECKLIST_COLUMNS.map(col => {
                             // NEW CLASS: Use 'checkbox-' prefix plus the column name (codal, books, etc.)
                             const columnCheckboxClass = `checkbox-${col}`;
                             const checked = topicProgress[col] === true ? 'checked' : '';
@@ -1909,7 +1910,7 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                          showMessageModal("Success!", `<p class='text-green-600'>${title} progress successfully uploaded and applied.</p>`);
                      } catch (e) {
                          console.error("Import error:", e);
-                         showMessageModal("Upload Error", `<p class='text-red-600'>Failed to upload. The file content is not valid JSON.</p>`);
+                         showMessageModal("Upload Error", `<p class='text-red-600'>Failed to upload. The file content is not valid JSON. Error: ${e.message}</p>`);
                      }
                  };
                  reader.onerror = function() { showMessageModal("Import Error", `<p class='text-red-600'>Error reading the file.</p>`); };
@@ -1986,54 +1987,67 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                         </summary>
                         <div class="syllabus-content">
                             
-                            <!-- 1. COLUMN HEADERS -->
+                            <!-- 1. COLUMN HEADERS 🚨 MODIFIED for 6 Columns & Multi-line Text -->
                             <div class="checklist-grid checklist-grid-header mt-1 font-bold text-xs text-center border-b-2 border-black/50">
                                 <div class="text-left">SUBJECTS/TOPICS</div> 
-                                <div class="flex items-center justify-center"><span class="checklist-label-capsule capsule-codal">Codal</span></div>
-                                <div class="flex items-center justify-center"><span class="checklist-label-capsule capsule-books">Books</span></div>
-                                <div class="flex items-center justify-center"><span class="checklist-label-capsule capsule-reviewer">Reviewer</span></div>
-                                <div class="flex items-center justify-center"><span class="checklist-label-capsule capsule-barqas">Bar QAs</span></div>
-                                <div class="flex items-center justify-center"><span class="checklist-label-capsule capsule-cases">Cases</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#8b5cf6;"><span class="font-bold text-[0.65rem]">Codal</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#eab308;"><span class="font-bold text-[0.65rem]">First Reading (Textbook Reviewer)</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#3b82f6;"><span class="font-bold text-[0.65rem]">Second Reading (Bar-Based Reviewer)</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#10b981;"><span class="font-bold text-[0.65rem]">Pre-Bar Review Notes & Lecture</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#f97316;"><span class="font-bold text-[0.65rem]">Pre-Week</span></div>
+                                <div class="flex items-center justify-center text-center leading-tight" style="color:#ef4444;"><span class="font-bold text-[0.65rem]">LMTs</span></div>
                                 <div class="flex items-center justify-center pt-1">
-                                    <button id="collapse-all-btn-${subjectName}" class="w-7 h-7 p-0 flex items-center justify-center text-white ${bgButton} rounded-lg shadow-md ${hoverButton} transition duration-150 whitespace-nowrap">
+                                    <button id="collapse-all-btn-${subjectName}" class="w-6 h-6 p-0 flex items-center justify-center text-white ${bgButton} rounded-lg shadow-md ${hoverButton} transition duration-150 whitespace-nowrap">
                                         <i data-lucide="chevrons-down" class="w-4 h-4"></i>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Micro-progress Bars -->
+                            <!-- Micro-progress Bars 🚨 MODIFIED for 6 Columns & New Threshold -->
                             <div class="checklist-grid checklist-grid-micro-progress text-center">
-                                <div class="text-left italic text-gray-700 col-span-1 pl-1 text-[0.68rem] self-start leading-tight pt-1">Overall progress only counts if at least 3 checklist boxes are marked for each topic row.</div> 
+                                <div class="text-left italic text-gray-700 col-span-1 pl-1 text-[0.68rem] self-start leading-tight pt-1">Overall progress only counts if at least 4 checklist boxes are marked for each topic row.</div> 
                                 
+                                <!-- Column 1: Codal (Purple) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
                                     <div class="col-progress-bar-container">
-                                        <div id="col-progress-bar-${subjectName}-codal" class="col-progress-bar col-progress-codal" style="width: 0%;"></div>
+                                        <div id="col-progress-bar-${subjectName}-codal" class="col-progress-bar" style="background-color: #8b5cf6; width: 0%;"></div>
                                     </div>
                                     <span id="col-percent-${subjectName}-codal" class="text-xs font-semibold mt-1 text-violet-700">0.0%</span>
                                 </div>
+                                <!-- Column 2: 1st Reading (Yellow) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
                                     <div class="col-progress-bar-container">
-                                        <div id="col-progress-bar-${subjectName}-books" class="col-progress-bar col-progress-lectures" style="width: 0%;"></div>
+                                        <div id="col-progress-bar-${subjectName}-first_reading" class="col-progress-bar" style="background-color: #eab308; width: 0%;"></div>
                                     </div>
-                                    <span id="col-percent-${subjectName}-books" class="text-xs font-semibold mt-1 text-yellow-700">0.0%</span>
+                                    <span id="col-percent-${subjectName}-first_reading" class="text-xs font-semibold mt-1 text-yellow-700">0.0%</span>
                                 </div>
+                                <!-- Column 3: 2nd Reading (Blue) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
                                     <div class="col-progress-bar-container">
-                                        <div id="col-progress-bar-${subjectName}-reviewer" class="col-progress-bar col-progress-reviewer" style="width: 0%;"></div>
+                                        <div id="col-progress-bar-${subjectName}-second_reading" class="col-progress-bar" style="background-color: #3b82f6; width: 0%;"></div>
                                     </div>
-                                    <span id="col-percent-${subjectName}-reviewer" class="text-xs font-semibold mt-1 text-blue-700">0.0%</span>
+                                    <span id="col-percent-${subjectName}-second_reading" class="text-xs font-semibold mt-1 text-blue-700">0.0%</span>
                                 </div>
+                                <!-- Column 4: Pre-Bar Notes (Green) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
                                     <div class="col-progress-bar-container">
-                                        <div id="col-progress-bar-${subjectName}-barqas" class="col-progress-bar col-progress-barqas" style="width: 0%;"></div>
+                                        <div id="col-progress-bar-${subjectName}-pre_bar_notes" class="col-progress-bar" style="background-color: #10b981; width: 0%;"></div>
                                     </div>
-                                    <span id="col-percent-${subjectName}-barqas" class="text-xs font-semibold mt-1 text-green-700">0.0%</span>
+                                    <span id="col-percent-${subjectName}-pre_bar_notes" class="text-xs font-semibold mt-1 text-green-700">0.0%</span>
                                 </div>
+                                <!-- Column 5: Pre-Week (Orange) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
                                     <div class="col-progress-bar-container">
-                                        <div id="col-progress-bar-${subjectName}-cases" class="col-progress-bar col-progress-cases" style="width: 0%;"></div>
+                                        <div id="col-progress-bar-${subjectName}-pre_week" class="col-progress-bar" style="background-color: #f97316; width: 0%;"></div>
                                     </div>
-                                    <span id="col-percent-${subjectName}-cases" class="text-xs font-semibold mt-1 text-orange-700">0.0%</span>
+                                    <span id="col-percent-${subjectName}-pre_week" class="text-xs font-semibold mt-1 text-orange-700">0.0%</span>
+                                </div>
+                                <!-- Column 6: LMTs (Red) -->
+                                <div class="px-1 flex flex-col items-center justify-start">
+                                    <div class="col-progress-bar-container">
+                                        <div id="col-progress-bar-${subjectName}-lmts" class="col-progress-bar" style="background-color: #ef4444; width: 0%;"></div>
+                                    </div>
+                                    <span id="col-percent-${subjectName}-lmts" class="text-xs font-semibold mt-1 text-red-700">0.0%</span>
                                 </div>
                                 <div></div>
                             </div>
@@ -2134,6 +2148,9 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
 
             let html = '';
             let lastDateId = null;
+            
+            // 🚨 MODIFIED: Updated threshold from 3 to 4
+            const DONE_THRESHOLD = 4;
 
             SCHEDULE_DATA.forEach((item, index) => {
                 const countdownData = COUNTDOWN_DATA.find(d => d.id === item.dateId);
@@ -2165,7 +2182,7 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                     mainTopics.forEach(topic => {
                         const topicProgress = progress[topic.id] || {};
                         const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
-                        if (boxesTicked >= 3) {
+                        if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
                             currentSubjectDone++;
                         }
                     });
@@ -2217,6 +2234,9 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
             let totalTrackableTopics = 0;
             let totalDoneTopics = 0;
             let totalToReadTopics = 0;
+            
+            // 🚨 MODIFIED: Updated threshold from 3 to 4
+            const DONE_THRESHOLD = 4;
 
             Object.values(SUBJECT_LOGIC_MAP).forEach(logic => {
                 const progress = logic.getProgress();
@@ -2230,7 +2250,7 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                     const topicProgress = progress[topic.id] || {};
                     const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
                     
-                    if (boxesTicked >= 3) {
+                    if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
                         currentSubjectDone++;
                     }
                 });
