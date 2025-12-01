@@ -1,10 +1,10 @@
 {
   "routes": [
     {
-      "src": "/((?!favicon.ico).*)",
+      "src": "/(.*)",
       "headers": {
         "WWW-Authenticate": "Basic realm=\"Private Bar Review Tracker\"",
-        "Authorization": "Basic c3R1ZHk6YmFyMjAyNg==" 
+        "Authorization": "Basic c3R1ZHk6YmFyMjAyNg=="
       },
       "status": 401
     },
