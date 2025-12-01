@@ -1,0 +1,18 @@
+{
+  "routes": [
+    {
+      // 1. This rule applies the basic auth requirement to all files/paths (excluding the favicon for browser compatibility)
+      "src": "/((?!favicon.ico).*)",
+      "headers": {
+        "WWW-Authenticate": "Basic realm=\"Private Bar Review Tracker\"",
+        "Authorization": "Basic c3R1ZHk6YmFyMjAyNg==" 
+      },
+      "status": 401
+    },
+    {
+      // 2. Serve the index.html file if all checks pass.
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
