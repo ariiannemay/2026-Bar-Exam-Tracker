@@ -5,75 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 BAR EXAM REVIEW TRACKER</title>
-
-    <!-- External Dependencies (Standard + Auth) -->
+    <!-- FIX: Updated favicon link -->
     <link rel="icon" href="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/LAWLOGO.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Calendar Dependencies -->
+    
+    <!-- ADDED: Calendar Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- VERCEL ACCESS CONTROL: GOOGLE IDENTITY SERVICES -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-    <script>
-        // --- GLOBAL AUTH HANDLERS (ADDED FOR SECURITY) ---
-        
-        // Client ID for Google Sign-In (Provided by user)
-        const GOOGLE_CLIENT_ID = "254421912242-c973g9f5p9elbsolpqccl1dp8p1doqgt.apps.googleusercontent.com";
-        
-        // Global Approved Emails (Provided by user)
-        const APPROVED_EMAILS = ['ariannemay737@gmail.com', 'trusted@domain.com'];
-
-        function decodeJwt(token) {
-            try {
-                const base64Url = token.split('.')[1];
-                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-                }).join(''));
-                return JSON.parse(jsonPayload);
-            } catch (e) {
-                console.error("JWT Decode Error:", e);
-                return {};
-            }
-        }
-
-        // ENTRY POINT GOOGLE CALLS AFTER SUCCESSFUL SIGN-IN
-        function handleCredentialResponse(response) {
-            const id_token = response.credential;
-            // Store the token or a flag to persist the session
-            localStorage.setItem('auth_token_check', id_token); 
-
-            const payload = decodeJwt(id_token);
-            const userEmail = payload.email;
-            checkAccess(userEmail);
-        }
-
-        function checkAccess(userEmail) {
-            const isAuthorized = APPROVED_EMAILS.includes(userEmail);
-
-            if (isAuthorized) {
-                // Show protected content and run original app initialization
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('protected-content').style.display = 'block';
-                // Call the original app's initialization function
-                fullAppInitialization(); 
-            } else {
-                // Deny access
-                document.getElementById('access-denied-message').textContent = `Access Denied. Email '${userEmail}' is not authorized.`;
-                document.getElementById('access-denied-message').style.display = 'block';
-                google.accounts.id.disableAutoSelect();
-            }
-        }
-        // --- END AUTH HANDLERS ---
-    </script>
-
+    <!-- END: Calendar Dependencies -->
+    
     <style>
         /* Attempt to import a decorative font for the quote */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,600&display=swap');
@@ -87,13 +31,13 @@
         }
         /* Calendar Stylesheet START */
         /* Minified/Consolidated Styles */
-        .calendar-wrapper{max-width:1280px;margin:0 auto;padding:0 1rem;margin-top:0;padding-bottom:1.9rem;overflow-x:hidden}.calendar-wrapper.mx-auto{max-width:1280px;padding:0}.calendar-wrapper.p-0{padding:0}#calendar-grid-container{display:grid;grid-template-columns:3fr 1fr;gap:1.5rem;align-items:start;padding:.25rem .5rem .5rem .5rem}#calendar-details{border-radius:.75rem;overflow:hidden}#calendar-details summary{background-color:var(--color-primary-dark);color:#fff;border-bottom:3px solid var(--color-secondary-gold);padding:.75rem 1.5rem;font-size:1.125rem;font-weight:700}.toggle-indicator{transition:transform .2s}#notepad-sidebar{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1.5rem;display:flex;flex-direction:column;border:1px solid #e5e7eb;grid-column:2}#calendar-details[data-calendar-ready=true] #notepad-sidebar{min-height:var(--calendar-height,450px)}#notepad-sidebar h3{background-color:var(--color-primary-dark);color:#fff;border-radius:.375rem .375rem 0 0;padding:.4rem .75rem;margin:calc(-1.5rem - 1px) -1.5rem .75rem -1.5rem;text-transform:uppercase;font-weight:800;font-size:.9rem;border-bottom:3px solid var(--color-secondary-gold)}#review-notes{width:100%;flex-grow:1;padding:1.5rem 1rem 1rem 1rem;font-size:.95rem;border:none;border-radius:.5rem;box-shadow:inset 0 1px 4px rgba(0,0,0,.1);resize:none;font-family:'Dancing Script',cursive;font-weight:600;line-height:1.95;color:#333;overflow-y:auto;background-color:#f7f7f7;background-image:url(https://img.freepik.com/free-vector/blank-cream-notepaper-design_53876-97377.jpg?semt=ais_hybrid&w=740&q=80);background-size:cover;background-position:center;background-repeat:no-repeat}#review-notes::placeholder{font-family:'Dancing Script',cursive;font-weight:700;color:#b33a3a;opacity:.8;transform:translateY(-5px);display:block}#calendar-content{grid-column:1;padding:0}#calendar-card{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:0}.fc-toolbar{padding:.1rem .75rem;background-color:var(--color-primary-dark);margin-bottom:0;border:0 solid var(--color-secondary-gold);color:#fff;border-radius:.5rem;display:flex;align-items:center;font-size:.85rem}#customMonthTitle{color:#fff;font-weight:800;text-transform:uppercase;font-size:1.4em;padding:.3em .6em;margin-right:.5rem;font-family:inherit}.fc-widget-header{background-color:var(--color-primary-dark) !important;color:#fff !important;text-transform:uppercase !important;font-weight:700 !important;padding:.05rem 0;height:100%}.fc-view-container .fc-view>table{border-top:none !important}.fc-toolbar + div{border-top:none !important}.fc-head{border-top:none !important;border-bottom:3px solid var(--color-secondary-gold) !important}#calendar{padding:0 !important}.fc-view-container{border-top:none !important}.fc-unthemed,.fc-unthemed table{border-top:none !important;border-color:transparent !important}.fc-unthemed td,.fc-unthemed th{border-color:#e5e7eb}#dateJump{display:none !important;visibility:hidden !important;position:absolute;top:0;left:0}#dateJump.temp-visible{display:block !important;visibility:visible !important;position:fixed !important;z-index:9999;width:200px;height:40px;opacity:.01;pointer-events:auto}.fc-toolbar .fc-right{flex-grow:1;display:flex;justify-content:flex-end;margin:0 !important;width:auto !important}.fc-toolbar .fc-button-group:last-child{margin-left:.5rem}.fc-toolbar .fc-button,#jumpToDateButton{padding:.3em .6em !important;line-height:1.2 !important;font-size:.75rem !important;background-color:#fff !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important;box-shadow:none;text-transform:uppercase;font-weight:700;border-radius:.25rem;margin-left:.5rem}#jumpToDateButton{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-button:hover:not(.fc-state-active),#jumpToDateButton:hover{background-color:#f0f0f0 !important;color:var(--color-primary-dark) !important}.fc-toolbar .fc-state-active,.fc-toolbar .fc-state-active:hover{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-today-button.fc-state-active{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important}.fc-day-number{display:inline-block;background-color:transparent;color:#4b5563;font-weight:700;padding:2px 4px;margin-right:0;float:right;line-height:1.2;font-size:.9rem}.fc-other-month .fc-day-number{color:#9ca3af;background-color:transparent}.fc-event{border-radius:.25rem !important;border:1px solid rgba(0,0,0,.1);font-size:.6rem;font-weight:600;padding:2px 5px;white-space:normal;text-transform:uppercase}.fc-event-title-wrap{display:flex;align-items:center}.event-status-icon{font-size:.8rem;margin-right:.5rem;width:1.25rem;text-align:center}.event-icon-book{color:#fff}.modal{z-index:1000;background-color:rgba(0,0,0,.75)}.modal-content{background-color:#fff !important;padding:1.5rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.5);min-width:300px;width:90%;max-width:500px}.syllabus-select-wrapper select{min-height:200px}
+        .calendar-wrapper{max-width:1280px;margin:0 auto;padding:0 1rem;margin-top:0;padding-bottom:1.9rem;overflow-x:hidden}.calendar-wrapper.mx-auto{max-width:1280px;padding:0}.calendar-wrapper.p-0{padding:0}#calendar-grid-container{display:grid;grid-template-columns:3fr 1fr;gap:1.5rem;align-items:start;padding:.25rem .5rem .5rem .5rem}#calendar-details{border-radius:.75rem;overflow:hidden}#calendar-details summary{background-color:var(--color-primary-dark);color:#fff;border-bottom:3px solid var(--color-secondary-gold);padding:.75rem 1.5rem;font-size:1.125rem;font-weight:700}.toggle-indicator{transition:transform .2s}#notepad-sidebar{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1.5rem;display:flex;flex-direction:column;border:1px solid #e5e7eb;grid-column:2}#calendar-details[data-calendar-ready=true] #notepad-sidebar{min-height:var(--calendar-height,450px)}#notepad-sidebar h3{background-color:var(--color-primary-dark);color:#fff;border-radius:.375rem .375rem 0 0;padding:.4rem .75rem;margin:calc(-1.5rem - 1px) -1.5rem .75rem -1.5rem;text-transform:uppercase;font-weight:800;font-size:.9rem;border-bottom:3px solid var(--color-secondary-gold)}#review-notes{width:100%;flex-grow:1;padding:1.5rem 1rem 1rem 1rem;font-size:.95rem;border:none;border-radius:.5rem;box-shadow:inset 0 1px 4px rgba(0,0,0,.1);resize:none;font-family:'Dancing Script',cursive;font-weight:600;line-height:1.95;color:#333;overflow-y:auto;background-color:#f7f7f7;background-image:url(https://img.freepik.com/free-vector/blank-cream-notepaper-design_53876-97377.jpg?semt=ais_hybrid&w=740&q=80);background-size:cover;background-position:center;background-repeat:no-repeat}#review-notes::placeholder{font-family:'Dancing Script',cursive;font-weight:700;color:#b33a3a;opacity:.8;transform:translateY(-5px);display:block}#calendar-content{grid-column:1;padding:0}#calendar-card{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:0}.fc-toolbar{padding:.1rem .75rem;background-color:var(--color-primary-dark);margin-bottom:0;border:0 solid var(--color-secondary-gold);color:#fff;border-radius:.5rem;display:flex;align-items:center;font-size:.85rem}#customMonthTitle{color:#fff;font-weight:800;text-transform:uppercase;font-size:1.4em;padding:.3em .6em;margin-right:.5rem;font-family:inherit}.fc-widget-header{background-color:var(--color-primary-dark) !important;color:#fff !important;text-transform:uppercase !important;font-weight:700 !important;padding:.05rem 0;height:100%}.fc-view-container .fc-view>table{border-top:none !important}.fc-toolbar + div{border-top:none !important}.fc-head{border-top:none !important;border-bottom:3px solid var(--color-secondary-gold) !important}#calendar{padding:0 !important}.fc-view-container{border-top:none !important}.fc-unthemed,.fc-unthemed table{border-top:none !important;border-color:transparent !important}.fc-unthemed td,.fc-unthemed th{border-color:#e5e7eb}#dateJump{display:none !important;visibility:hidden !important;position:absolute;top:0;left:0}#dateJump.temp-visible{display:block !important;visibility:visible !important;position:fixed !important;z-index:9999;width:200px;height:40px;opacity:.01;pointer-events:auto}.fc-toolbar .fc-right{flex-grow:1;display:flex;justify-content:flex-end;margin:0 !important;width:auto !important}.fc-toolbar .fc-button-group:last-child{margin-left:.5rem}.fc-toolbar .fc-button,#jumpToDateButton{padding:.3em .6em !important;line-height:1.2 !important;font-size:.75rem !important;background-color:#fff !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important;box-shadow:none;text-transform:uppercase;font-weight:700;border-radius:.25rem;margin-left:.5rem}#jumpToDateButton{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-button:hover:not(.fc-state-active),#jumpToDateButton:hover{background-color:#f0f0f0 !important;color:var(--color-primary-dark) !important}#jumpToDateButton:hover{filter:brightness(.9)}.fc-toolbar .fc-state-active,.fc-toolbar .fc-state-active:hover{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-today-button.fc-state-active{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important}.fc-day-number{display:inline-block;background-color:transparent;color:#4b5563;font-weight:700;padding:2px 4px;margin-right:0;float:right;line-height:1.2;font-size:.9rem}.fc-other-month .fc-day-number{color:#9ca3af;background-color:transparent}.fc-event{border-radius:.25rem !important;border:1px solid rgba(0,0,0,.1);font-size:.6rem;font-weight:600;padding:2px 5px;white-space:normal;text-transform:uppercase}.fc-event-title-wrap{display:flex;align-items:center}.event-status-icon{font-size:.8rem;margin-right:.5rem;width:1.25rem;text-align:center}.event-icon-book{color:#fff}.modal{z-index:1000;background-color:rgba(0,0,0,.75)}.modal-content{background-color:#fff !important;padding:1.5rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.5);min-width:300px;width:90%;max-width:500px}.syllabus-select-wrapper select{min-height:200px}
         /* Calendar Stylesheet END */
 
         /* -------------------------------------------------------------------------- */
         /* 1. CORE LAYOUT & TYPOGRAPHY STYLES */
         /* -------------------------------------------------------------------------- */
-
+        
         /* Global & Countdown Styles */
         body {
             font-family: 'Inter', sans-serif;
@@ -138,7 +82,7 @@
         
         @media (min-width: 1024px) {
             #overall-dashboard { padding: 0; }
-            .dashboard-container { display: grid; grid-template-columns: 1fr 1.5rem 1fr 1fr; padding: 0; }
+            .dashboard-container { display: grid; grid-template-columns: 1fr 1.5rem 1fr 1.5rem 1fr; padding: 0; }
             .chart-panel { grid-column: 1 / span 1; padding: 0.5rem 1rem; border-bottom: none; }
             .schedule-panel { grid-column: 3 / span 3; padding: 0.5rem 1rem; border-left: none; }
             .dashboard-container > div:nth-child(2) { grid-column: 2 / span 1; border-right: none; }
@@ -150,85 +94,18 @@
         .metric-pie-side.left { right: 50%; margin-right: 105px; transform: translateY(-50%); top: 50%; }
         .metric-pie-side.right { left: 50%; margin-left: 105px; transform: translateY(-50%); top: 50%; }
         .metric-pie-side .metric-value { font-size: 1rem; font-weight: 900; }
+        
+        .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
+        .schedule-table th, .schedule-table td { padding: 0.3rem 0.5rem; vertical-align: middle; }
+        .schedule-header th { background-color: #330066; color: #FFFFFF; font-weight: 700; text-transform: uppercase; border: 2px solid #B266FF; font-size: 0.75rem; }
+        .subject-cell { font-weight: 600; color: white; padding: 0.4rem; text-align: center; border-radius: 0.5rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); font-size: 0.7rem; text-transform: uppercase; }
+        .progress-bar-sparkline { width: 100%; height: 0.8rem; background-color: #e5e7eb; border-radius: 9999px; overflow: hidden; box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1); padding: 2px; }
+        .bg-progress-red { background-color: #ef4444; }
+        .bg-progress-orange { background-color: #f97316; }
+        .bg-progress-yellow { background-color: #facc15; }
+        .bg-progress-green { background-color: #10b981; }
 
-        /* --- SCHEDULE TABLE OVERRIDES TO RESTORE ORIGINAL LOOK --- */
-        .schedule-panel { padding: 0.5rem 0.3rem; }
-        .schedule-table { 
-            width: 100%; 
-            /* RESTORED: Separate borders/spacing */
-            border-collapse: separate; 
-            border-spacing: 0 0.5rem; 
-            font-size: 0.8rem; 
-            border: none; /* Removed outer border */
-            overflow: visible; /* To allow shadow/spacing */
-        }
-        .schedule-table thead { display: none; } /* HIDDEN: Headers are implied by data columns */
-        .schedule-table tr {
-            /* REMOVED: Internal borders from previous fix */
-            border-bottom: none !important;
-        }
-        .schedule-table td { 
-            padding: 0; 
-            vertical-align: middle; 
-            /* Removed default table borders */
-            border: none !important;
-        }
-        /* Style for the Date Column (width 20%) - applies only to the first cell in a date group (odd rows) */
-        .schedule-table tr:nth-child(odd) td:first-child { 
-            width: 20%; 
-            padding-right: 0.75rem; 
-            text-align: right !important; 
-            /* RESTORED: Add padding to separate the date group */
-            padding-bottom: 0.5rem; 
-        }
-
-        .subject-cell-wrapper {
-            padding: 0 0.5rem; /* Add padding around the subject box */
-            width: 55%; /* Subject Column Width */
-        }
-        .subject-cell { 
-            font-weight: 600; 
-            color: white; 
-            padding: 0.4rem; 
-            text-align: center; 
-            border-radius: 0.5rem; 
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
-            font-size: 0.75rem; /* Slightly larger font */
-            text-transform: uppercase; 
-            line-height: 1.1; 
-        }
-        .subject-cell .weight {
-            display: block; 
-            font-size: 0.65rem; 
-            font-weight: 400; 
-            opacity: 0.8; 
-            text-transform: none; 
-            margin-top: 2px;
-        }
-
-        .progress-cell-wrapper {
-            width: 25%; /* Progress Column Width */
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-
-        .progress-bar-sparkline { 
-            width: 100%; 
-            height: 0.8rem; 
-            background-color: #e5e7eb; 
-            border-radius: 9999px; 
-            overflow: hidden; 
-            box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1); 
-            padding: 2px; 
-        }
-        .sparkline-fill { 
-            height: 100%; 
-            transition: width 0.5s ease-in-out; 
-            border-radius: 9999px; 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-            border: 2px solid white; 
-            max-width: 100%; 
-        }
+        .sparkline-fill { height: 100%; transition: width 0.5s ease-in-out; border-radius: 9999px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); border: 2px solid white; max-width: 100%; }
 
         .bg-poli { background-color: #795548; }
         .bg-comm { background-color: #eab308; }
@@ -236,16 +113,13 @@
         .bg-lab { background-color: #38761d; }
         .bg-crim { background-color: #b33a3a; }
         .bg-rem { background-color: #674ea7; }
-        /* --- END SCHEDULE TABLE OVERRIDES --- */
         
         /* -------------------------------------------------------------------------- */
         /* 3. SUBJECT TRACKER STYLES (Checklist Fix Applied) */
         /* -------------------------------------------------------------------------- */
 
         .syllabus-panel-container { border-radius: .75rem; overflow: hidden; }
-        /* FIX: Remove percentage display from summary title */
-        .syllabus-summary-title { font-size: 1.25rem; font-weight: 700; color: white; }
-        .syllabus-summary { padding: 1rem; cursor: pointer; list-style: none; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: .5rem; border-top-left-radius: .75rem; border-top-right-radius: .75rem; }
+        .syllabus-summary { padding: 1rem; font-size: 1.25rem; font-weight: 700; color: white; cursor: pointer; list-style: none; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: .5rem; border-top-left-radius: .75rem; border-top-right-radius: .75rem; }
         .topic-header { padding: .75rem; font-weight: 600; color: #1f2937; display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; }
         
         .checklist-grid { 
@@ -390,37 +264,6 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen p-1 sm:p-2">
-
-    <!-- NEW LOGIN SCREEN AND GOOGLE BUTTON (ADDED) -->
-    <div id="login-screen" class="fixed inset-0 flex items-center justify-center z-[1000] bg-gray-900/90 hidden">
-        <div class="bg-white p-8 rounded-xl shadow-2xl text-center">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Private Tracker Access</h2>
-            <p class="text-gray-600 mb-6">Please sign in with an authorized email to continue.</p>
-
-            <!-- Google Button Rendering Div -->
-            <div id="g_id_onload"
-                 data-client_id="254421912242-c973g9f5p9elbsolpqccl1dp8p1doqgt.apps.googleusercontent.com"
-                 data-callback="handleCredentialResponse"
-                 data-auto_prompt="false">
-            </div>
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-size="large"
-                 data-theme="outline"
-                 data-text="sign_in_with"
-                 data-shape="rectangular"
-                 data-width="300"
-                 style="margin: 0 auto; display: inline-block;">
-            </div>
-
-            <p id="access-denied-message" class="text-red-500 mt-4 font-semibold hidden">Access Denied. Your email is not authorized.</p>
-        </div>
-    </div>
-    <!-- END LOGIN SCREEN -->
-    
-    <!-- PROTECTED CONTENT WRAPPER (WRAPS ALL ORIGINAL CONTENT) -->
-    <div id="protected-content" style="display: none;">
-
     
     <div class="main-content-wrapper">
         <div class="max-w-6xl mx-auto space-y-2">
@@ -656,11 +499,9 @@
         </div>
     </div>
 
-    </div> <!-- END PROTECTED CONTENT WRAPPER -->
-    
     <!-- Dynamic JavaScript Loader and Core Logic -->
     <script>
-        // --- INLINED CALENDAR MODULE HTML CONTENT (RESTORED TO ORIGINAL) ---
+        // --- INLINED CALENDAR MODULE HTML CONTENT ---
         const CALENDAR_MODULE_HTML = `
             <div id="calendar-module-container" class="mt-4">
                 <div class="calendar-wrapper mx-auto max-w-6xl p-0">
@@ -1117,11 +958,7 @@
                     // 2. Inject the panel structure 
                     const panelPlaceholder = document.getElementById(`subject-tracker-panel-${subjectName}`);
                     if (panelPlaceholder) {
-                        // FIX: Changed getPanelHtmlWrapper to remove the percentage from the title passed here
-                        const subjectData = SCHEDULE_DATA.find(s => s.subjectName === subjectName);
-                        const cleanTitle = subjectData.subject + ` (${subjectData.weight})`;
-                        
-                        const newPanelHtml = logic.getPanelHtmlWrapper(logic.SUBJECT_NAME, cleanTitle, logic.SUBJECT_ICON);
+                        const newPanelHtml = logic.getPanelHtmlWrapper(logic.SUBJECT_NAME, logic.SUBJECT_TITLE, logic.SUBJECT_ICON);
                         panelPlaceholder.outerHTML = newPanelHtml;
                     }
                     
@@ -1140,49 +977,85 @@
             document.head.appendChild(script);
         }
         
+        // --- GLOBAL DASHBOARD LOGIC (drawPieChart, updateScheduleTable, updateOverallDashboard remain unchanged) ---
+        // ... (Functions omitted for brevity, they remain as they were in the previous step)
+        
         // --- CALENDAR DATA SOURCE (SIMPLIFIED FOR CALENDAR ONLY) ---
-        // This array structure is needed by the calendar picker and the syllabus logic factory
+        // This is the new, minimal data source for the Calendar's dropdowns.
+        // It ONLY contains Depth 1 topics and the necessary metadata (id, topic, color, shortTitle)
+        // Note: The topics here must match the topics in the external JS files!
         const CONSOLIDATED_SYLLABUS = {
-            poli: { title: 'POLITICAL AND PUBLIC INTERNATIONAL LAW (15% of Total)', shortTitle: 'POLI LAW', color: '#795548', storageKey: 'poli_progress', 
+            poli: { title: 'POLITICAL AND PUBLIC INTERNATIONAL LAW', shortTitle: 'POLI LAW', color: '#795548', 
                 data: [
                     {id: 5001, topic: "I. BASIC CONCEPTS", depth: 1, trackable: true},
                     {id: 5007, topic: "II. NATIONAL TERRITORY", depth: 1, trackable: true},
-                    // ... (only Depth 1 topics needed here for calendar dropdown)
+                    {id: 5012, topic: "III. CITIZENSHIP", depth: 1, trackable: true},
+                    {id: 5016, topic: "IV. LEGISLATIVE DEPARTMENT", depth: 1, trackable: true},
+                    {id: 5022, topic: "V. EXECUTIVE DEPARTMENT", depth: 1, trackable: true},
+                    {id: 5028, topic: "VI. JUDICIAL DEPARTMENT", depth: 1, trackable: true},
+                    {id: 5033, topic: "VII. CONSTITUTIONAL COMMISSIONS", depth: 1, trackable: true},
+                    {id: 5036, topic: "VIII. CONSTITUTIONAL RIGHTS", depth: 1, trackable: true},
+                    {id: 5045, topic: "IX. NATIONAL ECONOMY AND PATRIMONY", depth: 1, trackable: true},
+                    {id: 5048, topic: "X. ADMINISTRATIVE LAW", depth: 1, trackable: true},
+                    {id: 5052, topic: "XI. LAW ON PUBLIC OFFICERS", depth: 1, trackable: true},
+                    {id: 5056, topic: "XII. ELECTION LAW", depth: 1, trackable: true},
+                    {id: 5060, topic: "XIII. LOCAL GOVERNMENTS", depth: 1, trackable: true},
+                    {id: 5064, topic: "XIV. PUBLIC INTERNATIONAL LAW", depth: 1, trackable: true},
                 ]
             },
-            comm: { title: 'COMMERCIAL AND TAXATION LAWS (20% of Total)', shortTitle: 'COMM & TAX', color: '#eab308', storageKey: 'comm_tax_progress', 
+            comm: { title: 'COMMERCIAL AND TAXATION LAWS', shortTitle: 'COMM & TAX', color: '#eab308', 
                 data: [
                     {id: 4001, topic: 'I. BUSINESS ORGANIZATIONS', depth: 1, trackable: true},
                     {id: 4005, topic: 'II. INSURANCE (P.D. NO. 612, AS AMENDED BY R.A. NO. 10607)', depth: 1, trackable: true},
-                    // ...
+                    {id: 4010, topic: 'III. TRANSPORTATION', depth: 1, trackable: true},
+                    {id: 4014, topic: 'IV. BANKING', depth: 1, trackable: true},
+                    {id: 4019, topic: 'V. INTELLECTUAL PROPERTY – R.A. NO. 8293, AS AMENDED', depth: 1, trackable: true},
+                    {id: 4023, topic: 'VI. SPECIAL COMMERCIAL LAWS', depth: 1, trackable: true},
+                    {id: 4027, topic: 'VII. TAXATION LAW', depth: 1, trackable: true},
                 ]
             },
-            civ: { title: 'CIVIL LAW AND LAND TITLES AND DEEDS (20% of Total)', shortTitle: 'CIVIL LAW', color: '#1e3a8a', storageKey: 'civ_progress',
+            civ: { title: 'CIVIL LAW AND LAND TITLES AND DEEDS', shortTitle: 'CIVIL LAW', color: '#1e3a8a', 
                 data: [
                     {id:3001,topic:"I. EFFECT AND APPLICATION OF LAWS",depth:1, trackable:true},
                     {id:3011,topic:"II. PERSONS AND FAMILY RELATIONS",depth:1, trackable:true},
-                    // ...
+                    {id:3024,topic:"III. PROPERTY, OWNERSHIP, AND ITS MODIFICATIONS",depth:1, trackable:true},
+                    {id:3035,topic:"IV. SUCCESSION",depth:1, trackable:true},
+                    {id:3041,topic:"V. OBLIGATIONS AND CONTRACTS",depth:1, trackable:true},
+                    {id:3046,topic:"VI. SPECIAL CONTRACTS",depth:1, trackable:true},
+                    {id:3053,topic:"VII. TORTS AND QUASI-DELICTS",depth:1, trackable:true},
                 ]
             },
-            lab: { title: 'LABOR AND SOCIAL LEGISLATION (10% of Total)', shortTitle: 'LABOR LAW', color: '#38761d', storageKey: 'lab_progress',
+            lab: { title: 'LABOR AND SOCIAL LEGISLATION', shortTitle: 'LABOR LAW', color: '#38761d', 
                 data: [
                     {id:2001,topic:"I. BASIC PRINCIPLES AND CONCEPTS",depth:1, trackable:true},
                     {id:2008,topic:"II. RECRUITMENT AND PLACEMENT",depth:1, trackable:true},
-                    // ...
+                    {id:2014,topic:"III. EMPLOYMENT RELATIONSHIP",depth:1, trackable:true},
+                    {id:2019,topic:"IV. LABOR STANDARDS",depth:1, trackable:true},
+                    {id:2025,topic:"V. LABOR RELATIONS",depth:1, trackable:true},
+                    {id:2031,topic:"VI. SUSPENSION AND TERMINATION OF EMPLOYMENT",depth:1, trackable:true},
+                    {id:2037,topic:"VII. SOCIAL LEGISLATION",depth:1, trackable:true},
+                    {id:2042,topic:"VIII. LABOR ADJUDICATION: JURISDICTION & REMEDIES",depth:1, trackable:true},
                 ]
             },
-            crim: { title: 'CRIMINAL LAW (10% of Total)', shortTitle: 'CRIM LAW', color: '#b33a3a', storageKey: 'crim_progress',
+            crim: { title: 'CRIMINAL LAW', shortTitle: 'CRIM LAW', color: '#b33a3a', 
                 data: [
                     {id:1001,topic:"I. FUNDAMENTAL PRINCIPLES",depth:1, trackable: true},
                     {id:1013,topic:"II. FELONIES AND CRIMINAL LIABILITY (RPC BOOK 1 AND RELATED LAWS)",depth:1, trackable: true},
-                    // ...
+                    {id:1032,topic:"III. CRIMES AND THEIR PENALTIES (RPC BOOK 2 AND RELATED SPECIAL LAWS)",depth:1, trackable: true},
                 ]
             },
-            rem: { title: 'REMEDIAL LAW, LEGAL ETHICS, & LEGAL FORMS (25% of Total)', shortTitle: 'REM LAW', color: '#674ea7', storageKey: 'rem_ethics_progress',
+            rem: { title: 'REMEDIAL LAW, LEGAL ETHICS, & LEGAL FORMS', shortTitle: 'REM LAW', color: '#674ea7', 
                 data: [
                     {id:1,topic:"I. GENERAL PRINCIPLES",depth:1, trackable: true},
                     {id:9,topic:"II. JURISDICTION",depth:1, trackable: true},
-                    // ...
+                    {id:43,topic:"III. CIVIL PROCEDURE (Rules of Court, as amended by A.M. No. 19-10-20-SC)",depth:1, trackable: true},
+                    {id:158,topic:"V. PROVISIONAL REMEDIES",depth:1, trackable: true},
+                    {id:174,topic:"VI. SPECIAL CIVIL ACTIONS",depth:1, trackable: true},
+                    {id:190,topic:"VII. SPECIAL PROCEEDINGS AND WRITS",depth:1, trackable: true},
+                    {id:217,topic:"VIII. CRIMINAL PROCEDURE",depth:1, trackable: true},
+                    {id:335,topic:"IX. EVIDENCE",depth:1, trackable: true},
+                    {id:414,topic:"X. LEGAL AND JUDICIAL ETHICS",depth:1, trackable: true},
+                    {id:583,topic:"XI. PRACTICAL EXERCISES",depth:1, trackable: true},
                 ]
             },
         };
@@ -1329,13 +1202,7 @@
             select.empty();
             select.append('<option value="">-- SELECT A SUBJECT --</option>');
             CALENDAR_SUBJECT_KEYS.forEach(key => {
-                // ADDED WEIGHT TO TITLE based on original file format
-                const subjectInfo = CONSOLIDATED_SYLLABUS[key];
-                // FIX: Get full subject name with weight from SCHEDULE_DATA, consistent with original style
-                const subjectSchedule = SCHEDULE_DATA.find(s => s.subjectName === key);
-                const fullTitle = subjectSchedule.subject + ` (${subjectSchedule.weight})`;
-
-                select.append(`<option value="${key}">${fullTitle.toUpperCase()}</option>`);
+                select.append(`<option value="${key}">${CONSOLIDATED_SYLLABUS[key].title.toUpperCase()}</option>`);
             });
             populateTopics(); 
         }
@@ -1359,19 +1226,7 @@
             // *** FIX: Get the full syllabus data from the externally loaded logic map ***
             const subjectLogic = SUBJECT_LOGIC_MAP[subjectKey];
             if (!subjectLogic || !subjectLogic.SYLLABUS_DATA) {
-                 // Fallback to minimal data if full syllabus hasn't loaded yet
-                 const data = CONSOLIDATED_SYLLABUS[subjectKey].data; 
-                 const topicsToSchedule = data.filter(item => item.depth === 1); 
-                 
-                 topicsToSchedule.forEach(item => {
-                    const topicText = item.topic.toUpperCase();
-                    const optionValue = `${item.id}|${topicText}`; 
-                    const isSelected = item.id == selectedTopicId ? 'selected' : '';
-                    select.append(`<option value="${optionValue}" data-topic-id="${item.id}" ${isSelected}>${topicText}</option>`);
-                 });
-                 if (topicsToSchedule.length === 0) {
-                     select.append('<option value="">-- SYLLABUS DATA NOT YET LOADED --</option>');
-                 }
+                 select.append('<option value="">-- SYLLABUS DATA NOT YET LOADED --</option>');
                  return;
             }
             const data = subjectLogic.SYLLABUS_DATA;
@@ -1441,7 +1296,7 @@
         function saveTopicTask() {
             const eventId = $('#topicEventId').val();
             const eventName = $('#eventNameInput').val().trim();
-            const subjectKey = $('#subjectSelect').val();
+const subjectKey = $('#subjectSelect').val();
             // 🚨 DEFINITIVE FIX: Use the native DOM element to ensure we capture the 
             // value property reliably, as jQuery's :selected selector can fail in size>1 lists.
             const topicSelectElement = document.getElementById('topicSelect');
@@ -1480,28 +1335,28 @@
                     allDay: true
                 };
             } 
-            else if (isSyllabusTask) {
-                const [topicId, topicText] = selectedTopicValue.split('|');
-                const subjectInfo = CONSOLIDATED_SYLLABUS[subjectKey];
-                
-                // 🚨 FIX: Construct the full title directly using the topicText extracted
-                // from the selection, ensuring it is accurate.
-                const fullEventTitle = `${subjectInfo.shortTitle.toUpperCase()} - ${topicText}`;
-                
-                eventData = {
-                    id: eventId || generateUniqueId(),
-                    subjectKey: subjectKey,
-                    topicId: topicId,
-                    
-                    // 🎯 FIXED: We store the fully constructed title directly.
-                    title: fullEventTitle,
-                    
-                    start: start,
-                    end: end ? moment(end).add(1, 'days').format('YYYY-MM-DD') : null,
-                    color: subjectInfo.color,
-                    borderColor: subjectInfo.color,
-                    allDay: true
-                };
+else if (isSyllabusTask) {
+        const [topicId, topicText] = selectedTopicValue.split('|');
+        const subjectInfo = CONSOLIDATED_SYLLABUS[subjectKey];
+        
+        // 🚨 FIX: Construct the full title directly using the topicText extracted
+        // from the selection, ensuring it is accurate.
+        const fullEventTitle = `${subjectInfo.shortTitle.toUpperCase()} - ${topicText}`;
+        
+        eventData = {
+            id: eventId || generateUniqueId(),
+            subjectKey: subjectKey,
+            topicId: topicId,
+            
+            // 🎯 FIXED: We store the fully constructed title directly.
+            title: fullEventTitle,
+            
+            start: start,
+            end: end ? moment(end).add(1, 'days').format('YYYY-MM-DD') : null,
+            color: subjectInfo.color,
+            borderColor: subjectInfo.color,
+            allDay: true
+        };
             } else {
                 CALENDAR_APP.showCustomAlert('INVALID COMBINATION', 'PLEASE CHOOSE EITHER A CUSTOM EVENT NAME OR A SUBJECT/TOPIC, BUT NOT BOTH.');
                 return;
@@ -1724,7 +1579,6 @@
                 SUBJECT_TITLE: title,
                 SUBJECT_ICON: themeIcon,
                 SYLLABUS_DATA: syllabusData, 
-                // NOTE: storageKey is derived from CONSOLIDATED_SYLLABUS
                 getProgress: getProgress,
                 updateOverallProgress: updateOverallProgress,
                 exportProgress: exportProgress,
@@ -1737,9 +1591,7 @@
 
             function getProgress() {
                 try {
-                    // Get storage key from CONSOLIDATED_SYLLABUS for flexibility
-                    const key = CONSOLIDATED_SYLLABUS[subjectName]?.storageKey || `${subjectName}_progress`;
-                    const saved = localStorage.getItem(key);
+                    const saved = localStorage.getItem(storageKey);
                     return saved ? JSON.parse(saved) : {};
                 } catch (e) {
                     console.error(`Error loading ${subjectName} progress:`, e);
@@ -1748,8 +1600,7 @@
             }
 
             function saveProgress(progressData) {
-                const key = CONSOLIDATED_SYLLABUS[subjectName]?.storageKey || `${subjectName}_progress`;
-                localStorage.setItem(key, JSON.stringify(progressData));
+                localStorage.setItem(storageKey, JSON.stringify(progressData));
                 updateOverallProgress();
                 window.updateOverallDashboard(); 
             }
@@ -2086,16 +1937,15 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                 const bgButton = subjectName === 'rem' ? 'bg-purple-600' : (subjectName === 'crim' ? 'bg-red-600' : (subjectName === 'lab' ? 'bg-lab-button' : (subjectName === 'civ' ? 'bg-civ-button' : (subjectName === 'comm' ? 'bg-comm-button' : 'bg-poli-button'))));
                 const hoverButton = subjectName === 'rem' ? 'hover:bg-purple-700' : (subjectName === 'crim' ? 'hover:bg-red-700' : (subjectName === 'lab' ? 'hover:bg-lab-button-dark' : (subjectName === 'civ' ? 'hover:bg-civ-button-dark' : (subjectName === 'comm' ? 'hover:bg-comm-button-dark' : 'hover:bg-poli-button-dark'))));
                 
-                // Title now passed as cleanTitle, removing the need for manual parsing here
-                const cleanTitle = title;
-
+                const cleanTitle = title.replace(/\s*\([\d\s]*% of Total\)/, '');
+                
                 return `
                 <div class="bg-white rounded-xl shadow-lg border border-gray-300 mt-4 syllabus-panel-container ${themeClass}" id="subject-tracker-panel-${subjectName}">
                     <details class="syllabus-panel">
                         <summary class="syllabus-summary" id="summary-${subjectName}">
                             <div class="syllabus-summary-title-row">
                                 <div class="flex items-center">
-                                    <i data-lucide="${icon}" class="w-6 h-6 mr-3"></i><span class="syllabus-summary-title">${cleanTitle.toUpperCase()}</span>
+                                    <i data-lucide="${icon}" class="w-6 h-6 mr-3"></i>${cleanTitle}
                                 </div>
                                 <div class="flex items-center text-xs">
                                     <span class="text-gray-300 mr-2 font-light hidden sm:inline">Press to Expand/Collapse</span>
@@ -2213,20 +2063,17 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
             if (donePercent <= 25) { fillColor = '#ef4444'; } 
             else if (donePercent <= 50) { fillColor = '#f97316'; } 
             else if (donePercent <= 75) { fillColor = '#facc15'; } 
-            else { fillColor = '#38761d'; }
+            else { fillColor = '#10b981'; }
             
-            // Use gray ring for progress not yet done
-            const backgroundRingColor = '#e5e7eb';
+            const backgroundRingColor = (donePercent < 100) ? '#ef4444' : '#e5e7eb';
             const centerTextColor = fillColor; 
             const centerFontSize = '2.5rem'; 
             const centerFontFamily = 'Bebas Neue, sans-serif'; 
 
             let totalTopics = 0;
             Object.values(SUBJECT_LOGIC_MAP).forEach(logic => {
-                if(logic && logic.SYLLABUS_DATA) {
-                    const mainTopics = logic.SYLLABUS_DATA.filter(t => t.depth === 2 && t.trackable);
-                    totalTopics += mainTopics.length;
-                }
+                const mainTopics = logic.SYLLABUS_DATA.filter(t => t.depth === 2 && t.trackable);
+                totalTopics += mainTopics.length;
             });
             const totalTopicsText = `Total Topics: ${totalTopics}`;
 
@@ -2243,15 +2090,12 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
 
             chartEl.innerHTML = `
                 <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-                    <!-- Background Circle (To Read) -->
-                    <circle cx="${center}" cy="${center}" r="${radius - strokeWidth / 2}" fill="none" stroke="${backgroundRingColor}" stroke-width="${strokeWidth}"></circle>
-                    <!-- Foreground Arc (Done) -->
+                    <circle cx="${center}" cy="${center}" r="${radius - strokeWidth / 2}" fill="none" stroke="${backgroundRingColor}" stroke-width="${strokeWidth}"/>
                     <circle
                         class="ring-done" cx="${center}" cy="${center}" r="${radius - strokeWidth / 2}"
                         fill="none" stroke="#38761d" stroke-width="${strokeWidth}" stroke-dasharray="${circumference}"
                         stroke-dashoffset="${doneOffset}" transform="rotate(-90 ${center} ${center})" stroke-linecap="round"
                     />
-                    <!-- Center Fill -->
                     <circle cx="${center}" cy="${center}" r="${radius - strokeWidth}" fill="white"/>
                     <text x="${center}" y="${center - 10}" text-anchor="middle" alignment-baseline="central" font-size="${centerFontSize}"
                         font-weight="900" fill="${centerTextColor}" font-family="${centerFontFamily}" 
@@ -2280,11 +2124,10 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                 let dayOfWeek = item.day;
                 let displayDate = dateString;
                 if (dateString !== 'N/A') {
-                    // FIX: Ensure moment is used correctly for formatting the date/day
-                    const dateObj = moment(dateString);
-                    if (dateObj.isValid()) {
-                        dayOfWeek = dateObj.format('dddd').toUpperCase();
-                        displayDate = dateObj.format('MMMM D, YYYY');
+                    const dateObj = new Date(dateString + 'T00:00:00Z');
+                    if (!isNaN(dateObj)) {
+                        dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
+                        displayDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
                     }
                 }
                 
@@ -2292,27 +2135,23 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
                 
                 let progressPercent = '0.0';
                 let progressFraction = 0;
-                let topicsDoneCount = 0;
-                let totalTrackableTopics = 0;
                 
-                if (subjectLogic && subjectLogic.SYLLABUS_DATA) {
+                if (subjectLogic) {
                     // CRITICAL: This pulls the Syllabus data from the EXTERNAL JS file via SUBJECT_LOGIC_MAP
                     const progress = subjectLogic.getProgress();
                     const syllabusData = subjectLogic.SYLLABUS_DATA;
-                    
                     const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
-                    totalTrackableTopics = mainTopics.length;
+                    const currentSubjectTrackable = mainTopics.length;
+                    let currentSubjectDone = 0;
 
                     mainTopics.forEach(topic => {
                         const topicProgress = progress[topic.id] || {};
                         const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
-                        
                         if (boxesTicked >= 3) {
-                            topicsDoneCount++;
+                            currentSubjectDone++;
                         }
                     });
-
-                    progressFraction = totalTrackableTopics > 0 ? (topicsDoneCount / totalTrackableTopics) : 0;
+                    progressFraction = currentSubjectTrackable > 0 ? (currentSubjectDone / currentSubjectTrackable) : 0;
                     progressPercent = (progressFraction * 100).toFixed(1);
                 }
                 
@@ -2325,32 +2164,25 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
 
                 let dateCell = '';
                 if (item.dateId !== lastDateId) {
-                    // Restore original visual grouping and font styles for date column
-                    dateCell = `
-                        <td rowspan="2" class="text-center" style="width: 20%; padding: 0.5rem 0.5rem 0.5rem 0; border-right: none;">
-                            <span class="text-2xl font-extrabold header-font text-black" style="line-height: 1.1;">
-                                ${displayDate.toUpperCase().replace(/,/g, '')}
-                            </span>
-                            <span class="text-xs text-gray-500 block">${dayOfWeek}</span>
-                        </td>`;
+                    dateCell = `<td rowspan="2" class="text-center font-bold text-sm border-r border-gray-300">
+                                    ${displayDate.toUpperCase()}<br><span class="text-gray-400 font-normal text-xs">${dayOfWeek}</span>
+                                </td>`;
                     lastDateId = item.dateId;
                 }
 
-                // Restore the visual structure of subject and progress columns
+                const rowClass = (index + 1) % 2 === 0 ? 'border-b-2 border-gray-300/50' : 'border-b border-gray-200';
+                
                 html += `
-                    <tr>
+                    <tr class="${rowClass}">
                         ${dateCell}
-                        <td class="subject-cell-wrapper" style="width: 55%;">
-                            <div class="subject-cell bg-${item.subjectName}">
-                                ${item.subject.toUpperCase()} 
-                                <span class="weight">${item.weight} of Total Bar Weight</span>
+                        <td class="border-r border-gray-300">
+                            <div class="subject-cell bg-${item.subjectName}" data-subject="${item.subjectName}">
+                                ${item.subject} <span class="font-normal">(${item.weight})</span>
                             </div>
                         </td>
-                        <td class="progress-cell-wrapper" style="width: 25%;">
-                            <div class="text-center text-sm font-bold text-gray-800 mb-1">
-                                ${progressPercent}% Done (${topicsDoneCount}/${totalTrackableTopics})
-                            </div>
-                            <div class="progress-bar-sparkline">
+                        <td>
+                            <div class="text-center text-sm font-semibold mb-0.5">${progressPercent}%</div>
+                            <div id="sparkline-${item.subjectName}" class="progress-bar-sparkline">
                                 <div class="sparkline-fill ${progressClass}" style="width: ${progressPercent}%;"></div>
                             </div>
                         </td>
@@ -2366,32 +2198,31 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
 
             let totalTrackableTopics = 0;
             let totalDoneTopics = 0;
+            let totalToReadTopics = 0;
 
             Object.values(SUBJECT_LOGIC_MAP).forEach(logic => {
-                // Safety check to ensure subject logic and data exist
-                if (logic && logic.SYLLABUS_DATA) {
-                    const progress = logic.getProgress();
-                    const syllabusData = logic.SYLLABUS_DATA;
+                const progress = logic.getProgress();
+                const syllabusData = logic.SYLLABUS_DATA;
+                
+                const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
+                const currentSubjectTrackable = mainTopics.length;
+                let currentSubjectDone = 0;
+
+                mainTopics.forEach(topic => {
+                    const topicProgress = progress[topic.id] || {};
+                    const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
                     
-                    const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
-                    const currentSubjectTrackable = mainTopics.length;
-                    let currentSubjectDone = 0;
+                    if (boxesTicked >= 3) {
+                        currentSubjectDone++;
+                    }
+                });
 
-                    mainTopics.forEach(topic => {
-                        const topicProgress = progress[topic.id] || {};
-                        const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
-                        
-                        if (boxesTicked >= 3) {
-                            currentSubjectDone++;
-                        }
-                    });
-
-                    totalTrackableTopics += currentSubjectTrackable;
-                    totalDoneTopics += currentSubjectDone;
-                }
+                totalTrackableTopics += currentSubjectTrackable;
+                totalDoneTopics += currentSubjectDone;
             });
 
-            const globalToReadTopics = totalTrackableTopics - totalDoneTopics;
+            totalToReadTopics = totalTrackableTopics - totalDoneTopics;
+
             const donePercent = totalTrackableTopics > 0 ? (totalDoneTopics / totalTrackableTopics) * 100 : 0;
             const toReadPercent = 100 - donePercent;
 
@@ -2402,24 +2233,34 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
             document.getElementById('global-total-done-count').textContent = totalDoneTopics;
             
             document.getElementById('global-progress-toread').textContent = `${toReadPercent.toFixed(1)}%`;
-            document.getElementById('global-total-toread-count').textContent = globalToReadTopics;
+            document.getElementById('global-total-toread-count').textContent = totalToReadTopics;
         }
 
         window.updateOverallDashboard = updateOverallDashboard;
 
 
-        // --- CORE APP SETUP CALLS (CRITICAL FIX) ---
-        // This function MUST be wrapped to only run AFTER authentication is successful.
-        function fullAppInitialization() {
-            // 1. Initialize Countdown Intervals
-            setInterval(updateAllCountdowns, 1000);
-            updateAllCountdowns();
+        // --- INITIALIZATION ---
+        window.onload = () => {
+            // 1. Initialize Countdown Dates
+            COUNTDOWN_DATA.forEach(data => {
+                const savedDate = localStorage.getItem(`comp_exam_date_${data.id}`);
+                const finalDate = savedDate || data.targetDate;
+                if (finalDate) {
+                    data.targetDate = finalDate;
+                    document.querySelector(`#target-date-display-${data.id} .date-text`).textContent = formatUniqueDate(finalDate);
+                }
+            });
 
+            // Display today's date
+            document.getElementById('today-date-display').textContent = getLocalDisplayDate();
+            setInterval(() => {
+                document.getElementById('today-date-display').textContent = getLocalDisplayDate();
+            }, 60000); 
+            
             // 2. Load Calendar Module HTML and initialize its logic (now inline)
             document.getElementById('calendar-module-placeholder').innerHTML = CALENDAR_MODULE_HTML;
             
             // 3. Initialize Calendar and Notepad Logic (window.CALENDAR_APP is now fully defined above)
-            // Note: These must be called immediately so SUBJECT_LOGIC_MAP can be used for calendar setup
             window.CALENDAR_APP.loadNotes();
             window.CALENDAR_APP.initializeCalendar();
             
@@ -2438,71 +2279,40 @@ const checklist = CHECKLIST_COLUMNS.map(col => {
             }
 
 
-            // 4. Load all subject panels (This relies on EXTERNAL JS files)
+            // 4. Load Subject Panels (This is ASYNCHRONOUS)
             initializeSubjectTrackers();
+            
+            // 5. Initialize Lucide Icons for static content
+            if (lucide && lucide.createIcons) {
+                lucide.createIcons();
+            }
 
-            // 5. Load User Name
+            // 6. Attach General Event Listeners and load user name
+            updateAllCountdowns();
+            setInterval(updateAllCountdowns, 1000);
+            
             loadUserName();
             
-            // 6. Initial dashboard update (wait 1.5s for external subjects to load)
+            // The dashboard update MUST wait for external subjects to load (1.5 seconds delay to be safe)
             setTimeout(window.updateOverallDashboard, 1500); 
-
-            // 7. Attach UI Event Listeners
+            
             document.getElementById('target-date-display-1').addEventListener('click', () => openModal(1));
             document.getElementById('target-date-display-2').addEventListener('click', () => openModal(2));
             document.getElementById('target-date-display-3').addEventListener('click', () => openModal(3));
             
+            // Monkey patch saveModal to update schedule table AFTER countdown is saved
+            if (typeof saveModal === 'function' && typeof updateScheduleTable === 'function') {
+                const originalSaveModal = saveModal;
+                saveModal = function() {
+                    originalSaveModal();
+                    updateScheduleTable();
+                };
+            }
+            
             document.getElementById('modal-save-btn').addEventListener('click', saveModal);
             document.getElementById('modal-cancel-btn').addEventListener('click', closeModal);
+            
             document.getElementById('message-modal-close-btn')?.addEventListener('click', closeMessageModal);
-        }
-
-        // --- INITIALIZATION STARTER (MODIFIED TO START AUTH FLOW) ---
-        window.onload = () => {
-            // FIX: Check for existing authentication token upon load
-            const savedToken = localStorage.getItem('auth_token_check');
-            if (savedToken) {
-                // Attempt to decode and re-check access directly without showing login screen first
-                try {
-                    const payload = decodeJwt(savedToken);
-                    const userEmail = payload.email;
-                    if (userEmail && APPROVED_EMAILS.includes(userEmail)) {
-                        // User is still authorized, skip login screen
-                        document.getElementById('login-screen').style.display = 'none';
-                        document.getElementById('protected-content').style.display = 'block';
-                        // Proceed directly to app initialization
-                        fullAppInitialization();
-                        return;
-                    }
-                } catch(e) {
-                    console.error("Token decode failed on load:", e);
-                    localStorage.removeItem('auth_token_check');
-                }
-            }
-            
-            // 1. Initialize Countdown Dates
-            COUNTDOWN_DATA.forEach(data => {
-                const savedDate = localStorage.getItem(`comp_exam_date_${data.id}`);
-                const finalDate = savedDate || data.targetDate;
-                if (finalDate) {
-                    data.targetDate = finalDate;
-                    document.querySelector(`#target-date-display-${data.id} .date-text`).textContent = formatUniqueDate(finalDate);
-                }
-            });
-
-            // 2. Display today's date (before authorization starts)
-            document.getElementById('today-date-display').textContent = getLocalDisplayDate();
-            setInterval(() => {
-                document.getElementById('today-date-display').textContent = getLocalDisplayDate();
-            }, 60000); 
-
-            // 3. Show the login screen and wait for Google sign-in
-            document.getElementById('login-screen').style.display = 'flex';
-            
-            // 4. Initialize Lucide Icons for static content
-            if (lucide && lucide.createIcons) {
-                lucide.createIcons();
-            }
         };
     </script>
 </body>
