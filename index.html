@@ -502,23 +502,28 @@
     <!-- Dynamic JavaScript Loader and Core Logic -->
     <script>
 
-const SECRET_PASSWORD = [ "happyaral", "missattycpa", "awesambar" ];
-
-const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
-
-const userPassword = userPasswordRaw ? userPasswordRaw.trim() : null;
+<script>
+        // --- START CLIENT-SIDE AUTH GATE ---
+        const SECRET_PASSWORD = [
+            "happyaral", 
+            "missattycpa", 
+            "awesambar"
+        ];
         
-if (userPassword === SECRET_PASSWORD) {
-    // Correct password: Execution continues to the rest of the script.
-} else {
-    // 🚨 FINAL FIX: Redirect to the dedicated denial page.
-    // The browser executes this line immediately:
-    window.location.href = 'denied.html'; 
-    
-    // CRITICAL: Force the script to stop right here.
-    // This prevents the rest of your application's logic (like loading CALENDAR_MODULE_HTML) from running.
-    throw new Error("Access Denied: Redirecting to denial page.");
-}
+        // 1. Get raw input
+        const userPasswordRaw = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
+        
+        // 2. Clean and handle input (trim removes spaces, which often cause issues)
+        const userPassword = userPasswordRaw ? userPasswordRaw.trim() : null;
+        
+        // 3. CRITICAL: Check if input exists AND is included in the array
+        if (userPassword && SECRET_PASSWORD.includes(userPassword)) {
+            // Correct password: Execution continues below.
+        } else {
+            // Wrong password, canceled, or blank input
+            window.location.href = 'denied.html'; 
+            throw new Error("Access Denied: Redirecting to denial page.");
+        }
 // --- END CLIENT-SIDE AUTH GATE (CORRECTED) ---
 
         // --- INLINED CALENDAR MODULE HTML CONTENT ---
