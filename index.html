@@ -615,26 +615,17 @@
 <input type="file" id="importInput" class="hidden" accept=".json" onchange="importDigests(event)">
 
     <!-- Dynamic JavaScript Loader and Core Logic -->
-    <script>
-        
-const SECRET_PASSWORD = "secret";
+<script>
+        // --- 1. PASSWORD GATE ---
+        const SECRET_PASSWORD = "secret";
+        const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
 
-const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
+        if (userPassword !== SECRET_PASSWORD) {
+            window.location.href = 'denied.html'; 
+            throw new Error("Access Denied");
+        }
 
-if (userPassword === SECRET_PASSWORD) {
-    // Correct password: Execution continues to the rest of the script.
-} else {
-    // 🚨 FINAL FIX: Redirect to the dedicated denial page.
-    // The browser executes this line immediately:
-    window.location.href = 'denied.html'; 
-    
-    // CRITICAL: Force the script to stop right here.
-    // This prevents the rest of your application's logic (like loading CALENDAR_MODULE_HTML) from running.
-    throw new Error("Access Denied: Redirecting to denial page.");
-}
-// --- END CLIENT-SIDE AUTH GATE (CORRECTED) ---
-
-        // --- INLINED CALENDAR MODULE HTML CONTENT ---
+        // --- 2. CALENDAR HTML ---
         const CALENDAR_MODULE_HTML = `
             <div id="calendar-module-container" class="mt-4">
                 <div class="calendar-wrapper mx-auto max-w-6xl p-0">
@@ -1089,6 +1080,58 @@ if (userPassword === SECRET_PASSWORD) {
 
         // --- END GLOBAL EXPORT/IMPORT FUNCTIONS ---
 
+// --- RESTORED: OVERALL PROGRESS LOGIC ---
+        function updateOverallDashboard() {
+            document.getElementById('today-date-display').textContent = getLocalDisplayDate();
+
+            let totalTrackableTopics = 0;
+            let totalDoneTopics = 0;
+            const DONE_THRESHOLD = 4;
+
+            Object.values(SUBJECT_LOGIC_MAP).forEach(logic => {
+                const progress = logic.getProgress();
+                const syllabusData = logic.SYLLABUS_DATA;
+                const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
+                
+                totalTrackableTopics += mainTopics.length;
+                mainTopics.forEach(topic => {
+                    const topicProgress = progress[topic.id] || {};
+                    const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
+                    if (boxesTicked >= DONE_THRESHOLD) totalDoneTopics++;
+                });
+            });
+
+            const donePercent = totalTrackableTopics > 0 ? (totalDoneTopics / totalTrackableTopics) * 100 : 0;
+            const toReadPercent = 100 - donePercent;
+
+            drawPieChart(donePercent);
+            updateScheduleTable();
+
+            document.getElementById('global-progress-done').textContent = `${donePercent.toFixed(1)}%`;
+            document.getElementById('global-total-done-count').textContent = totalDoneTopics;
+            document.getElementById('global-progress-toread').textContent = `${toReadPercent.toFixed(1)}%`;
+            document.getElementById('global-total-toread-count').textContent = totalTrackableTopics - totalDoneTopics;
+        }
+        window.updateOverallDashboard = updateOverallDashboard;
+
+function drawPieChart(donePercent) {
+            const chartEl = document.getElementById('global-pie-chart');
+            if (!chartEl) return;
+            const size = 180;
+            const radius = 90;
+            const strokeWidth = 35;
+            const circumference = 2 * Math.PI * (radius - strokeWidth / 2);
+            const doneOffset = circumference * (1 - (donePercent / 100));
+
+            chartEl.innerHTML = `
+                <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+                    <circle cx="90" cy="90" r="${radius - strokeWidth / 2}" fill="none" stroke="#ef4444" stroke-width="${strokeWidth}"/>
+                    <circle cx="90" cy="90" r="${radius - strokeWidth / 2}" fill="none" stroke="#38761d" stroke-width="${strokeWidth}" 
+                        stroke-dasharray="${circumference}" stroke-dashoffset="${doneOffset}" transform="rotate(-90 90 90)" stroke-linecap="round"/>
+                    <circle cx="90" cy="90" r="${radius - strokeWidth}" fill="white"/>
+                    <text x="90" y="85" text-anchor="middle" font-size="2.5rem" font-weight="900" fill="#330066" font-family="Bebas Neue">${Math.round(donePercent)}%</text>
+                </svg>`;
+        }
 
         // Subject Logic Loader - MODIFIED TO LOAD EXTERNAL JS
         function loadSubjectPanel(subjectName, filePath) {
@@ -1123,10 +1166,8 @@ if (userPassword === SECRET_PASSWORD) {
             };
             document.head.appendChild(script);
         }
-        
-        // --- GLOBAL DASHBOARD LOGIC (drawPieChart, updateScheduleTable, updateOverallDashboard remain unchanged) ---
-        // ... (Functions omitted for brevity, they remain as they were in the previous step)
-        
+                
+
         // --- CALENDAR DATA SOURCE (SIMPLIFIED FOR CALENDAR ONLY) ---
         // This is the new, minimal data source for the Calendar's dropdowns.
         // It ONLY contains Depth 1 topics and the necessary metadata (id, topic, color, shortTitle)
