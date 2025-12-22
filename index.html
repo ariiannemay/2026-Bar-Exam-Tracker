@@ -720,23 +720,23 @@ style="background-color: #000000; border-bottom: 5px solid #9ca3af;">
     </footer>
 
     <script>
-const SECRET_PASSWORD = "ama";
+const ALLOWED_PASSWORDS = ["ama", "bar", "2026", "bar2026"];  // Add your extra passwords here
 
-const userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
-
-if (userPassword === SECRET_PASSWORD) {
-    // Correct password: Execution continues to the rest of the script.
+let userPassword = prompt("🔐 Enter the password to access the 2026 Bar Exam Review Tracker:");
+if (userPassword) {
+    userPassword = userPassword.trim().toLowerCase();  // Make it forgiving (ignore case/spaces)
+    if (ALLOWED_PASSWORDS.includes(userPassword)) {
+        // Correct password - continue loading the tracker
+    } else {
+        alert("❌ Incorrect password. Access denied.");
+        window.location.href = 'denied.html';
+        throw new Error("Access Denied");
+    }
 } else {
-    // 🚨 FINAL FIX: Redirect to the dedicated denial page.
-    // The browser executes this line immediately:
-    window.location.href = 'denied.html'; 
-    
-    // CRITICAL: Force the script to stop right here.
-    // This prevents the rest of your application's logic (like loading CALENDAR_MODULE_HTML) from running.
-    throw new Error("Access Denied: Redirecting to denial page.");
+    // User clicked Cancel
+    window.location.href = 'denied.html';
+    throw new Error("Access Cancelled");
 }
-// --- END CLIENT-SIDE AUTH GATE (CORRECTED) ---
-
         // --- INLINED CALENDAR MODULE HTML CONTENT ---
         const CALENDAR_MODULE_HTML = `
             <div id="calendar-module-container" class="mt-4">
@@ -2230,7 +2230,7 @@ else if (isSyllabusTask) {
 
                             <!-- Micro-progress Bars 🚨 MODIFIED for 6 Columns & New Threshold -->
                             <div class="checklist-grid checklist-grid-micro-progress text-center">
-<div class="text-left italic text-gray-600 col-span-1 pl-1 text-xs self-start leading-tight pt-1">Overall progress only counts if at least 4 checklist boxes are marked for each topic row.</div> 
+<div class="text-left italic text-gray-600 col-span-1 pl-1 text-xs self-start leading-tight pt-1">Overall progress counts only when at least 4 boxes per topic are checked.</div> 
                                 
                                 <!-- Column 1: Codal (Purple) -->
                                 <div class="px-1 flex flex-col items-center justify-start">
