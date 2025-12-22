@@ -1,5 +1,5 @@
-       // MINIFIED CSV DATA
-       const csvData = `No.,Full Text,Division,Promulgation Date,Type
+// --- 1. DATA SOURCE ---
+const csvData = `No.,Full Text,Division,Promulgation Date,Type
 001,"=HYPERLINK(""https://docs.google.com/document/d/1Yuci6rUA_2FMRADapPgLMqEsEt8tfQtxFbCQE_RsAgk/export?format=pdf"", ""City Government of Pasay v. Arellano University"")",3RD DIVISION,07 May 2025,DECISION
 002,"=HYPERLINK(""https://docs.google.com/document/d/1zmE9F8NVKWZ8NlBtTpl5AYPsKpV2B6gHwiUpEtCBfoc/export?format=pdf"", ""Antonino v. Banco De Oro"")",3RD DIVISION,23 Apr 2025,DECISION
 003,"=HYPERLINK(""https://docs.google.com/document/d/1LOPMJrd_1ZzekXcmIr4EbE9uFuYrqxelo58WRLKDsOc/export?format=pdf"", ""Mangudadatu v. Comelec"")",EN BANC,22 Apr 2025,DECISION
@@ -33,8 +33,8 @@
 031,"=HYPERLINK(""https://docs.google.com/document/d/1m4B5-R0O3_A6_W7_Y2lG0nJ4pQ0qU5/export?format=pdf"", ""Legaspi v. Comelec"")",EN BANC,30 Jul 2024,DECISION
 032,"=HYPERLINK(""https://docs.google.com/document/d/1k2Z3-P8M1_Y4_U5_W0jE8nJ2pR2qS3/export?format=pdf"", ""Re Atty. Divina"")",EN BANC,30 Jul 2024,DECISION
 033,"=HYPERLINK(""https://docs.google.com/document/d/1i0X1-N6K9_W2_S3_U8hC6nJ4pQ0qQ1/export?format=pdf"", ""Gonzales v. Geronimo"")",EN BANC,30 Jul 2024,DECISION
-034,"=HYPERLINK(""https://docs.google.com/document/d/1g8V9-L4I7_U0_Q1_S6fA4nJ4pQ0qO9/export?format=pdf"", ""Stewart v. Atty. Rioflorido"")",3RD DIVISION,17 Jul 2024,DECISION
-035,"=HYPERLINK(""https://docs.google.com/document/d/1e6T7-J2G5_S8_O9_Q4dY2nJ4pQ0qM7/export?format=pdf"", ""OCA v. Judge Villavicencio-Olan"")",EN BANC,25 Jun 2024,DECISION
+034,"=HYPERLINK(""https://docs.google.com/document/d/1g8V9-L4I7_U0_Q1_S6fA4nJ2pR8qO9/export?format=pdf"", ""Stewart v. Atty. Rioflorido"")",3RD DIVISION,17 Jul 2024,DECISION
+035,"=HYPERLINK(""https://docs.google.com/document/d/1e6T7-J2G5_S8_O9_Q4dY2nJ4pQ0M7/export?format=pdf"", ""OCA v. Judge Villavicencio-Olan"")",EN BANC,25 Jun 2024,DECISION
 036,"=HYPERLINK(""https://docs.google.com/document/d/1c4R5-H0E3_Q6_M7_O2bW0nJ4pQ0qK5/export?format=pdf"", ""People v. Talaue"")",SPECIAL 1ST DIVISION,19 Jun 2024,RESOLUTION
 037,"=HYPERLINK(""https://docs.google.com/document/d/1a2P3-F8C1_O4_K5_M0zU8nJ4pQ0qI3/export?format=pdf"", ""People v. Oh"")",3RD DIVISION,05 Jun 2024,DECISION
 038,"=HYPERLINK(""https://docs.google.com/document/d/1Y0N1-D6A9_M2_I3_K8xS6nJ4pQ0qG1/export?format=pdf"", ""Ampolitod v. Top Ever Marine Management Phils."")",3RD DIVISION,22 May 2024,DECISION
@@ -49,7 +49,7 @@
 047,"=HYPERLINK(""https://docs.google.com/document/d/1G2V3-L8I1_U4_Q5_S0fA8nJ4pQ0qO3/export?format=pdf"", ""Villafuerte v. Atty. Tajanlangit"")",3RD DIVISION,06 Dec 2023,DECISION
 048,"=HYPERLINK(""https://docs.google.com/document/d/1E0T1-J6G9_S2_O3_Q8dY6nJ4pQ0qM1/export?format=pdf"", ""Trinidad v. Trinidad"")",3RD DIVISION,06 Dec 2023,DECISION
 049,"=HYPERLINK(""https://docs.google.com/document/d/1C8R9-H4E7_Q0_M1_O6bW4nJ4pQ0qK9/export?format=pdf"", ""People v. Flores"")",3RD DIVISION,11 Oct 2023,DECISION
-050,"=HYPERLINK(""https://docs.google.com/document/d/1A6P7-F2C5_O8_K9_M4zU2nJ4pQ0qI7/export?format=pdf"", ""People v. Lala"")",3RD DIVISION,11 Oct 2023,DECISION
+050,"=HYPERLINK(""https://docs.google.com/document/d/1A6P7-F2C5_O8_K9_M4zU2nJ4pQ0I7/export?format=pdf"", ""People v. Lala"")",3RD DIVISION,11 Oct 2023,DECISION
 051,"=HYPERLINK(""https://docs.google.com/document/d/184N5-D0A3_M6_I7_K2xS0nJ4pQ0qG5/export?format=pdf"", ""People v. Pajarilla"")",3RD DIVISION,30 Aug 2023,DECISION
 052,"=HYPERLINK(""https://docs.google.com/document/d/162L3-B8Y1_K4_G5_I0vQ8nJ4pQ0qE3/export?format=pdf"", ""People v. XXX220145"")",3RD DIVISION,30 Aug 2023,DECISION
 053,"=HYPERLINK(""https://docs.google.com/document/d/140J1-Z6W9_I2_E3_G8tO6nJ4pQ0qC1/export?format=pdf"", ""Republic v. Spouses Tan"")",3RD DIVISION,23 Aug 2023,DECISION
@@ -99,7 +99,7 @@
 097,"=HYPERLINK(""https://docs.google.com/document/d/1c6Z3-P8M1_Y4_U5_W0jE8nJ2pR2qS3/export?format=pdf"", ""Vizcarra v. Vizcarra-Nocillado"")",3RD DIVISION,11 Jan 2023,DECISION
 098,"=HYPERLINK(""https://docs.google.com/document/d/1a4X1-N6K9_W2_S3_U8hC6nJ4pQ0qQ1/export?format=pdf"", ""Ocampo v. Macapagal-Arroyo"")",EN BANC,10 Jan 2023,DECISION
 099,"=HYPERLINK(""https://docs.google.com/document/d/1Y2V9-L4I7_U0_Q1_S6fA4nJ2pR8qO9/export?format=pdf"", ""Bounsit-Torralba v. Torralba"")",3RD DIVISION,07 Dec 2022,DECISION
-100,"=HYPERLINK(""https://docs.google.com/document/d/1W0T7-J2G5_S8_O9_Q4dY2nJ4pQ0qM7/export?format=pdf"", ""Fort Bonifacio Development Corporation v. Domingo"")",3RD DIVISION,07 Dec 2022,DECISION
+100,"=HYPERLINK(""https://docs.google.com/document/d/1W0T7-J2G5_S8_O9_Q4dY2nJ4pQ0M7/export?format=pdf"", ""Fort Bonifacio Development Corporation v. Domingo"")",3RD DIVISION,07 Dec 2022,DECISION
 101,"=HYPERLINK(""https://docs.google.com/document/d/1U8R5-H0E3_Q6_M7_O2bW0nJ4pQ0qK5/export?format=pdf"", ""Bayron v. COA"")",EN BANC,29 Nov 2022,DECISION
 102,"=HYPERLINK(""https://docs.google.com/document/d/1S6P3-F8C1_O4_K5_M0zU8nJ4pQ0qI3/export?format=pdf"", ""Manguerra v. Manguerra-Aberasturi"")",EN BANC,29 Nov 2022,DECISION
 103,"=HYPERLINK(""https://docs.google.com/document/d/1Q4N1-D6A9_M2_I3_K8xS6nJ4pQ0qG1/export?format=pdf"", ""Nolasco v. Purence Realty Corporation"")",3RD DIVISION,12 Oct 2022,DECISION
@@ -168,7 +168,7 @@
 166,"=HYPERLINK(""https://docs.google.com/document/d/1O8R5-H0E3_Q6_M7_O2bW0nJ4pQ0qK5/export?format=pdf"", ""The Salvation Army v. SSS"")",2ND DIVISION,15 Sep 2021,DECISION
 167,"=HYPERLINK(""https://docs.google.com/document/d/1M6P3-F8C1_O4_K5_M0zU8nJ4pQ0qI3/export?format=pdf"", ""Lagao v. People"")",2ND DIVISION,15 Sep 2021,DECISION
 168,"=HYPERLINK(""https://docs.google.com/document/d/1I8N1-D6A9_M2_I3_K8xS6nJ4pQ0qG1/export?format=pdf"", ""Joven v. Spouses Tulio"")",2ND DIVISION,04 Aug 2021,DECISION
-169,"=HYPERLINK(""https://docs.google.com/document/d/1G6L9-B4Y7_K0_G1_I6vQ4nJ4pQ0qE9/export?format=pdf"", ""Quitalig v. Quitalig"")",2ND DIVISION,04 Aug 2021,DECISION
+169,"=HYPERLINK(""https://docs.google.com/document/d/1G6L9-B4Y7_K0_G1_I6vQ4nJ2pR8qE9/export?format=pdf"", ""Quitalig v. Quitalig"")",2ND DIVISION,04 Aug 2021,DECISION
 170,"=HYPERLINK(""https://docs.google.com/document/d/1E4J7-Z2W5_I8_E9_G4tO2nJ4pQ0qC7/export?format=pdf"", ""CF Sharp Crew Management v. Cunanan"")",2ND DIVISION,04 Aug 2021,DECISION
 171,"=HYPERLINK(""https://docs.google.com/document/d/1C2H5-X0U3_G6_C7_E2rM0nJ4pQ0qA5/export?format=pdf"", ""Anacay v. Atty. Alberto"")",2ND DIVISION,04 Aug 2021,DECISION
 172,"=HYPERLINK(""https://docs.google.com/document/d/1A0F3-V8S1_E4_A5_C0pS8nJ4pQ0qY3/export?format=pdf"", ""Moreno v. Chateau Royale Sports and Country Club"")",2ND DIVISION,04 Aug 2021,DECISION
@@ -233,7 +233,7 @@
 231,"=HYPERLINK(""https://docs.google.com/document/d/1G2R5-H0E3_Q6_M7_O2bW0nJ4pQ0qK5/export?format=pdf"", ""Ingram v. Atty. Lorica IV"")",3RD DIVISION,16 Sep 2020,DECISION
 232,"=HYPERLINK(""https://docs.google.com/document/d/1E0P3-F8C1_O4_K5_M0zU8nJ4pQ0qI3/export?format=pdf"", ""Judge Ramos v. Atty. Lazo"")",3RD DIVISION,14 Sep 2020,DECISION
 233,"=HYPERLINK(""https://docs.google.com/document/d/1C8N1-D6A9_M2_I3_K8xS6nJ4pQ0qG1/export?format=pdf"", ""Santos v. V.C. Development Corporation"")",3RD DIVISION,09 Sep 2020,DECISION
-234,"=HYPERLINK(""https://docs.google.com/document/d/1A6L9-B4Y7_K0_G1_I6vQ4nJ4pQ0qE9/export?format=pdf"", ""Sismaet v. Atty. Cruzabra"")",3RD DIVISION,07 Sep 2020,DECISION
+234,"=HYPERLINK(""https://docs.google.com/document/d/1A6L9-B4Y7_K0_G1_I6vQ4nJ2pR8qO9/export?format=pdf"", ""Sismaet v. Atty. Cruzabra"")",3RD DIVISION,07 Sep 2020,DECISION
 235,"=HYPERLINK(""https://docs.google.com/document/d/184J7-Z2W5_I8_E9_G4tO2nJ4pQ0qC7/export?format=pdf"", ""IP E-Game Ventures, Inc. v. Beijing Perfect World Software Co., Ltd."")",3RD DIVISION,07 Sep 2020,DECISION
 236,"=HYPERLINK(""https://docs.google.com/document/d/162H5-X0U3_G6_C7_E2rM0nJ4pQ0qA5/export?format=pdf"", ""Unirock Corporation v. CA"")",3RD DIVISION,07 Sep 2020,DECISION
 237,"=HYPERLINK(""https://docs.google.com/document/d/140F3-V8S1_E4_A5_C0pS8nJ4pQ0qY3/export?format=pdf"", ""DBP v. Ronquillo"")",3RD DIVISION,07 Sep 2020,DECISION
@@ -252,312 +252,251 @@
 250,"=HYPERLINK(""https://docs.google.com/document/d/16xDe60MhrSqSsaCaylO8fs5pWGLUwrMDZyjXuHZVOac/export?format=pdf"", ""People v. Manzanilla"")",3RD DIVISION,08 Jun 2020,DECISION
 251,"=HYPERLINK(""https://docs.google.com/document/d/1sGMuJ08pTJRNwod9wgTDtoCo_YKHaowU2UHlEAL1nwk/export?format=pdf"", ""Nacarion v. People"")",3RD DIVISION,08 Jun 2020,DECISION
 252,"=HYPERLINK(""https://docs.google.com/document/d/1wlIDG0oZZSR1V1kaSRmSx4qdflKioLv4-qd8JhFzyRo/export?format=pdf"", ""Violago v. Atty. Aranjuez, Jr."")",3RD DIVISION,09 Mar 2020,RESOLUTION`;
- 
-       // APP STATE
-       let allCases = [];
-       let sortConfig = { column: 0, direction: 'asc' }; // default sort by No.
-       const STORAGE_KEY = 'gaerlan_tracker_v1';
- 
-       // Load Data from Storage
-       function getStorageData() {
-           return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-       }
- 
-       // Save Data to Storage
-       function updateStorage(caseId, field, value) {
-           const data = getStorageData();
-           if (!data[caseId]) data[caseId] = {};
-           data[caseId][field] = value;
-           localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-           updateStats();
-       }
- 
-       // Initial Data Parse
-// Initial Data Parse
-       async function init() { // Added 'async'
-           const lines = csvData.trim().split('\n');
-           let savedData = getStorageData();
-           allCases = [];
 
-           // --- NEW: PRELOAD FROM GITHUB ---
-           // Only preload if the user's local storage is empty to avoid overwriting their edits
-           if (Object.keys(savedData).length === 0) {
-               try {
-const response = await fetch('https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/data.json');
-                   if (response.ok) {
-                       const preloadedData = await response.json();
-                       localStorage.setItem(STORAGE_KEY, JSON.stringify(preloadedData));
-                       savedData = preloadedData;
-                       console.log("Digests preloaded from GitHub.");
-                   }
-               } catch (err) {
-                   console.error("Could not load preload file:", err);
-               }
-           }
- 
-           for (let i = 1; i < lines.length; i++) {
-               const row = lines[i];
-               const firstComma = row.indexOf(',');
-               const lastComma = row.lastIndexOf(',');
-               const secondLastComma = row.lastIndexOf(',', lastComma - 1);
-               const thirdLastComma = row.lastIndexOf(',', secondLastComma - 1);
- 
-               if (firstComma === -1 || lastComma === -1) continue;
- 
-               const no = row.substring(0, firstComma).trim();
-               const division = row.substring(thirdLastComma + 1, secondLastComma).trim();
-               const date = row.substring(secondLastComma + 1, lastComma).trim();
-               const type = row.substring(lastComma + 1).trim();
-               
-               let rawLink = row.substring(firstComma + 1, thirdLastComma).trim();
-               if (rawLink.startsWith('"') && rawLink.endsWith('"')) rawLink = rawLink.slice(1, -1);
-               
-               let url = "#", title = rawLink;
-               const match = rawLink.match(/=HYPERLINK\(""([^"]+)""\s*,\s*""([^"]+)""\)/i);
-               if (match) { url = match[1]; title = match[2]; }
-               else { title = rawLink.replace(/^=HYPERLINK\("/, '').replace(/"\)$/, ''); }
- 
-               allCases.push({no, title, division, date, type, url});
-           }
-           
-           lucide.createIcons();
-           renderTable();
-           updateStats();
-       }
- 
-       // RENDER TABLE
-       function renderTable() {
-           const tbody = document.getElementById('caseTableBody');
-           const savedData = getStorageData();
-           const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-           const filterDiv = document.getElementById('filterDivision').value;
-           const filterType = document.getElementById('filterType').value;
- 
-           // 1. Filter
-           let filteredCases = allCases.filter(c => {
-               const matchesSearch = c.title.toLowerCase().includes(searchTerm) ||
-                                     c.no.includes(searchTerm) ||
-                                     c.date.toLowerCase().includes(searchTerm);
-               const matchesDiv = filterDiv === "" || c.division === filterDiv;
-               const matchesType = filterType === "" || c.type === filterType;
-               
-               return matchesSearch && matchesDiv && matchesType;
-           });
- 
-           document.getElementById('visibleCount').innerText = filteredCases.length;
- 
-           // 2. Sort
-           filteredCases.sort((a, b) => {
-               let valA, valB;
-               
-               if (sortConfig.column === 0) { // No.
-                   valA = parseInt(a.no); valB = parseInt(b.no);
-               } else if (sortConfig.column === 1) { // Title
-                   valA = a.title.toLowerCase(); valB = b.title.toLowerCase();
-               } else if (sortConfig.column === 2) { // Division
-                   valA = a.division.toLowerCase(); valB = b.division.toLowerCase();
-               } else if (sortConfig.column === 3) { // Date
-                   valA = new Date(a.date); valB = new Date(b.date);
-               } else if (sortConfig.column === 4) { // Type
-                   valA = a.type.toLowerCase(); valB = b.type.toLowerCase();
-               }
- 
-               if (valA < valB) return sortConfig.direction === 'asc' ? -1 : 1;
-               if (valA > valB) return sortConfig.direction === 'asc' ? 1 : -1;
-               return 0;
-           });
- 
-           // 3. Render HTML
-           let html = '';
-           filteredCases.forEach(c => {
-               const caseState = savedData[c.no] || {};
-               const digestExists = caseState.digest && (caseState.digest.doctrine || caseState.digest.facts || caseState.digest.issue || caseState.digest.ruling);
-               
-               // Division Color Logic
-               let divBadgeClass = "bg-gray-100 text-gray-600";
-               if (c.division.includes("EN BANC")) divBadgeClass = "bg-red-100 text-red-800 border border-red-200";
-               else if (c.division.includes("1ST")) divBadgeClass = "bg-blue-100 text-blue-800 border border-blue-200";
-               else if (c.division.includes("2ND")) divBadgeClass = "bg-teal-100 text-teal-800 border border-teal-200";
-               else if (c.division.includes("3RD")) divBadgeClass = "bg-orange-100 text-orange-800 border border-orange-200";
- 
-               // Type Color Logic
-               const isDecision = c.type.toUpperCase().includes('DECISION');
-               const typeBadgeClass = isDecision ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700';
-               
-               // Digest Button Logic
-               const digestBtnClass = digestExists ? 'bg-emerald-500 text-white shadow-md hover:bg-emerald-600' : 'bg-white text-gray-500 border border-gray-200 hover:border-[#B266FF] hover:text-[#330066]';
-               const digestIcon = digestExists ? 'check' : 'plus';
-               const digestText = digestExists ? 'View' : 'Add';
- 
-html += `
-<tr class="hover:bg-gray-200 transition-colors group border-b border-gray-50 last:border-b-0">
-    <td class="px-2 py-0.5 font-medium text-gray-400 text-[9px]">${c.no}</td>
-    <td class="px-3 py-0.5">
-        <a href="${c.url}" target="_blank" class="text-blue-700 hover:text-black font-bold text-sm block leading-tight group-hover:underline">
-            ${c.title}
-        </a>
-    </td>
-    <td class="px-3 py-0.5 text-center">
-        <span class="px-2 py-0.5 inline-flex text-[10px] font-bold uppercase rounded-md tracking-wider ${divBadgeClass}">${c.division}</span>
-    </td>
-    <td class="px-3 py-0.5 text-center text-xs text-gray-500 whitespace-nowrap font-medium">${c.date}</td>
-    <td class="px-3 py-0.5 text-center">
-        <span class="px-2 py-0.5 inline-flex text-[10px] font-bold uppercase rounded-md tracking-wider ${typeBadgeClass}">${c.type}</span>
-    </td>
-    <td class="px-3 py-0.5 text-center">
-        <button onclick="openDigestModal('${c.no}', '${c.title.replace(/'/g, "\\'")}')"
-                id="btn-digest-${c.no}"
-                class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide transition-all ${digestBtnClass}">
-            <i data-lucide="${digestIcon}" class="w-3 h-3"></i> ${digestText}
-        </button>
-    </td>
-    <td class="px-3 py-0.5 text-center">
-        <div class="flex justify-center">
-            <input type="checkbox" class="custom-checkbox w-4 h-4"
-                   onchange="updateStorage('${c.no}', 'done', this.checked)"
-                   ${caseState.done ? 'checked' : ''}>
-        </div>
-    </td>
-</tr>`;
-           });
-           
-           tbody.innerHTML = html;
-           lucide.createIcons();
-       }
- 
-       // --- SORTING ---
-       function sortTable(columnIndex, type) {
-           // Toggle direction if clicking same column
-           if (sortConfig.column === columnIndex) {
-               sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
-           } else {
-               sortConfig.column = columnIndex;
-               sortConfig.direction = 'asc';
-           }
-           renderTable();
-       }
- 
-       // --- FILTER ---
-// --- FILTER ---
-function filterTable() {
-    renderTable();
-    // Reset the "Check All" box when filtering
-    document.getElementById('checkAll').checked = false;
+// --- 2. APP STATE ---
+let allCases = [];
+let sortConfig = { column: 0, direction: 'asc' }; // default sort by No.
+const STORAGE_KEY = 'gaerlan_tracker_v1';
+
+// --- 3. STORAGE HELPERS ---
+function getStorageData() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 }
 
-// --- TOGGLE ALL ---
-function toggleAll(masterCheckbox) {
-    const isChecked = masterCheckbox.checked;
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const filterDiv = document.getElementById('filterDivision').value;
-    const filterType = document.getElementById('filterType').value;
+function updateStorage(caseId, field, value) {
+    const data = getStorageData();
+    if (!data[caseId]) data[caseId] = {};
+    data[caseId][field] = value;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    updateStats();
+}
 
-    // Filter allCases using the same logic as renderTable to get currently visible IDs
-    allCases.forEach(c => {
+// --- 4. INITIALIZATION ---
+async function init() {
+    const lines = csvData.trim().split('\n');
+    let savedData = getStorageData();
+    allCases = [];
+
+    // GITHUB PRELOAD LOGIC: Only preload if user storage is empty
+    if (Object.keys(savedData).length === 0) {
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/data.json');
+            if (response.ok) {
+                const preloadedData = await response.json();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(preloadedData));
+                savedData = preloadedData;
+                console.log("Digests preloaded from GitHub.");
+            }
+        } catch (err) {
+            console.error("Could not load preload file:", err);
+        }
+    }
+
+    // Parse CSV into objects
+    for (let i = 1; i < lines.length; i++) {
+        const row = lines[i];
+        const firstComma = row.indexOf(',');
+        const lastComma = row.lastIndexOf(',');
+        const secondLastComma = row.lastIndexOf(',', lastComma - 1);
+        const thirdLastComma = row.lastIndexOf(',', secondLastComma - 1);
+
+        if (firstComma === -1 || lastComma === -1) continue;
+
+        const no = row.substring(0, firstComma).trim();
+        const division = row.substring(thirdLastComma + 1, secondLastComma).trim();
+        const date = row.substring(secondLastComma + 1, lastComma).trim();
+        const type = row.substring(lastComma + 1).trim();
+        
+        let rawLink = row.substring(firstComma + 1, thirdLastComma).trim();
+        if (rawLink.startsWith('"') && rawLink.endsWith('"')) rawLink = rawLink.slice(1, -1);
+        
+        let url = "#", title = rawLink;
+        const match = rawLink.match(/=HYPERLINK\(""([^"]+)""\s*,\s*""([^"]+)""\)/i);
+        if (match) { url = match[1]; title = match[2]; }
+        else { title = rawLink.replace(/^=HYPERLINK\("/, '').replace(/"\)$/, ''); }
+
+        allCases.push({no, title, division, date, type, url});
+    }
+    
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    renderTable();
+    updateStats();
+}
+
+// --- 5. TABLE RENDERING ---
+function renderTable() {
+    const tbody = document.getElementById('caseTableBody');
+    if (!tbody) return;
+    const savedData = getStorageData();
+    const searchTerm = (document.getElementById('searchInput')?.value || '').toLowerCase();
+    const filterDiv = document.getElementById('filterDivision')?.value || "";
+    const filterType = document.getElementById('filterType')?.value || "";
+
+    let filteredCases = allCases.filter(c => {
         const matchesSearch = c.title.toLowerCase().includes(searchTerm) ||
                               c.no.includes(searchTerm) ||
                               c.date.toLowerCase().includes(searchTerm);
         const matchesDiv = filterDiv === "" || c.division === filterDiv;
         const matchesType = filterType === "" || c.type === filterType;
-
-        if (matchesSearch && matchesDiv && matchesType) {
-            updateStorage(c.no, 'done', isChecked);
-        }
+        return matchesSearch && matchesDiv && matchesType;
     });
 
-    renderTable(); // Refresh the UI
-} 
-       // --- STATS ---
-       function updateStats() {
-           const data = getStorageData();
-           const total = allCases.length;
-           let done = 0;
-           
-           Object.values(data).forEach(c => {
-               if(c.done) done++;
-           });
-           
-           const remaining = total - done;
-           const donePercent = total > 0 ? (done / total) * 100 : 0;
- 
-// Update Header Stats (NEW IDs)
-document.getElementById('headerDone').innerText = done;
-document.getElementById('headerRemaining').innerText = remaining;
-document.getElementById('headerPercent').innerText = `${donePercent.toFixed(1)}%`;
+    const visibleCount = document.getElementById('visibleCount');
+    if (visibleCount) visibleCount.innerText = filteredCases.length;
 
-const progressBar = document.getElementById('headerProgressBar');
-progressBar.style.width = `${donePercent}%`;
+    // Sort Logic
+    filteredCases.sort((a, b) => {
+        let valA, valB;
+        if (sortConfig.column === 0) { valA = parseInt(a.no); valB = parseInt(b.no); }
+        else if (sortConfig.column === 1) { valA = a.title.toLowerCase(); valB = b.title.toLowerCase(); }
+        else if (sortConfig.column === 2) { valA = a.division.toLowerCase(); valB = b.division.toLowerCase(); }
+        else if (sortConfig.column === 3) { valA = new Date(a.date); valB = new Date(b.date); }
+        else if (sortConfig.column === 4) { valA = a.type.toLowerCase(); valB = b.type.toLowerCase(); }
 
-// Dynamic Color Logic
-// Also removing 'bg-white' so the new colors can show through
-progressBar.classList.remove('bg-white', 'bg-red-500', 'bg-orange-500', 'bg-yellow-400', 'bg-green-500');
+        if (valA < valB) return sortConfig.direction === 'asc' ? -1 : 1;
+        if (valA > valB) return sortConfig.direction === 'asc' ? 1 : -1;
+        return 0;
+    });
 
-if (donePercent <= 25) {
-    progressBar.classList.add('bg-red-500');
-} else if (donePercent <= 50) {
-    progressBar.classList.add('bg-orange-500');
-} else if (donePercent <= 75) {
-    progressBar.classList.add('bg-yellow-400');
-} else {
-    progressBar.classList.add('bg-green-500');
+    let html = '';
+    filteredCases.forEach(c => {
+        const caseState = savedData[c.no] || {};
+        const digestExists = caseState.digest && (caseState.digest.doctrine || caseState.digest.facts || caseState.digest.issue || caseState.digest.ruling);
+        
+        let divBadgeClass = "bg-gray-100 text-gray-600";
+        if (c.division.includes("EN BANC")) divBadgeClass = "bg-red-100 text-red-800 border border-red-200";
+        else if (c.division.includes("1ST")) divBadgeClass = "bg-blue-100 text-blue-800 border border-blue-200";
+        else if (c.division.includes("2ND")) divBadgeClass = "bg-teal-100 text-teal-800 border border-teal-200";
+        else if (c.division.includes("3RD")) divBadgeClass = "bg-orange-100 text-orange-800 border border-orange-200";
+
+        const isDecision = c.type.toUpperCase().includes('DECISION');
+        const typeBadgeClass = isDecision ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700';
+        
+        const digestBtnClass = digestExists ? 'bg-emerald-500 text-white shadow-md hover:bg-emerald-600' : 'bg-white text-gray-500 border border-gray-200 hover:border-black hover:text-black';
+        const digestIcon = digestExists ? 'check' : 'plus';
+        const digestText = digestExists ? 'View' : 'Add';
+
+        html += `
+        <tr class="hover:bg-gray-200 transition-colors group border-b border-gray-50 last:border-b-0">
+            <td class="px-2 py-0.5 font-medium text-gray-400 text-[9px]">${c.no}</td>
+            <td class="px-3 py-0.5"><a href="${c.url}" target="_blank" class="text-blue-700 hover:text-black font-bold text-sm block leading-tight group-hover:underline">${c.title}</a></td>
+            <td class="px-3 py-0.5 text-center"><span class="px-2 py-0.5 inline-flex text-[10px] font-bold uppercase rounded-md tracking-wider ${divBadgeClass}">${c.division}</span></td>
+            <td class="px-3 py-0.5 text-center text-xs text-gray-500 whitespace-nowrap font-medium">${c.date}</td>
+            <td class="px-3 py-0.5 text-center"><span class="px-2 py-0.5 inline-flex text-[10px] font-bold uppercase rounded-md tracking-wider ${typeBadgeClass}">${c.type}</span></td>
+            <td class="px-3 py-0.5 text-center">
+                <button onclick="openDigestModal('${c.no}', '${c.title.replace(/'/g, "\\'")}')" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide transition-all ${digestBtnClass}">
+                    <i data-lucide="${digestIcon}" class="w-3 h-3"></i> ${digestText}
+                </button>
+            </td>
+            <td class="px-3 py-0.5 text-center"><div class="flex justify-center"><input type="checkbox" class="custom-checkbox w-4 h-4" onchange="updateStorage('${c.no}', 'done', this.checked)" ${caseState.done ? 'checked' : ''}></div></td>
+        </tr>`;
+    });
+    
+    tbody.innerHTML = html;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 }
-} // Closes updateStats 
-       // --- MODAL LOGIC ---
-       function openDigestModal(id, title) {
-           const data = getStorageData();
-           const caseData = data[id]?.digest || {};
-           
-           document.getElementById('currentCaseId').value = id;
-           document.getElementById('modalCaseTitle').innerText = title;
-           document.getElementById('noteDoctrine').value = caseData.doctrine || '';
-           document.getElementById('noteFacts').value = caseData.facts || '';
-           document.getElementById('noteIssue').value = caseData.issue || '';
-           document.getElementById('noteRuling').value = caseData.ruling || '';
-           
-           const modal = document.getElementById('digestModal');
-           modal.classList.remove('hidden');
-           modal.classList.add('flex');
-           // Animation
-           setTimeout(() => {
-               modal.firstElementChild.classList.remove('scale-95');
-               modal.firstElementChild.classList.add('scale-100');
-           }, 10);
-       }
- 
-       function closeModal() {
-           const modal = document.getElementById('digestModal');
-           modal.firstElementChild.classList.remove('scale-100');
-           modal.firstElementChild.classList.add('scale-95');
-           setTimeout(() => {
-               modal.classList.add('hidden');
-               modal.classList.remove('flex');
-           }, 300);
-       }
- 
-       function saveDigest() {
-           const id = document.getElementById('currentCaseId').value;
-           const digest = {
-               doctrine: document.getElementById('noteDoctrine').value,
-               facts: document.getElementById('noteFacts').value,
-               issue: document.getElementById('noteIssue').value,
-               ruling: document.getElementById('noteRuling').value
-           };
-           
-           updateStorage(id, 'digest', digest);
-           renderTable(); // Re-render to update the button status
-           closeModal();
-       }
- 
-       // Start
-// --- EXPORT TO WORD LOGIC ---
+
+// --- 6. UTILITIES (SORT/FILTER/TOGGLE) ---
+function sortTable(columnIndex, type) {
+    if (sortConfig.column === columnIndex) { sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc'; } 
+    else { sortConfig.column = columnIndex; sortConfig.direction = 'asc'; }
+    renderTable();
+}
+
+function filterTable() { 
+    renderTable(); 
+    if (document.getElementById('checkAll')) document.getElementById('checkAll').checked = false;
+}
+
+function toggleAll(masterCheckbox) {
+    const isChecked = masterCheckbox.checked;
+    const searchTerm = (document.getElementById('searchInput')?.value || '').toLowerCase();
+    const filterDiv = document.getElementById('filterDivision')?.value || "";
+    const filterType = document.getElementById('filterType')?.value || "";
+
+    allCases.forEach(c => {
+        const matchesSearch = c.title.toLowerCase().includes(searchTerm) || c.no.includes(searchTerm) || c.date.toLowerCase().includes(searchTerm);
+        const matchesDiv = filterDiv === "" || c.division === filterDiv;
+        const matchesType = filterType === "" || c.type === filterType;
+        if (matchesSearch && matchesDiv && matchesType) { updateStorage(c.no, 'done', isChecked); }
+    });
+    renderTable();
+}
+
+// --- 7. STATS UPDATER ---
+function updateStats() {
+    const data = getStorageData();
+    const total = allCases.length;
+    let done = 0;
+    Object.values(data).forEach(c => { if(c.done) done++; });
+    const remaining = total - done;
+    const donePercent = total > 0 ? (done / total) * 100 : 0;
+
+    const hDone = document.getElementById('headerDone');
+    const hRem = document.getElementById('headerRemaining');
+    const hPer = document.getElementById('headerPercent');
+    const hBar = document.getElementById('headerProgressBar');
+
+    if (hDone) hDone.innerText = done;
+    if (hRem) hRem.innerText = remaining;
+    if (hPer) hPer.innerText = `${donePercent.toFixed(1)}%`;
+    if (hBar) {
+        hBar.style.width = `${donePercent}%`;
+        hBar.classList.remove('bg-white', 'bg-red-500', 'bg-orange-500', 'bg-yellow-400', 'bg-green-500');
+        if (donePercent <= 25) hBar.classList.add('bg-red-500');
+        else if (donePercent <= 50) hBar.classList.add('bg-orange-500');
+        else if (donePercent <= 75) hBar.classList.add('bg-yellow-400');
+        else hBar.classList.add('bg-green-500');
+    }
+}
+
+// --- 8. MODAL LOGIC ---
+function openDigestModal(id, title) {
+    const data = getStorageData();
+    const caseData = data[id]?.digest || {};
+    document.getElementById('currentCaseId').value = id;
+    document.getElementById('modalCaseTitle').innerText = title;
+    document.getElementById('noteDoctrine').value = caseData.doctrine || '';
+    document.getElementById('noteFacts').value = caseData.facts || '';
+    document.getElementById('noteIssue').value = caseData.issue || '';
+    document.getElementById('noteRuling').value = caseData.ruling || '';
+    
+    const modal = document.getElementById('digestModal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    setTimeout(() => { modal.firstElementChild.classList.remove('scale-95'); modal.firstElementChild.classList.add('scale-100'); }, 10);
+}
+
+function closeModal() {
+    const modal = document.getElementById('digestModal');
+    if (!modal) return;
+    modal.firstElementChild.classList.remove('scale-100');
+    modal.firstElementChild.classList.add('scale-95');
+    setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+}
+
+function saveDigest() {
+    const id = document.getElementById('currentCaseId').value;
+    const digest = {
+        doctrine: document.getElementById('noteDoctrine').value,
+        facts: document.getElementById('noteFacts').value,
+        issue: document.getElementById('noteIssue').value,
+        ruling: document.getElementById('noteRuling').value
+    };
+    updateStorage(id, 'digest', digest);
+    renderTable();
+    closeModal();
+}
+
+// --- 9. EXPORT TO WORD LOGIC ---
 async function generateDocx(casesToExport, fileName) {
+    if (typeof docx === 'undefined') return;
     const { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, PageBreak } = docx;
     const children = [];
 
     casesToExport.forEach((c, index) => {
         const data = getStorageData()[c.no]?.digest || null;
-
-        // Header Section
         children.push(new Paragraph({ text: c.title.toUpperCase(), heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER }));
         children.push(new Paragraph({ text: `${c.date} | ${c.division}`, alignment: AlignmentType.CENTER, spacing: { after: 400 } }));
 
@@ -570,38 +509,27 @@ async function generateDocx(casesToExport, fileName) {
 
         sections.forEach(s => {
             children.push(new Paragraph({ children: [new TextRun({ text: s.label, bold: true, underline: {} })], spacing: { before: 200 } }));
-            children.push(new Paragraph({ 
-                text: s.text ? `- ${s.text}` : "No digest yet", 
-                alignment: AlignmentType.JUSTIFIED,
-                spacing: { after: 200 }
-            }));
+            children.push(new Paragraph({ text: s.text ? `- ${s.text}` : "No digest yet", alignment: AlignmentType.JUSTIFIED, spacing: { after: 200 } }));
         });
-
-        // Add page break if not the last case
-        if (index < casesToExport.length - 1) {
-            children.push(new Paragraph({ children: [new PageBreak()] }));
-        }
+        if (index < casesToExport.length - 1) { children.push(new Paragraph({ children: [new PageBreak()] })); }
     });
 
     const doc = new Document({ sections: [{ properties: {}, children: children }] });
-    Packer.toBlob(doc).then(blob => saveAs(blob, fileName));
+    Packer.toBlob(doc).then(blob => { if (typeof saveAs !== 'undefined') saveAs(blob, fileName); });
 }
 
 function exportSingleDigest() {
     const id = document.getElementById('currentCaseId').value;
     const caseObj = allCases.find(c => c.no === id);
-    // Format: CaseTitle_Date.docx (removing special characters for safety)
     const safeTitle = caseObj.title.replace(/[^a-z0-9]/gi, '_').substring(0, 50);
     const safeDate = caseObj.date.replace(/[^a-z0-9]/gi, '_');
     generateDocx([caseObj], `${safeTitle}_${safeDate}.docx`);
 }
 
-function exportAllDigests() {
-    // Fixed name for the bulk export
-    generateDocx(allCases, "2026_Gaerlan_Cases.docx");
-}
-// --- IMPORT LOGIC (JSON Backup) ---
-function triggerImport() { document.getElementById('importInput').click(); }
+function exportAllDigests() { generateDocx(allCases, "2026_Gaerlan_Cases.docx"); }
+
+// --- 10. IMPORT LOGIC ---
+function triggerImport() { document.getElementById('importInput')?.click(); }
 
 function importDigests(event) {
     const file = event.target.files[0];
@@ -612,17 +540,16 @@ function importDigests(event) {
             const importedData = JSON.parse(e.target.result);
             const currentData = getStorageData();
             const mergedData = { ...currentData, ...importedData };
-localStorage.setItem(STORAGE_KEY, JSON.stringify(mergedData));
-alert("Digests imported successfully!");
-// Refresh the modal content if it's open
-const openId = document.getElementById('currentCaseId').value;
-if(openId) openDigestModal(openId, document.getElementById('modalCaseTitle').innerText); 
-renderTable();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(mergedData));
+            alert("Digests imported successfully!");
+            const openId = document.getElementById('currentCaseId')?.value;
+            if(openId) openDigestModal(openId, document.getElementById('modalCaseTitle').innerText); 
+            renderTable();
             updateStats();
         } catch (err) { alert("Invalid file format."); }
     };
     reader.readAsText(file);
 }
 
+// --- START ---
 init();
- 
