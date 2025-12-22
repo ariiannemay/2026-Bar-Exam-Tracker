@@ -933,11 +933,22 @@ if (userPassword === SECRET_PASSWORD) {
                          throw new Error("Invalid file structure.");
                     }
                     
+/* --- START EDITING HERE --- */
                     let subjectsImported = 0;
                     let calendarRefreshed = false;
 
-                    // 1. Import Subject Data
-/* --- START EDITING HERE --- */
+                    // ADDED: Logic to loop through and import Subject Progress
+                    if (importedData.subjects) {
+                        Object.keys(importedData.subjects).forEach(key => {
+                            if (ALL_SUBJECT_STORAGE_KEYS.includes(key)) {
+                                localStorage.setItem(key, JSON.stringify(importedData.subjects[key]));
+                                subjectsImported++;
+                            }
+                        });
+                    }
+
+                    // 2. Import Calendar and Notepad data
+/* --- END EDITING HERE --- */
                     // 4. Import Dates
                     if (importedData.dates) {
                         Object.keys(importedData.dates).forEach(key => {
@@ -948,15 +959,17 @@ if (userPassword === SECRET_PASSWORD) {
                     }
 
                     // ADDED: Import Case Tracker Data
+/* --- START EDITING HERE --- */
+                    // ADDED: Import Case Tracker Data
                     if (importedData.case_tracker_data) {
                         localStorage.setItem('gaerlan_tracker_v1', importedData.case_tracker_data);
-                        // Refresh the Case Tracker Table if it exists
                         if (typeof renderTable === 'function') {
                             renderTable();
-                            updateStats();
+                            // Ensure this matches the function name in case_tracker.js
+                            if (typeof updateStatsCount === 'function') updateStatsCount();
                         }
                     }
-
+/* --- END EDITING HERE --- */
 
                     // 5. Update UI: Re-render everything
                     COUNTDOWN_DATA.forEach(data => {
