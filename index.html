@@ -874,6 +874,7 @@ if (userPassword === SECRET_PASSWORD) {
 
         // --- GLOBAL EXPORT/IMPORT FUNCTIONS (UPDATED) ---
 
+/* --- START EDITING HERE --- */
         function exportAllData() {
             const data = {};
             
@@ -904,8 +905,12 @@ if (userPassword === SECRET_PASSWORD) {
                 data.notepad_content = localStorage.getItem(window.CALENDAR_APP.NOTEPAD_CONTENT_KEY);
             }
 
+            // ADDED: Gather Case Tracker Data
+            data.case_tracker_data = localStorage.getItem('gaerlan_tracker_v1');
 
             const jsonString = JSON.stringify(data, null, 2);
+/* --- END EDITING HERE --- */
+
             downloadFile(jsonString, 'comprehensive-review-tracker-backup.json', 'application/json');
             showMessageModal("Export Complete", "<p class='text-green-600'>All data (progress, dates, name, calendar, and notes) has been downloaded as **comprehensive-review-tracker-backup.json**</p>");
         }
@@ -932,36 +937,7 @@ if (userPassword === SECRET_PASSWORD) {
                     let calendarRefreshed = false;
 
                     // 1. Import Subject Data
-                    if (importedData.subjects) {
-                        Object.keys(importedData.subjects).forEach(key => {
-                            if (ALL_SUBJECT_STORAGE_KEYS.includes(key)) {
-                                localStorage.setItem(key, JSON.stringify(importedData.subjects[key]));
-                                subjectsImported++;
-                            }
-                        });
-                    }
-                    
-                    // 2. Import Calendar and Notepad data
-                    if (window.CALENDAR_APP) {
-                        if (importedData.calendar_events) {
-                             localStorage.setItem(window.CALENDAR_APP.CALENDAR_EVENTS_KEY, importedData.calendar_events);
-                             calendarRefreshed = true;
-                        }
-                        if (importedData.notepad_content) {
-                             localStorage.setItem(window.CALENDAR_APP.NOTEPAD_CONTENT_KEY, importedData.notepad_content);
-                             window.CALENDAR_APP.setNotes(importedData.notepad_content);
-                        }
-                    }
-
-                    // 3. Import User Name
-                    if (importedData.user_name) {
-                        localStorage.setItem(USER_NAME_KEY, importedData.user_name);
-                        loadUserName();
-                    } else {
-                        localStorage.removeItem(USER_NAME_KEY);
-                        loadUserName();
-                    }
-
+/* --- START EDITING HERE --- */
                     // 4. Import Dates
                     if (importedData.dates) {
                         Object.keys(importedData.dates).forEach(key => {
@@ -970,6 +946,17 @@ if (userPassword === SECRET_PASSWORD) {
                             }
                         });
                     }
+
+                    // ADDED: Import Case Tracker Data
+                    if (importedData.case_tracker_data) {
+                        localStorage.setItem('gaerlan_tracker_v1', importedData.case_tracker_data);
+                        // Refresh the Case Tracker Table if it exists
+                        if (typeof renderTable === 'function') {
+                            renderTable();
+                            updateStats();
+                        }
+                    }
+
 
                     // 5. Update UI: Re-render everything
                     COUNTDOWN_DATA.forEach(data => {
