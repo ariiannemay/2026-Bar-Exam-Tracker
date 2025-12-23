@@ -354,8 +354,6 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
 .animated-hourglass-svg:hover { /* Optional: pause on hover */
     animation-play-state: paused;
 }
-
-
     </style>
     <!-- Vercel Web Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
@@ -1608,16 +1606,6 @@ function saveModal(){
         function closeCustomAlert() {
             $('#custom-alert-modal').addClass('hidden').css('display', 'none');
         }
-
-        function getEventsFromLocalStorage() {
-            try {
-                const data = localStorage.getItem(CALENDAR_EVENTS_KEY);
-                return data ? JSON.parse(data) : [];
-            } catch (e) {
-                console.error("ERROR READING CALENDAR FROM LOCAL STORAGE:", e);
-                return [];
-            }
-        }
         function saveEventsToLocalStorage(events) {
             try {
                 localStorage.setItem(CALENDAR_EVENTS_KEY, JSON.stringify(events));
@@ -1871,6 +1859,56 @@ else if (isSyllabusTask) {
                 $(targetButton).addClass('fc-state-active');
             }
         }
+
+// --- CALENDAR PLACEHOLDER SAMPLES & COLOR FIX ---
+function getEventsFromLocalStorage() {
+    try {
+        const data = localStorage.getItem('review_calendar_events');
+        let events = data ? JSON.parse(data) : [];
+
+        if (events.length === 0) {
+            events = [
+                {
+                    id: 'sample-poli-1',
+                    title: 'POLITICAL LAW – FIRST TOPIC (SAMPLE)',
+                    start: '2026-01-04',
+                    end: '2026-01-10',
+                    allDay: true,
+                    subjectKey: 'poli',
+                    topicId: null,
+                    description: 'Sample multi-day Political Law topic – will appear in brown!'
+                },
+                {
+                    id: 'sample-rest-1',
+                    title: 'REST DAY (SAMPLE)',
+                    start: '2026-01-01',
+                    end: '2026-01-03',
+                    allDay: true,
+                    subjectKey: null,
+                    className: 'custom-rest-event',
+                    backgroundColor: '#D4EDDA',
+                    borderColor: '#C3E6CB',
+                    textColor: '#155724',
+                    description: 'Sample rest period – light green!'
+                }
+            ];
+
+            localStorage.setItem('review_calendar_events', JSON.stringify(events));
+        }
+
+        return events;
+    } catch (e) {
+        console.error("ERROR READING CALENDAR FROM LOCAL STORAGE:", e);
+        return [];
+    }
+}
+
+// Force green on custom rest event (overrides default blue)
+const colorFixStyle = document.createElement('style');
+colorFixStyle.innerHTML = `
+`;
+document.head.appendChild(colorFixStyle);
+// --- END FIX ---
 
         function initializeCalendar() {
             calendarInstance = $('#calendar').fullCalendar({
@@ -3446,6 +3484,7 @@ const qStyle = document.createElement('style');
 qStyle.innerHTML = "#quoteText { transition: opacity 0.2s ease-in-out; }";
 document.head.appendChild(qStyle);
 // END EDITING HERE
+
 init();
 
     </script>
