@@ -11,8 +11,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- ADDED: Calendar Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,7 +36,11 @@
         }
         /* Calendar Stylesheet START */
         /* Minified/Consolidated Styles */
-        .calendar-wrapper{max-width:1280px;margin:0 auto;padding:0 1rem;margin-top:0;padding-bottom:1.9rem;overflow-x:hidden}.calendar-wrapper.mx-auto{max-width:1280px;padding:0}.calendar-wrapper.p-0{padding:0}#calendar-grid-container{display:grid;grid-template-columns:3fr 1fr;gap:1.5rem;align-items:start;padding:.25rem .5rem .5rem .5rem}#calendar-details{border-radius:.75rem;overflow:hidden}#calendar-details summary{background-color:var(--color-primary-dark);color:#fff;border-bottom:3px solid var(--color-secondary-gold);padding:.75rem 1.5rem;font-size:1.125rem;font-weight:700}.toggle-indicator{transition:transform .2s}#notepad-sidebar{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1.5rem;display:flex;flex-direction:column;border:1px solid #e5e7eb;grid-column:2}#calendar-details[data-calendar-ready=true] #notepad-sidebar{min-height:var(--calendar-height,450px)}#notepad-sidebar h3{background-color:var(--color-primary-dark);color:#fff;border-radius:.375rem .375rem 0 0;padding:.4rem .75rem;margin:calc(-1.5rem - 1px) -1.5rem .75rem -1.5rem;text-transform:uppercase;font-weight:800;font-size:.9rem;border-bottom:3px solid var(--color-secondary-gold)}#review-notes{width:100%;flex-grow:1;padding:1.5rem 1rem 1rem 1rem;font-size:.95rem;border:none;border-radius:.5rem;box-shadow:inset 0 1px 4px rgba(0,0,0,.1);resize:none;font-family:'Dancing Script',cursive;font-weight:600;line-height:1.95;color:#333;overflow-y:auto;background-color:#f7f7f7;background-image: url('https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/blank-cream-notepaper.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}#review-notes::placeholder{font-family:'Dancing Script',cursive;font-weight:700;color:#b33a3a;opacity:.8;transform:translateY(-5px);display:block}#calendar-content{grid-column:1;padding:0}#calendar-card{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:0}.fc-toolbar{padding:.1rem .75rem;background-color:var(--color-primary-dark);margin-bottom:0;border:0 solid var(--color-secondary-gold);color:#fff;border-radius:.5rem;display:flex;align-items:center;font-size:.85rem}#customMonthTitle{color:#fff;font-weight:800;text-transform:uppercase;font-size:1.4em;padding:.3em .6em;margin-right:.5rem;font-family:inherit}.fc-widget-header{background-color:var(--color-primary-dark) !important;color:#fff !important;text-transform:uppercase !important;font-weight:700 !important;padding:.05rem 0;height:100%}.fc-view-container .fc-view>table{border-top:none !important}.fc-toolbar + div{border-top:none !important}.fc-head{border-top:none !important;border-bottom:3px solid var(--color-secondary-gold) !important}#calendar{padding:0 !important}.fc-view-container{border-top:none !important}.fc-unthemed,.fc-unthemed table{border-top:none !important;border-color:transparent !important}.fc-unthemed td,.fc-unthemed th{border-color:#e5e7eb}#dateJump{display:none !important;visibility:hidden !important;position:absolute;top:0;left:0}#dateJump.temp-visible{display:block !important;visibility:visible !important;position:fixed !important;z-index:9999;width:200px;height:40px;opacity:.01;pointer-events:auto}.fc-toolbar .fc-right{flex-grow:1;display:flex;justify-content:flex-end;margin:0 !important;width:auto !important}.fc-toolbar .fc-button-group:last-child{margin-left:.5rem}.fc-toolbar .fc-button,#jumpToDateButton{padding:.3em .6em !important;line-height:1.2 !important;font-size:.75rem !important;background-color:#fff !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important;box-shadow:none;text-transform:uppercase;font-weight:700;border-radius:.25rem;margin-left:.5rem}#jumpToDateButton{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-button:hover:not(.fc-state-active),#jumpToDateButton:hover{background-color:#f0f0f0 !important;color:var(--color-primary-dark) !important}#jumpToDateButton:hover{filter:brightness(.9)}.fc-toolbar .fc-state-active,.fc-toolbar .fc-state-active:hover{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-today-button.fc-state-active{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important}.fc-day-number{display:inline-block;background-color:transparent;color:#4b5563;font-weight:700;padding:2px 4px;margin-right:0;float:right;line-height:1.2;font-size:.9rem}.fc-other-month .fc-day-number{color:#9ca3af;background-color:transparent}.fc-event{border-radius:.25rem !important;border:1px solid rgba(0,0,0,.1);font-size:.6rem;font-weight:600;padding:2px 5px;white-space:normal;text-transform:uppercase}.fc-event-title-wrap{display:flex;align-items:center}.event-status-icon{font-size:.8rem;margin-right:.5rem;width:1.25rem;text-align:center}.event-icon-book{color:#fff}.modal{z-index:1000;background-color:rgba(0,0,0,.75)}.modal-content{background-color:#fff !important;padding:1.5rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.5);min-width:300px;width:90%;max-width:500px}.syllabus-select-wrapper select{min-height:200px}
+        .calendar-wrapper{max-width:1280px;margin:0 auto;padding:0 1rem;margin-top:0;padding-bottom:1.9rem;overflow-x:hidden}.calendar-wrapper.mx-auto{max-width:1280px;padding:0}.calendar-wrapper.p-0{padding:0}#calendar-grid-container{display:grid;grid-template-columns:3fr 1fr;gap:1.5rem;align-items:start;padding:.25rem .5rem .5rem .5rem}#calendar-details{border-radius:.75rem;overflow:hidden}#calendar-details summary{background-color:var(--color-primary-dark);color:#fff;border-bottom:3px solid var(--color-secondary-gold);padding:.75rem 1.5rem;font-size:1.125rem;font-weight:700}.toggle-indicator{transition:transform .2s}#notepad-sidebar{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1.5rem;display:flex;flex-direction:column;border:1px solid #e5e7eb;grid-column:2}#calendar-details[data-calendar-ready=true] #notepad-sidebar{min-height:var(--calendar-height,450px)}#notepad-sidebar h3{background-color:var(--color-primary-dark);color:#fff;border-radius:.375rem .375rem 0 0;padding:.4rem .75rem;margin:calc(-1.5rem - 1px) -1.5rem .75rem -1.5rem;text-transform:uppercase;font-weight:800;font-size:.9rem;border-bottom:3px solid var(--color-secondary-gold)}#review-notes{width:100%;flex-grow:1;padding:1.5rem 1rem 1rem 1rem;font-size:.95rem;border:none;border-radius:.5rem;box-shadow:inset 0 1px 4px rgba(0,0,0,.1);resize:none;font-family:'Dancing Script',cursive;font-weight:600;line-height:1.95;color:#333;overflow-y:auto;background-color:#f7f7f7;background-image: url('https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/blank-cream-notepaper.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}#review-notes::placeholder{font-family:'Dancing Script',cursive;font-weight:700;color:#b33a3a;opacity:.8;transform:translateY(-5px);display:block}#calendar-content{grid-column:1;padding:0}#calendar-card{background-color:#fff;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:0}.fc-toolbar{padding:.1rem .75rem;background-color:var(--color-primary-dark);margin-bottom:0;border:0 solid var(--color-secondary-gold);color:#fff;border-radius:.5rem;display:flex;align-items:center;font-size:.85rem}#customMonthTitle{color:#fff;font-weight:800;text-transform:uppercase;font-size:1.4em;padding:.3em .6em;margin-right:.5rem;font-family:inherit}
+
+.fc-widget-header{background-color:var(--color-primary-dark) !important;color:#fff !important;text-transform:uppercase !important;font-weight:700 !important;padding: 0 !important;height:100%}
+
+.fc-view-container .fc-view>table{border-top:none !important}.fc-toolbar + div{border-top:none !important}.fc-head{border-top:none !important;border-bottom:3px solid var(--color-secondary-gold) !important}#calendar{padding:0 !important}.fc-view-container{border-top:none !important}.fc-unthemed,.fc-unthemed table{border-top:none !important;border-color:transparent !important}.fc-unthemed td,.fc-unthemed th{border-color:#e5e7eb}#dateJump{display:none !important;visibility:hidden !important;position:absolute;top:0;left:0}#dateJump.temp-visible{display:block !important;visibility:visible !important;position:fixed !important;z-index:9999;width:200px;height:40px;opacity:.01;pointer-events:auto}.fc-toolbar .fc-right{flex-grow:1;display:flex;justify-content:flex-end;margin:0 !important;width:auto !important}.fc-toolbar .fc-button-group:last-child{margin-left:.5rem}.fc-toolbar .fc-button,#jumpToDateButton{padding:.3em .6em !important;line-height:1.2 !important;font-size:.75rem !important;background-color:#fff !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important;box-shadow:none;text-transform:uppercase;font-weight:700;border-radius:.25rem;margin-left:.5rem}#jumpToDateButton{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-button:hover:not(.fc-state-active),#jumpToDateButton:hover{background-color:#f0f0f0 !important;color:var(--color-primary-dark) !important}#jumpToDateButton:hover{filter:brightness(.9)}.fc-toolbar .fc-state-active,.fc-toolbar .fc-state-active:hover{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important;border-color:var(--color-primary-dark) !important}.fc-toolbar .fc-today-button.fc-state-active{background-color:var(--color-secondary-gold) !important;color:var(--color-primary-dark) !important}.fc-day-number{display:inline-block;background-color:transparent;color:#4b5563;font-weight:700;padding:2px 4px;margin-right:0;float:right;line-height:1.2;font-size:.9rem}.fc-other-month .fc-day-number{color:#9ca3af;background-color:transparent}.fc-event{border-radius:.25rem !important;border:1px solid rgba(0,0,0,.1);font-size:.6rem;font-weight:600;padding:2px 5px;white-space:normal;text-transform:uppercase}.fc-event-title-wrap{display:flex;align-items:center}.event-status-icon{font-size:.8rem;margin-right:.5rem;width:1.25rem;text-align:center}.event-icon-book{color:#fff}.modal{z-index:1000;background-color:rgba(0,0,0,.75)}.modal-content{background-color:#fff !important;padding:1.5rem;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.5);min-width:300px;width:90%;max-width:500px}.syllabus-select-wrapper select{min-height:200px}
         /* Calendar Stylesheet END */
 
         /* -------------------------------------------------------------------------- */
@@ -53,11 +57,11 @@
         .header-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: .1em; }
         .header-bg { background-color: #330066; border-bottom: 5px solid #B266FF; }
         .card-header-bg { background-color: #330066; }
-        .time-value { font-size: 1.75rem; font-weight: 900; line-height: 1; color: #1a202c; }
-        .time-label { font-size: .875rem; font-weight: 700; color: #4a5568; text-transform: uppercase; }
+        .time-value { font-size: 1.5rem; font-weight: 900; line-height: 1; color: #1a202c; }
+        .time-label { font-size: .5rem; font-weight: 700; color: #4a5568; text-transform: uppercase; }
         .date-display-wrapper { display: inline-block; padding-bottom: 0; cursor: pointer; transition: color .2s; }
         .date-display-wrapper:hover .date-text { color: #1d4ed8; }
-        .date-text { font-family: 'Bebas Neue', sans-serif; font-size: 2.25rem; font-weight: 800; color: #000000; text-transform: uppercase; letter-spacing: .15em; line-height: 1; }
+        .date-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.75rem; font-weight: 800; color: #000000; text-transform: uppercase; letter-spacing: .15em; line-height: 1; }
         .today-date-text { font-size: 0.9rem; white-space: nowrap; font-weight: 700; line-height: 1; }
         .dashboard-footer-text { font-size: 0.65rem; margin-top: 0.5rem; }
         .text-miss { color: #000000; }
@@ -82,7 +86,16 @@
         
         #overall-dashboard { background-color: transparent; box-shadow: none; border: none; padding: 0; }
         .dashboard-container { display: flex; flex-wrap: wrap; padding: 0; }
-        .chart-panel { width: 100%; padding: 0.5rem 0.3rem; border-bottom: 1px solid #e5e7eb; background-color: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+
+.chart-panel { 
+    width: 100%; 
+    padding: 0 0.3rem; 
+    border-bottom: 1px solid #e5e7eb; 
+    background-color: #fff; 
+    border-radius: 0.75rem; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+}
+
         .schedule-panel { width: 100%; padding: 0.5rem 0.3rem; background-color: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
         
         @media (min-width: 1024px) {
@@ -101,7 +114,7 @@
         .metric-pie-side .metric-value { font-size: 1rem; font-weight: 900; }
         
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
-        .schedule-table th, .schedule-table td { padding: 0.3rem 0.5rem; vertical-align: middle; }
+        .schedule-table th, .schedule-table td { padding: 0.1rem 0.3rem; vertical-align: middle; }
         .schedule-header th { background-color: #330066; color: #FFFFFF; font-weight: 700; text-transform: uppercase; border: 2px solid #B266FF; font-size: 0.75rem; }
         .subject-cell { font-weight: 600; color: white; padding: 0.4rem; text-align: center; border-radius: 0.5rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); font-size: 0.7rem; text-transform: uppercase; }
         .progress-bar-sparkline { width: 100%; height: 0.8rem; background-color: #e5e7eb; border-radius: 9999px; overflow: hidden; box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1); padding: 2px; }
@@ -310,6 +323,39 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
     padding-bottom: 2px;
     margin-bottom: 8px;
 }
+
+.animated-hourglass-svg {
+    animation: flip 3s infinite linear; /* Flip every 3 seconds */
+    transform-origin: center;
+}
+
+@keyframes flip {
+    0% { transform: rotate(0deg); }
+    45% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    95% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Flowing sand effect */
+.sand {
+    animation: flow 8s infinite linear;
+}
+
+@keyframes flow {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; } /* Sand "disappears" during flip */
+    95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* When flipped, reverse the look */
+.animated-hourglass-svg:hover { /* Optional: pause on hover */
+    animation-play-state: paused;
+}
+
+
     </style>
     <!-- Vercel Web Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
@@ -347,12 +393,21 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
             <!-- 2. COUNTDOWN PANELS (Hourglass color fixed to inherited white) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div id="card-day-1" class="bg-white rounded-xl shadow-lg border border-gray-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-lg font-bold text-center border-b-4 border-custom-yellow uppercase">
-                        <i data-lucide="hourglass" class="w-6 h-6 mr-2"></i>BAR EXAM DAY 1<i data-lucide="hourglass" class="w-6 h-6 ml-2"></i>
+                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-sm font-bold text-center border-b-4 border-custom-yellow uppercase">
+                        <svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg>BAR EXAM DAY 1<svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg>
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-1" class="date-display-wrapper" data-target-date="2026-09-06"><span class="date-text"></span></span>
+<!-- Day 1 -->
+<span id="target-date-display-1" class="date-display-wrapper cursor-pointer relative inline-block">
+    <input type="date" id="date-picker-1" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+    <span class="date-text pointer-events-none"></span>
+</span>
+
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-1" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -363,12 +418,21 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
                     </div>
                 </div>
                 <div id="card-day-2" class="bg-white rounded-xl shadow-lg border border-gray-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-lg font-bold text-center border-b-4 border-custom-yellow uppercase">
-                        <i data-lucide="hourglass" class="w-6 h-6 mr-2"></i>BAR EXAM DAY 2<i data-lucide="hourglass" class="w-6 h-6 ml-2"></i>
+                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-sm font-bold text-center border-b-4 border-custom-yellow uppercase">
+                        <svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg></i>BAR EXAM DAY 2<svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg>
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-2" class="date-display-wrapper" data-target-date="2026-09-09"><span class="date-text"></span></span>
+<!-- Day 2 -->
+<span id="target-date-display-2" class="date-display-wrapper cursor-pointer relative inline-block">
+    <input type="date" id="date-picker-2" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+    <span class="date-text pointer-events-none"></span>
+</span>
+
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-2" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -379,12 +443,21 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
                     </div>
                 </div>
                 <div id="card-day-3" class="bg-white rounded-xl shadow-lg border border-gray-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-lg font-bold text-center border-b-4 border-custom-yellow uppercase">
-                        <i data-lucide="hourglass" class="w-6 h-6 mr-2"></i>BAR EXAM DAY 3<i data-lucide="hourglass" class="w-6 h-6 ml-2"></i>
+                    <div class="flex items-center justify-between card-header-bg text-white p-2 text-sm font-bold text-center border-b-4 border-custom-yellow uppercase">
+                        <svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg></i>BAR EXAM DAY 3<svg class="animated-hourglass-svg w-5 h-5 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">    <!-- Frame -->    <path d="M20 10 H80 V20 H70 L50 40 L30 20 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <path d="M20 90 H80 V80 H70 L50 60 L30 80 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>    <line x1="50" y1="40" x2="50" y2="60" stroke="currentColor" stroke-width="4"/>
+    <!-- Top sand (flows down) -->     <path class="sand top-sand" d="M30 20 L50 35 L70 20 Z" fill="#B266FF"/>    
+    <!-- Bottom sand (builds up) -->    <path class="sand bottom-sand" d="M30 80 L50 65 L70 80 Z" fill="#B266FF"/></svg>
                     </div>
                     <div class="p-2 text-center">
                         <div class="mb-2 flex justify-center items-center">
-                            <span id="target-date-display-3" class="date-display-wrapper" data-target-date="2026-09-13"><span class="date-text"></span></span>
+<!-- Day 3 -->
+<span id="target-date-display-3" class="date-display-wrapper cursor-pointer relative inline-block">
+    <input type="date" id="date-picker-3" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+    <span class="date-text pointer-events-none"></span>
+</span>
+
                         </div>
                         <div class="grid grid-cols-4 py-2 border-y-2 border-dashed border-gray-300">
                             <div class="flex flex-col"><span id="days-3" class="time-value">000</span><span class="time-label">Days</span></div>
@@ -397,33 +470,26 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
             </div>
 
             <!-- 3. Overall Progress (DASHBOARD) - Floating Effect -->
-            <div id="overall-dashboard" class="mt-4 p-0">
+            <div id="overall-dashboard" class="mt-2 p-0">
                 <div class="dashboard-container">
                     
                     <!-- LEFT SIDE: CHART & METRICS - Aligns with Day 1 Card -->
-                    <div class="chart-panel">
-                        
-                        <div class="header-bg p-1.5 rounded-lg mb-2 text-center header-font flex flex-col items-center justify-center border-b-2 border-custom-yellow">
-                            <span id="today-date-display" class="text-white today-date-text block font-extrabold" style="text-shadow: none;"></span>
-                        </div>
-                        
-                        <!-- NEW: Welcome/Name Input -->
-                        <div class="flex flex-col items-center mb-2">
-                            <input type="text" id="user-name-input" placeholder="Input your name here..." 
-                                   class="w-full text-center text-xl font-bold header-font border-b border-gray-300 
-                                          focus:border-blue-500 outline-none p-1 bg-transparent text-gray-800"
-                                   maxlength="30">
-                        </div>
+<div class="chart-panel py-1.5">
+    
+    <div class="header-bg p-0.5 rounded-lg mb-1 text-center header-font flex flex-col items-center justify-center border-b-2 border-custom-yellow">
+        <span id="today-date-display" class="text-white today-date-text block font-extrabold" style="text-shadow: none;"></span>
+    </div>
+    
+    <div class="flex flex-col items-center mb-1"> <input type="text" id="user-name-input" placeholder="Input your name here..." 
+               class="w-full text-center text-xl font-bold header-font border-b border-gray-300 
+                      focus:border-blue-500 outline-none p-0 bg-transparent text-gray-800" 
+               maxlength="30"> </div>
 
-                        <!-- Review Progress Title -->
-                        <h3 class="text-xl font-extrabold header-font tracking-wider text-chart-title text-center mt-2 mb-2">YOUR REVIEW PROGRESS</h3>
-                        
-                        <!-- Chart Area (Reduced size) -->
-                        <div class="pie-chart-wrapper">
-                            <div id="global-pie-chart" class="relative" style="width: 180px; height: 180px;">
-                                <!-- SVG chart will be dynamically injected here -->
-                            </div>
-                            
+    <h3 class="text-xl font-extrabold header-font tracking-wider text-chart-title text-center mt-1 mb-1">YOUR REVIEW PROGRESS</h3>
+    
+    <div class="pie-chart-wrapper" style="margin-top: 0.1rem; margin-bottom: 0.1rem;">
+        <div id="global-pie-chart" class="relative" style="width: 160px; height: 160px;">
+            </div>                            
                             <!-- Done Metric (Left of Pie) -->
                             <div class="metric-pie-side left">
                                 <span id="global-progress-done" class="text-chart-done metric-value">0.0%</span>
@@ -432,13 +498,25 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
                             </div>
 
                             <!-- To Read Metric (Right of Pie, Red) -->
-                            <div class="metric-pie-side right">
+<div class="metric-pie-side right">
                                 <span id="global-progress-toread" class="text-chart-toread metric-value">0.0%</span>
                                 <span class="text-chart-toread block leading-tight">TO-READ</span>
                                 <span class="text-gray-600 font-normal block leading-tight"><span id="global-total-toread-count">0</span> TOPICS</span>
                             </div>
                         </div>
-                        
+
+                        <div class="mt-4 px-4 py-2 bg-gray-50 border border-dashed border-gray-300 rounded-lg shadow-inner">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-[10px] font-black text-[#330066] tracking-tighter flex items-center">
+                                    <i data-lucide="pen-tool" class="w-3 h-3 mr-1"></i> GAERLAN PENNED CASES
+                                </span>
+                                <span id="casePercentText" class="text-[10px] font-black text-gray-500">0.0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                                <div id="caseProgressBar" class="h-full bg-black transition-all duration-700" style="width: 0%"></div>
+                            </div>
+                            <div class="text-[7px] text-center mt-1 text-gray-400 font-bold uppercase tracking-widest" id="caseCountText">0/0 CASES READ</div>
+                        </div>
                     </div>
 
                     <!-- Spacer Column -->
@@ -818,7 +896,7 @@ if (userPassword) {
                                 </div>
                                 <textarea 
                                     id="review-notes" 
-                                    placeholder="Start writing quick notes here... Click on any day in the calendar to mark an event or schedule a review topic."
+placeholder="IN RE: BAR EXAM 2026&#10;RE: MANIFESTATION OF PASSING GRADE&#10;&#10;TO WHOM IT MAY CONCERN:&#10;&#10;COMES NOW the examinee, with all the hope, faith, and caffeine in her soul, respectfully manifests:&#10;- That she has endured three years of law school,&#10;- That she has reviewed all doctrines, mnemonics, and bar QAs,&#10;- That she has wrestled with codals, annotated books, and reviewers,&#10;- That she has whispered “please, Lord” to every 5-point question,&#10;- And that she has earned the right to see her name on the list of passers.&#10;&#10;WHEREFORE, it is most respectfully prayed that the undersigned be awarded a passing comprehensive exam score, no less than 75%, more preferably 85%+, with grace, confidence, and faith (and maybe just a little extra mercy from the examiners).&#10;&#10;RESPECTFULLY SUBMITTED,&#10;&#10;This ___ day of _____, in _______, while half-asleep but full of hope."
                                     oninput="window.CALENDAR_APP.saveNotes()"
                                     style="font-family: 'Dancing Script', cursive; font-weight: 600; line-height: 1.95; padding: 1.5rem 1.0rem 1.0rem 1.0rem; flex-grow: 1; resize: none;"
                                 ></textarea>
@@ -938,6 +1016,116 @@ if (userPassword) {
             { id: 6, dateId: 3, day: 'SUNDAY', subject: 'Remedial Law, Legal Ethics, & Legal Forms', weight: '25%', subjectName: 'rem' }
         ];
 
+        function updateScheduleTable() {
+            const tableBody = document.getElementById('schedule-table-body');
+            if (!tableBody) return;
+
+            let html = '';
+            let lastDateId = null;
+            
+            // 🚨 MODIFIED: Updated threshold from 3 to 4
+            const DONE_THRESHOLD = 4;
+
+            SCHEDULE_DATA.forEach((item, index) => {
+                const countdownData = COUNTDOWN_DATA.find(d => d.id === item.dateId);
+                const dateString = countdownData ? countdownData.targetDate : 'N/A';
+                
+                let dayOfWeek = item.day;
+                let displayDate = dateString;
+                if (dateString !== 'N/A') {
+                    const dateObj = new Date(dateString + 'T00:00:00Z');
+                    if (!isNaN(dateObj)) {
+                        dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
+                        displayDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                    }
+                }
+                
+                const subjectLogic = SUBJECT_LOGIC_MAP[item.subjectName];
+                
+                let progressPercent = '0.0';
+                let progressFraction = 0;
+                
+                if (subjectLogic) {
+                    // CRITICAL: This pulls the Syllabus data from the EXTERNAL JS file via SUBJECT_LOGIC_MAP
+                    const progress = subjectLogic.getProgress();
+                    const syllabusData = subjectLogic.SYLLABUS_DATA;
+                    const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
+                    const currentSubjectTrackable = mainTopics.length;
+                    let currentSubjectDone = 0;
+
+                    mainTopics.forEach(topic => {
+                        const topicProgress = progress[topic.id] || {};
+                        const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
+                        if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
+                            currentSubjectDone++;
+                        }
+                    });
+                    progressFraction = currentSubjectTrackable > 0 ? (currentSubjectDone / currentSubjectTrackable) : 0;
+                    progressPercent = (progressFraction * 100).toFixed(1);
+                }
+                
+                let progressClass;
+                if (progressFraction <= 0.25) { progressClass = 'bg-progress-red'; } 
+                else if (progressFraction <= 0.5) { progressClass = 'bg-progress-orange'; } 
+                else if (progressFraction <= 0.75) { progressClass = 'bg-progress-yellow'; } 
+                else { progressClass = 'bg-progress-green'; }
+
+
+                let dateCell = '';
+                if (item.dateId !== lastDateId) {
+                    dateCell = `<td rowspan="2" class="text-center font-bold text-sm border-r border-gray-300">
+                                    ${displayDate.toUpperCase()}<br><span class="text-gray-400 font-normal text-xs">${dayOfWeek}</span>
+                                </td>`;
+                    lastDateId = item.dateId;
+                }
+
+                const rowClass = (index + 1) % 2 === 0 ? 'border-b-2 border-gray-300/50' : 'border-b border-gray-200';
+                
+                html += `
+                    <tr class="${rowClass}">
+                        ${dateCell}
+                        <td class="border-r border-gray-300">
+                            <div class="subject-cell bg-${item.subjectName}" data-subject="${item.subjectName}">
+                                ${item.subject} <span class="font-normal">(${item.weight})</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center text-sm font-semibold mb-0.5">${progressPercent}%</div>
+                            <div id="sparkline-${item.subjectName}" class="progress-bar-sparkline">
+                                <div class="sparkline-fill ${progressClass}" style="width: ${progressPercent}%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+
+    // Aesthetic Quote Row
+// Aesthetic Quote Row with Purple Dashed Lines and Styled Buttons
+    html += `
+        <tr>
+            <td colspan="3" class="p-2 border-none">
+                <div class="bg-purple-50/30 border border-dashed border-[#B266FF] rounded-xl p-3 relative flex flex-col justify-center items-center text-center italic mt-2">
+                    <button onclick="window.changeQuote(-1)" 
+                            class="absolute left-2 p-1 text-[#B266FF] hover:bg-[#B266FF] hover:text-white rounded-full transition-all duration-200 z-30">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    
+<p id="quoteText" 
+                       class="text-[12px] sm:text-sm text-[#330066] font-medium leading-relaxed px-10 italic" 
+                       style="font-family: 'Cormorant Garamond', cursive; letter-spacing: 0.5px;">
+                        "${MOTIVATIONAL_QUOTES[currentQuoteIndex]}"
+                    </p>
+                    
+                    <button onclick="window.changeQuote(1)" 
+                            class="absolute right-2 p-1 text-[#B266FF] hover:bg-[#B266FF] hover:text-white rounded-full transition-all duration-200 z-30">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>`;
+    tableBody.innerHTML = html;
+    if (window.lucide) lucide.createIcons();
+}
         // --- User Name Storage/Loading ---
         const USER_NAME_KEY = 'user_display_name';
         const EMOJI = '✨';
@@ -1011,7 +1199,7 @@ if (userPassword) {
         function openModal(id){currentEditingId=id;const data=COUNTDOWN_DATA.find(d=>d.id===id);document.getElementById('modal-title').textContent=`Edit Target Date - Day ${id}`;document.getElementById('new-target-date').value=data.targetDate;document.getElementById('modal-error').classList.add('hidden');document.getElementById('date-edit-modal').classList.remove('hidden');document.getElementById('date-edit-modal').style.display='flex';}
         function closeModal(){document.getElementById('date-edit-modal').classList.add('hidden');document.getElementById('date-edit-modal').style.display='none';currentEditingId=null;}
         
-        function saveModal(){
+function saveModal(){
             const newDateString=document.getElementById('new-target-date').value;
             const newDate=new Date(newDateString);
             const now=new Date();
@@ -1025,9 +1213,12 @@ if (userPassword) {
                 data.targetDate=newDateString;
                 document.querySelector(`#target-date-display-${currentEditingId} .date-text`).textContent = formatUniqueDate(newDateString);
                 localStorage.setItem(`comp_exam_date_${currentEditingId}`,newDateString);
-                updateAllCountdowns();
                 
-                // Trigger calendar refresh if the module is loaded
+                // --- TRIGGER REFRESHES ---
+                updateAllCountdowns();   // Updates the countdown numbers
+                updateScheduleTable();   // Updates the Date/Subject table rows
+                
+                // Updates the "Exam Day" markers in the Calendar module
                 if (window.CALENDAR_APP && typeof window.CALENDAR_APP.refreshCalendar === 'function') {
                     window.CALENDAR_APP.refreshCalendar();
                 }
@@ -2339,7 +2530,7 @@ else if (isSyllabusTask) {
             });
             const totalTopicsText = `Total Topics: ${totalTopics}`;
 
-            const size = 180; 
+            const size = 160; 
             const radius = size / 2;
             const strokeWidth = 35; 
             const center = size / 2;
@@ -2364,98 +2555,12 @@ else if (isSyllabusTask) {
                         style="text-shadow: 1px 1px 0 #cccccc; letter-spacing: 1px;">
                         ${(donePercent).toFixed(0)}%
                     </text>
-                     <text x="${center}" y="${center + 20}" text-anchor="middle" alignment-baseline="central" font-size="0.6rem"
+                     <text x="${center}" y="${center + 20}" text-anchor="middle" alignment-baseline="central" font-size="0.4rem"
                         font-weight="bold" fill="#4a5568" font-family="Inter, sans-serif" style="text-shadow: none;">
                         ${totalTopicsText}
                     </text>
                 </svg>
             `;
-        }
-
-        function updateScheduleTable() {
-            const tableBody = document.getElementById('schedule-table-body');
-            if (!tableBody) return;
-
-            let html = '';
-            let lastDateId = null;
-            
-            // 🚨 MODIFIED: Updated threshold from 3 to 4
-            const DONE_THRESHOLD = 4;
-
-            SCHEDULE_DATA.forEach((item, index) => {
-                const countdownData = COUNTDOWN_DATA.find(d => d.id === item.dateId);
-                const dateString = countdownData ? countdownData.targetDate : 'N/A';
-                
-                let dayOfWeek = item.day;
-                let displayDate = dateString;
-                if (dateString !== 'N/A') {
-                    const dateObj = new Date(dateString + 'T00:00:00Z');
-                    if (!isNaN(dateObj)) {
-                        dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
-                        displayDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-                    }
-                }
-                
-                const subjectLogic = SUBJECT_LOGIC_MAP[item.subjectName];
-                
-                let progressPercent = '0.0';
-                let progressFraction = 0;
-                
-                if (subjectLogic) {
-                    // CRITICAL: This pulls the Syllabus data from the EXTERNAL JS file via SUBJECT_LOGIC_MAP
-                    const progress = subjectLogic.getProgress();
-                    const syllabusData = subjectLogic.SYLLABUS_DATA;
-                    const mainTopics = syllabusData.filter(t => t.depth === 2 && t.trackable);
-                    const currentSubjectTrackable = mainTopics.length;
-                    let currentSubjectDone = 0;
-
-                    mainTopics.forEach(topic => {
-                        const topicProgress = progress[topic.id] || {};
-                        const boxesTicked = CHECKLIST_COLUMNS.filter(col => topicProgress[col] === true).length;
-                        if (boxesTicked >= DONE_THRESHOLD) { // 🚨 MODIFIED: Uses DONE_THRESHOLD
-                            currentSubjectDone++;
-                        }
-                    });
-                    progressFraction = currentSubjectTrackable > 0 ? (currentSubjectDone / currentSubjectTrackable) : 0;
-                    progressPercent = (progressFraction * 100).toFixed(1);
-                }
-                
-                let progressClass;
-                if (progressFraction <= 0.25) { progressClass = 'bg-progress-red'; } 
-                else if (progressFraction <= 0.5) { progressClass = 'bg-progress-orange'; } 
-                else if (progressFraction <= 0.75) { progressClass = 'bg-progress-yellow'; } 
-                else { progressClass = 'bg-progress-green'; }
-
-
-                let dateCell = '';
-                if (item.dateId !== lastDateId) {
-                    dateCell = `<td rowspan="2" class="text-center font-bold text-sm border-r border-gray-300">
-                                    ${displayDate.toUpperCase()}<br><span class="text-gray-400 font-normal text-xs">${dayOfWeek}</span>
-                                </td>`;
-                    lastDateId = item.dateId;
-                }
-
-                const rowClass = (index + 1) % 2 === 0 ? 'border-b-2 border-gray-300/50' : 'border-b border-gray-200';
-                
-                html += `
-                    <tr class="${rowClass}">
-                        ${dateCell}
-                        <td class="border-r border-gray-300">
-                            <div class="subject-cell bg-${item.subjectName}" data-subject="${item.subjectName}">
-                                ${item.subject} <span class="font-normal">(${item.weight})</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center text-sm font-semibold mb-0.5">${progressPercent}%</div>
-                            <div id="sparkline-${item.subjectName}" class="progress-bar-sparkline">
-                                <div class="sparkline-fill ${progressClass}" style="width: ${progressPercent}%;"></div>
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            });
-
-            tableBody.innerHTML = html;
         }
 
         function updateOverallDashboard() {
@@ -2555,18 +2660,24 @@ else if (isSyllabusTask) {
                 lucide.createIcons();
             }
 
-            // 6. Attach General Event Listeners and load user name
+// 6. Attach General Event Listeners and load user name
+// 6. Attach General Event Listeners and load user name
             updateAllCountdowns();
             setInterval(updateAllCountdowns, 1000);
             
             loadUserName();
+
+            // RESTORE CLICKABLE DATES (Explicit mapping)
+            const d1 = document.getElementById('target-date-display-1');
+            const d2 = document.getElementById('target-date-display-2');
+            const d3 = document.getElementById('target-date-display-3');
             
+            if(d1) d1.onclick = () => openModal(1);
+            if(d2) d2.onclick = () => openModal(2);
+            if(d3) d3.onclick = () => openModal(3);
+
             // The dashboard update MUST wait for external subjects to load (1.5 seconds delay to be safe)
-            setTimeout(window.updateOverallDashboard, 1500); 
-            
-            document.getElementById('target-date-display-1').addEventListener('click', () => openModal(1));
-            document.getElementById('target-date-display-2').addEventListener('click', () => openModal(2));
-            document.getElementById('target-date-display-3').addEventListener('click', () => openModal(3));
+            setTimeout(window.updateOverallDashboard, 1500);
             
             // Monkey patch saveModal to update schedule table AFTER countdown is saved
             if (typeof saveModal === 'function' && typeof updateScheduleTable === 'function') {
@@ -3007,6 +3118,7 @@ html += `
 </tr>`;
            });
            
+
            tbody.innerHTML = html;
            lucide.createIcons();
        }
@@ -3052,41 +3164,57 @@ function toggleAll(masterCheckbox) {
 
     renderTable(); // Refresh the UI
 } 
-       // --- STATS ---
-       function updateStats() {
-           const data = getStorageData();
-           const total = allCases.length;
-           let done = 0;
-           
-           Object.values(data).forEach(c => {
-               if(c.done) done++;
-           });
-           
-           const remaining = total - done;
-           const donePercent = total > 0 ? (done / total) * 100 : 0;
- 
-// Update Header Stats (NEW IDs)
-document.getElementById('headerDone').innerText = done;
-document.getElementById('headerRemaining').innerText = remaining;
-document.getElementById('headerPercent').innerText = `${donePercent.toFixed(1)}%`;
+// START EDITING HERE: CLEAN UP updateStats
+function updateStats() {
+    const data = getStorageData();
+    const total = allCases.length;
+    let done = 0;
+    Object.values(data).forEach(c => { if(c.done) done++; });
+    const remaining = total - done;
+    const donePercent = total > 0 ? (done / total) * 100 : 0;
 
-const progressBar = document.getElementById('headerProgressBar');
-progressBar.style.width = `${donePercent}%`;
+    // 1. Update the sidebar/mini bar (if it exists)
+    const caseBar = document.getElementById('caseProgressBar');
+    if (caseBar) {
+        caseBar.style.width = `${donePercent}%`;
+        // Reset classes first
+        caseBar.classList.remove('bg-black', 'bg-red-500', 'bg-orange-500', 'bg-yellow-400', 'bg-green-500');
+        
+        // Apply progressive colors
+        if (donePercent <= 25) caseBar.classList.add('bg-red-500');
+        else if (donePercent <= 50) caseBar.classList.add('bg-orange-500');
+        else if (donePercent <= 75) caseBar.classList.add('bg-yellow-400');
+        else caseBar.classList.add('bg-green-500');
+    }
 
-// Dynamic Color Logic
-// Also removing 'bg-white' so the new colors can show through
-progressBar.classList.remove('bg-white', 'bg-red-500', 'bg-orange-500', 'bg-yellow-400', 'bg-green-500');
+    // 2. Update the Large Header Progress Bar (inside the Gaerlan section)
+    const headerBar = document.getElementById('headerProgressBar');
+    if (headerBar) {
+        headerBar.style.width = `${donePercent}%`;
+        headerBar.classList.remove('bg-white', 'bg-red-500', 'bg-orange-500', 'bg-yellow-400', 'bg-green-500');
+        
+        if (donePercent <= 25) headerBar.classList.add('bg-red-500');
+        else if (donePercent <= 50) headerBar.classList.add('bg-orange-500');
+        else if (donePercent <= 75) headerBar.classList.add('bg-yellow-400');
+        else headerBar.classList.add('bg-green-500');
+    }
 
-if (donePercent <= 25) {
-    progressBar.classList.add('bg-red-500');
-} else if (donePercent <= 50) {
-    progressBar.classList.add('bg-orange-500');
-} else if (donePercent <= 75) {
-    progressBar.classList.add('bg-yellow-400');
-} else {
-    progressBar.classList.add('bg-green-500');
+// 3. Update Text Labels
+    if (document.getElementById('caseCountText')) {
+        // Calculate the "To Read" stats first
+        const toReadPercent = (100 - donePercent).toFixed(1);
+        const toReadCount = total - done;
+
+        // Apply the new creative layout
+        document.getElementById('caseCountText').innerText = 
+            `${donePercent.toFixed(1)}% DONE • ${done} CASES READ | ${toReadPercent}% REMAINING • ${toReadCount} TO READ`;
+    }
+
+    if (document.getElementById('casePercentText')) document.getElementById('casePercentText').innerText = `${donePercent.toFixed(1)}%`;
+    if (document.getElementById('headerDone')) document.getElementById('headerDone').innerText = done;
+    if (document.getElementById('headerRemaining')) document.getElementById('headerRemaining').innerText = remaining;
+    if (document.getElementById('headerPercent')) document.getElementById('headerPercent').innerText = `${donePercent.toFixed(1)}%`;
 }
-} // Closes updateStats 
        // --- MODAL LOGIC ---
        function openDigestModal(id, title) {
            const data = getStorageData();
@@ -3234,6 +3362,90 @@ async function preloadLatestDigests() {
         alert("❌ Failed to load latest digests. Check your internet connection or try again later.");
     }
 }
+
+// Quick clickable date picker - pops up right on the card!
+document.querySelectorAll('.date-display-wrapper').forEach(wrapper => {
+    const id = wrapper.id.split('-').pop(); // gets 1, 2, or 3
+    const picker = wrapper.querySelector('input[type="date"]');
+    const text = wrapper.querySelector('.date-text');
+
+    // Load saved date and display it
+    const saved = localStorage.getItem(`comp_exam_date_${id}`) || COUNTDOWN_DATA.find(d => d.id == id).targetDate;
+    text.textContent = formatUniqueDate(saved);
+    picker.value = saved;
+
+    // Click anywhere on the card → open picker right there
+    wrapper.addEventListener('click', () => {
+        picker.showPicker ? picker.showPicker() : picker.focus();
+    });
+
+    // When user picks a date → save + update everything
+    picker.addEventListener('change', () => {
+        const newDate = picker.value;
+        if (!newDate) return;
+
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        if (new Date(newDate) < today) {
+            alert("Please select a future date.");
+            picker.value = saved; // revert
+            return;
+        }
+
+        // Save
+        localStorage.setItem(`comp_exam_date_${id}`, newDate);
+        COUNTDOWN_DATA.find(d => d.id == id).targetDate = newDate;
+
+        // Update display
+        text.textContent = formatUniqueDate(newDate);
+
+        // Refresh everything
+        updateAllCountdowns();
+        updateScheduleTable();
+        if (window.CALENDAR_APP && window.CALENDAR_APP.refreshCalendar) {
+            window.CALENDAR_APP.refreshCalendar();
+        }
+    });
+});
+
+// START EDITING HERE: QUOTE LOGIC
+const MOTIVATIONAL_QUOTES = [
+    "Trust that your hard work will never betray you. You did not come this far to only come this far.",
+    "Faith. Grit. Determination.",
+    "Do what you could and you have done what you should.",
+"One page at a time, one case at a time. The mountain is climbed one step at a time.",
+    "Success is the sum of small efforts, repeated day in and day out.",
+"Believe you can and you're halfway there. Keep the faith, Future Atty!",
+"The struggle you’re in today is developing the strength you need for tomorrow. Padayon!",
+    "You are capable of more than you know. Keep reading, keep grinding.",
+    "The difference between a successful person and others is not a lack of strength, but a lack of will.",
+    "It always seems impossible until it's done.",
+    "Padayon Atty! Your future self is already proud of the work you are doing today.",
+"One page at a time, one case at a time. The mountain is climbed one step at a time."
+];
+let currentQuoteIndex = parseInt(localStorage.getItem('selected_quote_index')) || 0;
+
+window.changeQuote = function(direction) {
+    currentQuoteIndex += direction;
+    if (currentQuoteIndex >= MOTIVATIONAL_QUOTES.length) currentQuoteIndex = 0;
+    if (currentQuoteIndex < 0) currentQuoteIndex = MOTIVATIONAL_QUOTES.length - 1;
+    
+    // Save the choice to Local Storage
+    localStorage.setItem('selected_quote_index', currentQuoteIndex);
+    
+    const quoteEl = document.getElementById('quoteText');
+    if (quoteEl) {
+        quoteEl.style.opacity = 0;
+        setTimeout(() => {
+            quoteEl.innerText = `"${MOTIVATIONAL_QUOTES[currentQuoteIndex]}"`;
+            quoteEl.style.opacity = 1;
+        }, 150);
+    }
+};
+const qStyle = document.createElement('style');
+qStyle.innerHTML = "#quoteText { transition: opacity 0.2s ease-in-out; }";
+document.head.appendChild(qStyle);
+// END EDITING HERE
 init();
 
     </script>
