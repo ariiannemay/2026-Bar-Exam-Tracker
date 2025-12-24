@@ -17,6 +17,5 @@ const SUBJECT_ICON_POLI = 'landmark'; // Using 'gavel' as a thematic icon
 // This calls the global factory defined in index.html
 const POLI_LOGIC = window.createSyllabusLogic(SUBJECT_NAME_POLI, POLI_SYLLABUS, SYLLABUS_STORAGE_KEY_POLI, SUBJECT_ICON_POLI, SUBJECT_TITLE_POLI);
 
-
 // 5. Expose Logic Globally (needed for index.html onload to attach to map)
 window.createPOLI_LOGIC = () => POLI_LOGIC;
