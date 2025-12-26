@@ -1,10 +1,10 @@
 {
   "001": {
     "digest": {
-      "doctrine": "SAMPLE DOCTRINE",
-      "facts": "SAMPLE FACTS",
-      "issue": "SAMPLE ISSUE",
-      "ruling": "SAMPLE RULING"
+      "doctrine": "Tax values and assessments prepared by local assessors can serve as guides but cannot be absolute substitutes for just compensation in expropriation proceedings, as these are often based on generalities and fail to account for individual property differences. Consequently, a valuation of private property taken for public use is invalid if it relies solely on the tax assessment value found in tax declarations without considering other essential factors like acquisition cost and current market data.",
+      "facts": "Arellano University filed a complaint against the City Government of Pasay for taking its 805-square-meter property and converting it into a public street (Menlo Street) without expropriation proceedings or payment of just compensation. The City admitted the taking but the parties disputed the valuation; the Board of Commissioners, composed of City officials, submitted an appraisal report pegging the value at P200.00 per square meter based solely on the 1978 City Assessor’s tax valuation. The Regional Trial Court adopted this tax-based valuation, but the Court of Appeals remanded the case for re-determination, ruling that the computation was based on incomplete data by relying only on the 1978 tax assessment without considering other factors like BIR zonal valuations.",
+      "issue": "Whether the determination of just compensation based solely on the tax assessment value provided by the City Assessor is valid",
+      "ruling": "NO, the valuation based solely on tax assessment is not valid. Under the principle established in Export Processing Zone Authority v. Judge Dulay, tax values serve only as guides and cannot be absolute substitutes for just compensation, as the \"justness\" of the amount is a judicial function requiring a consideration of the \"totality of circumstances\" beyond mere tax declarations. Here, the trial court and commissioners erred by relying exclusively on the 1978 tax assessment revision without considering other mandatory factors such as BIR zonal valuations, acquisition cost, and the property's potential uses. Hence, the case must be remanded for a proper determination of fair market value using complete data beyond mere tax assessments. &#10;&#10;DISPOSITIVE PORTION: ACCORDINGLY, the petition is PARTIALLY GRANTED. The December 28, 2020 Decision and the March 15, 2021 Resolution of the Court of Appeals in CA-G.R. CV No. 113233 are MODIFIED, in that: 1) the award of exemplary damages is DELETED; and 2) the interest on the value of the property at the time of taking shall likewise earn interest at the rate of 6% per annum from the date of finality of this Decision until full payment."
     }
   },
   "002": {
