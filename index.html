@@ -577,9 +577,15 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
                   focus:border-[#B266FF] outline-none p-0 bg-transparent text-gray-800" 
            maxlength="30">
 
-    <button onclick="if(confirm('Lock tracker and log out? Progress is saved.')) { localStorage.removeItem('auth_session_start'); location.reload(); }" 
+    <button onclick="window.showThemedModal({
+                title: 'LOCK TRACKER',
+                message: 'Are you sure you want to lock the tracker and log out?',
+                type: 'confirm',
+                confirmText: 'LOGOUT',
+                onConfirm: () => { localStorage.removeItem('auth_session_start'); location.reload(); }
+            })" 
             title="Lock Tracker (Logout)"
-            class="absolute right-0 text-gray-400 hover:text-[#B266FF] transition-all flex-shrink-0 hover-pulse">
+            class="absolute right-0 text-gray-400 hover:text-red-600 transition-all flex-shrink-0 hover-pulse">
         <i data-lucide="power" class="w-4 h-4"></i>
     </button>
 </div>
@@ -910,22 +916,70 @@ style="background-color: #000000; border-bottom: 5px solid #9ca3af;">
     </div> <!-- end main-content-wrapper -->
 
     <!-- GLOBAL FOOTER -->
-    <footer class="global-app-footer">
-        <p class="quote">
-            Trust that your hard work will never betray you. You did not come this far to only come this far.
-        </p>
-        <p class="signature mt-1">
-            <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/missattycpa.PNG" 
-                 alt="missattycpa signature" 
-                 class="inline-block h-3.5"
-                 onerror="this.outerHTML = '<span class=\'text-miss\'>made by miss</span><span class=\'text-atty\'>atty</span><span class=\'text-cpa\'>cpa</span>'">
-            <span class="date-text-signature">| november 2025</span>
-        </p>
-    </footer>
+<footer class="global-app-footer">
+    <p class="quote">
+        Trust that your hard work will never betray you. You did not come this far to only come this far.
+    </p>
+    <p class="signature mt-1">
+        <img src="https://raw.githubusercontent.com/ariiannemay/2026-Bar-Exam-Tracker/main/Images/missattycpa.PNG"
+             alt="missattycpa signature"
+             class="inline-block h-3.5"
+             onerror="this.outerHTML = '<span class=\'text-miss\'>made by miss</span><span class=\'text-atty\'>atty</span><span class=\'text-cpa\'>cpa</span>'">
+        <span class="date-text-signature">| november 2025</span>
+        <!-- ADD THIS LINE -->
+<p> <span class="ml-4 text-sm text-gray-600 italic" 
+      style="font-family: 'Cormorant Garamond', serif; font-weight: 600;" 
+      id="last-saved">
+   • Last saved: never • </p>
+</span>    
+</p>
+</footer>
+
+<div id="universal-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[10000] p-4 transition-opacity duration-300">
+    <div class="bg-white rounded-xl shadow-2xl w-full max-w-sm overflow-hidden transform transition-all scale-95 duration-300 ease-out" id="universal-modal-content">
+        <div class="header-bg p-3 flex items-center gap-3 border-b-4 border-custom-yellow">
+            <i id="modal-icon" data-lucide="alert-circle" class="w-5 h-5 text-white"></i>
+            <h2 id="modal-header-title" class="text-lg header-font tracking-widest text-white uppercase mt-1">Notification</h2>
+        </div>
+        <div class="p-6 bg-gray-50">
+            <p id="modal-body-text" class="text-sm font-bold text-gray-800 text-center leading-relaxed uppercase"></p>
+        </div>
+        <div class="bg-white p-4 border-t border-gray-100 flex gap-3 justify-center">
+            <button id="modal-cancel-btn" class="hidden px-5 py-2 text-gray-500 font-black text-xs uppercase hover:bg-gray-100 rounded-lg transition-colors">Cancel</button>
+            <button id="modal-confirm-btn" class="px-8 py-2 bg-[#6D1B1B] text-white font-black text-xs uppercase rounded-lg shadow-md hover:bg-red-900 border-b-4 border-black/20 active:border-b-0 active:translate-y-1 transition-all">Confirm</button>
+        </div>
+    </div>
+</div>
 
     <script>
 const ALLOWED_PASSWORDS = ["ama", "bar", "2026", "bar2026"];
 const AUTH_TARGET_DATES = ["2026-09-06", "2026-09-09", "2026-09-13"];
+
+window.showThemedModal = function(options) {
+    const modal = document.getElementById('universal-modal');
+    const titleEl = document.getElementById('modal-header-title');
+    const textEl = document.getElementById('modal-body-text');
+    const confirmBtn = document.getElementById('modal-confirm-btn');
+    const cancelBtn = document.getElementById('modal-cancel-btn');
+
+    titleEl.innerText = options.title || "NOTIFICATION";
+    textEl.innerText = options.message || "";
+    confirmBtn.innerText = options.confirmText || "OK";
+    
+    if (options.type === 'confirm') {
+        cancelBtn.classList.remove('hidden');
+        cancelBtn.innerText = options.cancelText || "CANCEL";
+    } else {
+        cancelBtn.classList.add('hidden');
+    }
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    confirmBtn.onclick = () => { modal.classList.add('hidden'); if (options.onConfirm) options.onConfirm(); };
+    cancelBtn.onclick = () => { modal.classList.add('hidden'); if (options.onCancel) options.onCancel(); };
+};
+
 
 function updateAuthCountdown() {
     const now = new Date();
@@ -2835,6 +2889,11 @@ document.head.appendChild(colorFixStyle);
 
         // --- INITIALIZATION ---
         window.onload = () => {
+const last = localStorage.getItem('last_saved');
+    if (last) {
+        document.getElementById('last-saved').textContent = `• Last saved: ${last} •`;
+    }
+
             // 1. Initialize Countdown Dates
             COUNTDOWN_DATA.forEach(data => {
                 const savedDate = localStorage.getItem(`comp_exam_date_${data.id}`);
@@ -3178,6 +3237,7 @@ document.head.appendChild(colorFixStyle);
 250,"=HYPERLINK(""https://drive.google.com/uc?export=download&id=1Oyq47o3cALF4r_J0xSYKHfgYlO0Aalv6"", ""People v. Manzanilla"")",3RD DIVISION,08 Jun 2020,DECISION
 251,"=HYPERLINK(""https://drive.google.com/uc?export=download&id=1HTxu8Uc_ulxUm769jXk9yA3mlbkhx7F5"", ""Nacarion v. People"")",3RD DIVISION,08 Jun 2020,DECISION
 252,"=HYPERLINK(""https://drive.google.com/uc?export=download&id=1MvqgS2-Z29UbY7oe19gsa3sMtiZd4Cqw"", ""Violago v. Atty. Aranjuez, Jr."")",3RD DIVISION,09 Mar 2020,RESOLUTION`;
+
        // APP STATE
        let allCases = [];
        let sortConfig = { column: 0, direction: 'asc' }; // default sort by No.
@@ -3195,6 +3255,7 @@ document.head.appendChild(colorFixStyle);
            data[caseId][field] = value;
            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
            updateStats();
+updateLastSaved();
        }
  
        // Initial Data Parse
@@ -3220,34 +3281,49 @@ const response = await fetch('https://raw.githubusercontent.com/ariiannemay/2026
                }
            }
  
-           for (let i = 1; i < lines.length; i++) {
-               const row = lines[i];
-               const firstComma = row.indexOf(',');
-               const lastComma = row.lastIndexOf(',');
-               const secondLastComma = row.lastIndexOf(',', lastComma - 1);
-               const thirdLastComma = row.lastIndexOf(',', secondLastComma - 1);
- 
-               if (firstComma === -1 || lastComma === -1) continue;
- 
-               const no = row.substring(0, firstComma).trim();
-               const division = row.substring(thirdLastComma + 1, secondLastComma).trim();
-               const date = row.substring(secondLastComma + 1, lastComma).trim();
-               const type = row.substring(lastComma + 1).trim();
-               
-               let rawLink = row.substring(firstComma + 1, thirdLastComma).trim();
-               if (rawLink.startsWith('"') && rawLink.endsWith('"')) rawLink = rawLink.slice(1, -1);
-               
-               let url = "#", title = rawLink;
-               const match = rawLink.match(/=HYPERLINK\(""([^"]+)""\s*,\s*""([^"]+)""\)/i);
-               if (match) { url = match[1]; title = match[2]; }
-               else { title = rawLink.replace(/^=HYPERLINK\("/, '').replace(/"\)$/, ''); }
- 
-               allCases.push({no, title, division, date, type, url});
-           }
-           
+for (let i = 1; i < lines.length; i++) {
+    const row = lines[i].trim();
+    if (!row) continue;
+
+    // Proper CSV parser that respects quotes and inner commas
+    const fields = [];
+    let current = '';
+    let inQuote = false;
+    for (let j = 0; j < row.length; j++) {
+        const char = row[j];
+        if (char === '"' && !inQuote) {
+            inQuote = true;
+        } else if (char === '"' && inQuote) {
+            if (j + 1 < row.length && row[j + 1] === '"') {
+                current += '"';
+                j++;
+            } else {
+                inQuote = false;
+            }
+        } else if (char === ',' && !inQuote) {
+            fields.push(current.trim());
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    fields.push(current.trim());
+
+    const [no, rawLink, division, date, type] = fields;
+
+    let url = "#", title = rawLink || '';
+    const match = rawLink.match(/=HYPERLINK\("([^"]+)"\s*,\s*"([^"]+)"\)/i);
+    if (match) {
+        url = match[1];
+        title = match[2];
+    }
+
+    allCases.push({no, title, division, date, type, url});
+}           
            lucide.createIcons();
            renderTable();
            updateStats();
+updateLastSaved();
        }
  
 // NOTEPAD PERSISTENCE (ADD THIS BLOCK) 
@@ -3432,6 +3508,7 @@ function toggleAll(masterCheckbox) {
     });
 
     renderTable(); // Refresh the UI
+updateLastSaved();
 } 
 // START EDITING HERE: CLEAN UP updateStats
 function updateStats() {
@@ -3552,6 +3629,7 @@ function saveDigest() {
     updateStorage(id, 'digest', digest);
     renderTable(); 
     closeModal();
+updateLastSaved();
 }
 // End editing here
 
@@ -3658,6 +3736,7 @@ function importDigests(event) {
             }
             renderTable();
             updateStats();
+updateLastSaved();
         } catch (err) { 
             alert("Invalid file format. Please use a .json backup file."); 
         }
@@ -3687,6 +3766,7 @@ async function preloadLatestDigests() {
         // Refresh the table
         renderTable();
         updateStats();
+updateLastSaved();
         
     } catch (err) {
         console.error("Preload failed:", err);
@@ -3739,6 +3819,24 @@ document.querySelectorAll('.date-display-wrapper').forEach(wrapper => {
     });
 });
 
+function updateLastSaved() {
+    const now = new Date().toLocaleString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+    });
+    localStorage.setItem('last_saved', now);
+    const el = document.getElementById('last-saved');
+    if (el) el.textContent = `• Last saved: ${now} •`;
+}
+
+// Call this after every save operation
+
+
 // START EDITING HERE: QUOTE LOGIC
 const MOTIVATIONAL_QUOTES = [
     "Trust that your hard work will never betray you. You did not come this far to only come this far.",
@@ -3778,8 +3876,7 @@ qStyle.innerHTML = "#quoteText { transition: opacity 0.2s ease-in-out; }";
 document.head.appendChild(qStyle);
 // END EDITING HERE
 
-
-init();
+init(); 
 
     </script>
 </body>
