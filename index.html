@@ -585,7 +585,7 @@ th.sortable:hover { background-color: #f1f1f1; color: #000; }
                 onConfirm: () => { localStorage.removeItem('auth_session_start'); location.reload(); }
             })" 
             title="Lock Tracker (Logout)"
-            class="absolute right-0 text-gray-400 hover:text-red-600 transition-all flex-shrink-0 hover-pulse">
+            class="absolute right-0 text-gray-400 hover:text-purple-600 transition-all flex-shrink-0 hover-pulse">
         <i data-lucide="power" class="w-4 h-4"></i>
     </button>
 </div>
@@ -946,7 +946,7 @@ style="background-color: #000000; border-bottom: 5px solid #9ca3af;">
         </div>
         <div class="bg-white p-4 border-t border-gray-100 flex gap-3 justify-center">
             <button id="modal-cancel-btn" class="hidden px-5 py-2 text-gray-500 font-black text-xs uppercase hover:bg-gray-100 rounded-lg transition-colors">Cancel</button>
-            <button id="modal-confirm-btn" class="px-8 py-2 bg-[#6D1B1B] text-white font-black text-xs uppercase rounded-lg shadow-md hover:bg-red-900 border-b-4 border-black/20 active:border-b-0 active:translate-y-1 transition-all">Confirm</button>
+            <button id="modal-confirm-btn" class="px-8 py-2 bg-[#330066] text-white font-black text-xs uppercase rounded-lg shadow-md hover:bg-purple-900 border-b-4 border-black/20 active:border-b-0 active:translate-y-1 transition-all">Confirm</button>
         </div>
     </div>
 </div>
@@ -2030,6 +2030,7 @@ else if (isSyllabusTask) {
             
             saveEventsToLocalStorage(events);
             closeTopicModal();
+updateLastSaved();
         }
 
         function deleteTopicTask() {
@@ -2041,6 +2042,7 @@ else if (isSyllabusTask) {
                 
                 saveEventsToLocalStorage(events);
                 closeTopicModal();
+updateLastSaved();
             }
         }
         
@@ -2758,6 +2760,20 @@ document.head.appendChild(colorFixStyle);
             return self;
         };
 
+// AUTO "Last saved" UPDATE FOR ALL SUBJECTS
+const originalCreateSyllabusLogic = window.createSyllabusLogic;
+window.createSyllabusLogic = function(...args) {
+    const logic = originalCreateSyllabusLogic(...args);
+    
+    // Override the saveProgress method
+    const originalSaveProgress = logic.saveProgress;
+    logic.saveProgress = function(progressData) {
+        originalSaveProgress.call(this, progressData);
+        updateLastSaved();  // ← This makes the footer update!
+    };
+    
+    return logic;
+};
 
         // --- GLOBAL SUBJECT SYLLABUS DATA (Declarations for loading) ---
         
@@ -3323,7 +3339,6 @@ for (let i = 1; i < lines.length; i++) {
            lucide.createIcons();
            renderTable();
            updateStats();
-updateLastSaved();
        }
  
 // NOTEPAD PERSISTENCE (ADD THIS BLOCK) 
