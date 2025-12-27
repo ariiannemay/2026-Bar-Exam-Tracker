@@ -4065,13 +4065,25 @@ window.updateAnalyticsGoal = function() {
 };
 
 window.resetAnalyticsData = function() {
-    if (confirm("THIS WILL WIPE YOUR PRODUCTIVITY HISTORY. PROCEED?")) {
-        localStorage.removeItem(ANALYTICS_STORE_KEY);
-        refreshTargetsUI();
-    }
+    window.showThemedModal({
+        title: 'CLEAR HISTORY',
+        message: 'THIS WILL PERMANENTLY WIPE YOUR PRODUCTIVITY TIMELINE. ARE YOU SURE YOU WANT TO PROCEED?',
+        type: 'confirm',
+        confirmText: 'CLEAR ALL',
+        cancelText: 'CANCEL',
+        onConfirm: () => {
+            localStorage.removeItem(ANALYTICS_STORE_KEY);
+            refreshTargetsUI();
+            // Optional: Success feedback
+            window.showThemedModal({
+                title: 'HISTORY WIPED',
+                message: 'YOUR PRODUCTIVITY DATA HAS BEEN RESET.'
+            });
+        }
+    });
 };
-
-function refreshTargetsUI() {
+        
+    function refreshTargetsUI() {
     const data = getAnalyticsData();
     const today = new Date().toDateString();
     const todayCount = data.history[today] || 0;
