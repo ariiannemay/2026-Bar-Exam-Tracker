@@ -2879,6 +2879,10 @@ function handleCheckboxChange(event) {
                      const id = topic.id;
                      if (!progressData[id]) { progressData[id] = {}; }
                      CHECKLIST_COLUMNS.forEach(col => {
+                         // 🚨 FIX: If the state is actually changing, notify Analytics
+                         if (progressData[id][col] !== targetState) {
+                             if (window.trackActivity) window.trackActivity(targetState);
+                         }
                          progressData[id][col] = targetState;
                      });
                  });
