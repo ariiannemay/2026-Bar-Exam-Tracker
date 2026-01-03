@@ -1261,6 +1261,13 @@ style="background-color: #000000; border-bottom: 5px solid #9ca3af;">
 const ALLOWED_PASSWORDS = ["ama", "bar", "2026", "bar2026"];
 const AUTH_TARGET_DATES = ["2026-09-06", "2026-09-09", "2026-09-13"];
 
+/* --- AUTO-EXPAND LOGIC START --- */
+function autoExpandTextarea(el) {
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+}
+
 window.showThemedModal = function(options) {
     const modal = document.getElementById('universal-modal');
     const titleEl = document.getElementById('modal-header-title');
@@ -3961,44 +3968,45 @@ function openDigestModal(id, title) {
     const data = getStorageData();
     const caseState = data[id] || {}; 
     const caseData = caseState.digest || {}; 
-const caseInfo = allCases.find(c => c.no === id);
+    const caseInfo = allCases.find(c => c.no === id);
 
     document.getElementById('currentCaseId').value = id;
     
-    // NEW: Inject the Title into the BODY of the modal instead of just the header
-    const modalBody = document.querySelector('#digestModalContent .p-4.overflow-y-auto');
     let titleEl = document.getElementById('modalCaseTitle');
-    
-    if (!titleEl) {
-        titleEl = document.createElement('h1');
-        titleEl.id = 'modalCaseTitle';
-        titleEl.className = "text-2xl font-black text-black uppercase tracking-tighter mb-4 border-b-4 border-black pb-2 leading-tight";
-        modalBody.prepend(titleEl);
-    }
-    titleEl.innerText = title;
+    if (titleEl) titleEl.innerText = title;
 
-    // Fix: Using caseData instead of the non-existent caseObj
+    // 1. Set the values first
     document.getElementById('noteGRNo').value = caseData.grNo || '';
-document.getElementById('noteCaseDate').value = caseInfo ? caseInfo.date : '';
-document.getElementById('noteDivision').value = caseInfo ? caseInfo.division : '';
-    document.getElementById('noteDoctrine').value = caseData.doctrine || '';
-    document.getElementById('noteFacts').value = caseData.facts || '';
-    document.getElementById('noteIssue').value = caseData.issue || '';
-    document.getElementById('noteRuling').value = caseData.ruling || '';
-    document.getElementById('noteDispositive').value = caseData.dispositive || '';
+    document.getElementById('noteCaseDate').value = caseInfo ? caseInfo.date : '';
+    document.getElementById('noteDivision').value = caseInfo ? caseInfo.division : '';
+    
+    // 2. Define the elements correctly
+    const doctrine = document.getElementById('noteDoctrine');
+    const facts = document.getElementById('noteFacts');
+    const issue = document.getElementById('noteIssue');
+    const ruling = document.getElementById('noteRuling');
+    const dispositive = document.getElementById('noteDispositive');
 
+    doctrine.value = caseData.doctrine || '';
+    facts.value = caseData.facts || '';
+    issue.value = caseData.issue || '';
+    ruling.value = caseData.ruling || '';
+    dispositive.value = caseData.dispositive || '';
+
+    // 3. Show the modal
     const modal = document.getElementById('digestModal');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-// TRIGGER THE EXPANSION HERE
+    // 4. Trigger the expansion logic safely
     const textareas = [doctrine, facts, issue, ruling, dispositive];
     textareas.forEach(el => {
-        autoExpandTextarea(el);
-        // Add listener so it continues to expand as you type
-        if (!el.getAttribute('data-expand-bound')) {
-            el.addEventListener('input', () => autoExpandTextarea(el));
-            el.setAttribute('data-expand-bound', 'true');
+        if (el) {
+            autoExpandTextarea(el);
+            if (!el.getAttribute('data-expand-bound')) {
+                el.addEventListener('input', () => autoExpandTextarea(el));
+                el.setAttribute('data-expand-bound', 'true');
+            }
         }
     });
     
@@ -4033,19 +4041,11 @@ function saveDigest() {
         ruling: document.getElementById('noteRuling').value,
         dispositive: document.getElementById('noteDispositive').value
     };
-
-    /* --- AUTO-EXPAND LOGIC START --- */
-function autoExpandTextarea(el) {
-    if (!el) return;
-    el.style.height = 'auto';
-    el.style.height = el.scrollHeight + 'px';
-}
-/* --- AUTO-EXPAND LOGIC END --- */
     
     updateStorage(id, 'digest', digest);
     renderTable(); 
     closeModal();
-updateLastSaved();
+    updateLastSaved();
 }
 // End editing here
 
