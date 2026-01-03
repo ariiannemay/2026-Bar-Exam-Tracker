@@ -518,9 +518,12 @@ body { scroll-behavior: smooth; }
 }
 
 /* START EDITING HERE: Hide manual resize and set base transition */
+/* Remove manual resize corner and hide scrollbars for a clean notepad look */
 #digestModal textarea {
     resize: none;
     overflow-y: hidden;
+    min-height: 40px;
+    transition: height 0.1s ease;
 }
 /* END EDITING HERE */
     </style>
