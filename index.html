@@ -517,9 +517,18 @@ body { scroll-behavior: smooth; }
     border-color: #1a1a1a transparent transparent;
 }
 
+/* START EDITING HERE: Hide manual resize and set base transition */
+#digestModal textarea {
+    resize: none;
+    overflow-y: hidden;
+    min-height: 40px;
+}
+/* END EDITING HERE */
     </style>
+    
     <!-- Vercel Web Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
+    
 </head>
 
 <body class="bg-gray-100 min-h-screen p-1 sm:p-2">
@@ -1007,27 +1016,27 @@ style="background-color: #000000; border-bottom: 5px solid #9ca3af;">
 
 <div class="bg-orange-50/50 p-2 rounded-r-lg shadow-sm border border-orange-200 border-l-[6px] border-l-orange-500">
         <label class="modal-label text-[10px] font-extrabold text-orange-700 border-orange-700 uppercase tracking-wider mb-1 block">Doctrine / Syllabus</label>
-        <textarea id="noteDoctrine" class="w-full p-1 bg-transparent text-sm text-gray-800 leading-snug focus:outline-none font-bold" style="text-align: justify;" rows="3" placeholder="Enter doctrine..."></textarea>
-    </div>
+<textarea id="noteDoctrine" class="w-full p-1 bg-transparent text-sm text-gray-800 leading-snug focus:outline-none font-bold auto-expand" style="text-align: justify;" placeholder="Enter doctrine..."></textarea>
+</div>
 
     <div class="bg-yellow-50/50 p-2 rounded-r-lg shadow-sm border border-yellow-200 border-l-[6px] border-l-yellow-500">
         <label class="modal-label text-[10px] font-extrabold text-yellow-700 border-yellow-700 uppercase tracking-wider mb-1 block">Facts</label>
-        <textarea id="noteFacts" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" style="text-align: justify;" rows="5" placeholder="Brief facts..."></textarea>
+<textarea id="noteFacts" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" placeholder="Brief facts..."></textarea>
     </div>
 
     <div class="bg-green-50/50 p-2 rounded-r-lg shadow-sm border border-green-200 border-l-[6px] border-l-green-500">
         <label class="modal-label text-[10px] font-extrabold text-green-700 border-green-700 uppercase tracking-wider mb-1 block">Issue/s</label>
-        <textarea id="noteIssue" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" style="text-align: justify;" rows="3" placeholder="Legal issues..."></textarea>
+<textarea id="noteIssue" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" placeholder="Legal issues..."></textarea>
     </div>
 
 <div class="bg-pink-50/50 p-2 rounded-r-lg shadow-sm border border-pink-200 border-l-[6px] border-l-pink-500">
     <label class="modal-label text-[10px] font-extrabold text-pink-700 border-pink-700 uppercase tracking-wider mb-1 block">Ruling</label>
-    <textarea id="noteRuling" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" style="text-align: justify;" rows="5" placeholder="Court's ruling..."></textarea>
+<textarea id="noteRuling" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" placeholder="Court's ruling..."></textarea>
 </div>
 
     <div class="bg-red-50/50 p-2 rounded-r-lg shadow-sm border border-red-200 border-l-[6px] border-l-red-500">
         <label class="modal-label text-[10px] font-extrabold text-red-700 border-red-700 uppercase tracking-wider mb-1 block">Dispositive Portion</label>
-        <textarea id="noteDispositive" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" style="text-align: justify;" rows="5" placeholder="WHEREFORE, premises considered..." ></textarea>
+<textarea id="noteDispositive" class="w-full p-1 bg-transparent text-sm text-gray-700 focus:outline-none font-bold" placeholder="WHEREFORE..."></textarea>
     </div>
 
 <div class="bg-white px-4 py-2 border-t border-gray-100 flex justify-between items-center">
@@ -3982,6 +3991,18 @@ document.getElementById('noteDivision').value = caseInfo ? caseInfo.division : '
     const modal = document.getElementById('digestModal');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+
+// TRIGGER THE EXPANSION HERE
+    const textareas = [doctrine, facts, issue, ruling, dispositive];
+    textareas.forEach(el => {
+        autoExpandTextarea(el);
+        // Add listener so it continues to expand as you type
+        if (!el.getAttribute('data-expand-bound')) {
+            el.addEventListener('input', () => autoExpandTextarea(el));
+            el.setAttribute('data-expand-bound', 'true');
+        }
+    });
+    
     setTimeout(() => {
         modal.firstElementChild.classList.remove('scale-95');
         modal.firstElementChild.classList.add('scale-100');
@@ -4013,6 +4034,14 @@ function saveDigest() {
         ruling: document.getElementById('noteRuling').value,
         dispositive: document.getElementById('noteDispositive').value
     };
+
+    /* --- AUTO-EXPAND LOGIC START --- */
+function autoExpandTextarea(el) {
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+}
+/* --- AUTO-EXPAND LOGIC END --- */
     
     updateStorage(id, 'digest', digest);
     renderTable(); 
